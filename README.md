@@ -67,9 +67,12 @@ The automation solution will demonstrate capabilities in:
 
 ## Project Structure
 
-.<br>
-├── config<br>
-│   └── settings.ini<br>
+.IdentifyCourses<br>
+├──src/main/java<br>
+│  └──com.cognizant.base<br>
+│       └──Base_Test<br>
+│       └──Base_Page<br>
+├──src/main/resources<br>
 ├── data<br>
 │   └── output_courses.csv<br>
 ├── LICENSE.md<br>
