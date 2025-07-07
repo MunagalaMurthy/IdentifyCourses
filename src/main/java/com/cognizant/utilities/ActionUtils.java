@@ -25,7 +25,8 @@ public class ActionUtils {
      */
     public ActionUtils(WebDriver driver) {
         this.driver = driver;
-        this.action = new Actions(driver); // IMPORTANT: Initialize 'action' here after 'driver' is set.
+        this.action = new Actions(this.driver); 
+        // IMPORTANT: Initialize 'action' here after 'driver' is set.
     }
 
     /**
