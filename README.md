@@ -58,27 +58,32 @@ The automation solution will demonstrate capabilities in:
     ```
 3.  Download the appropriate browser(e.g., Chrome for ChromeDriver, MS Edge for EdgeDriver)
 
-## How to Run
 
-1.  **Ensure WebDriver is set up correctly.**
-2.  **Execute the main automation script:**
-    ```bash
-    ```
 
 ## Project Structure
 
-.<br>
-├── config<br>
-│   └── settings.ini<br>
-├── data<br>
-│   └── output_courses.csv<br>
-├── LICENSE.md<br>
-├── README.md<br>
-├── requirements.txt<br>
-└── src<br>
-├── main.py<br>
-├── tests<br>
-│   ├── test_course_search.py<br>
-│   └── test_form_validation.py<br>
-└── utils<br>
-└── helper_functions.py<br>
+IdentifyCourses/  
+├─ src/main/java/  
+│  ├─ com.cognizant.base/  
+│  │  ├─ Base_Test.java  
+│  │  ├─ Base_Page.java  
+│  ├─ com.cognizant.element.repository/  
+│  │  ├─ HomePage.java  
+│  │  ├─ ResultPage.java  
+│  │  ├─ EnterprisePage.java  
+│  ├─ com.cognizant.utilities/  
+│  │  ├─ ExcelUtils.java  
+│  │  ├─ ActionUtils.java  
+│  │  ├─ SelectUtils.java 
+├─ src/test/java/  
+│  ├─ com.cognizant.TS01_course_search_and_filtering/  
+│  ├─ com.cognizant.TS02_language_learning_overview/  
+│  ├─ com.cognizant.TS03_enterprise_form/  
+├─ src/test/resources/  
+│  ├─ testdata/  
+│  │  ├─ data.xlsx  
+│  ├─ testNG.xml  
+├─ POM.xml  
+├─ test outputs/  
+├─ .gitignore  
+├─ README.md  
