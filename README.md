@@ -74,7 +74,7 @@ IdentifyCourses/
 │  ├─ com.cognizant.utilities/  
 │  │  ├─ ExcelUtils.java  
 │  │  ├─ ActionUtils.java  
-│  │  ├─ SelectUtils.java 
+│  │  ├─ SelectUtils.java  
 ├─ src/test/java/  
 │  ├─ com.cognizant.TS01_course_search_and_filtering/  
 │  ├─ com.cognizant.TS02_language_learning_overview/  
