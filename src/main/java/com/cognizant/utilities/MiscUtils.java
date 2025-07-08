@@ -1,5 +1,6 @@
 package com.cognizant.utilities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
@@ -29,5 +30,18 @@ public class MiscUtils {
 		}
 		if(cnt == ls.size()) return true;
 		return false;
+	}
+	
+	public boolean isSectionDisplayed(WebElement Section) {
+		return Section.isDisplayed();
+	}
+	
+	public List<String> getNameList(List<WebElement> elementNames) {
+		List<String> elementNamesList = new ArrayList<>();
+		for(WebElement ele:elementNames ) {
+			elementNamesList.add(ele.getText());
+		}
+		
+		return elementNamesList;
 	}
 }
