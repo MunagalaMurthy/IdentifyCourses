@@ -48,12 +48,17 @@ public class ActionUtils {
 
     /**
      * Scrolls the web page to bring the specified WebElement into the viewable area.
-     * Note: This method from the Actions class might not be as reliable or precise
-     * across all browsers or for elements deep within scrollable containers compared
-     * to using JavaScriptExecutor for scrolling.
      * @param target The WebElement to scroll to.
      */
     public void scrollToElement(WebElement target) {
         action.scrollToElement(target).perform();
+    }
+    
+    /**
+     * Scrolls the web page to bring the specified WebElement into the viewable area and
+     * clicks on the target element.
+     */
+    public void scrollToElementAndClick(WebElement section, WebElement target) {
+    	action.scrollToElement(section).click(target).perform();
     }
 }
