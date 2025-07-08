@@ -14,7 +14,7 @@ public class SelectUtils {
 
     // The Selenium Select object, used to interact with the dropdown.
     // It's initialized in the constructor to ensure the WebElement is available.
-    private Select select;
+    private static Select select;
 
     /**
      * Constructor for SelectUtils.
@@ -27,7 +27,7 @@ public class SelectUtils {
         // IMPORTANT: Initialize the Select object here, AFTER the 'dropDown' WebElement is set.
         // If initialized outside the constructor as "Select select = new Select(dropDown);",
         // 'dropDown' might be null at that point, leading to a NullPointerException.
-        this.select = new Select(this.dropDown);
+        select = new Select(this.dropDown);
     }
     
     /**
