@@ -30,6 +30,26 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
 	private WebElement showMoreLink;
 	
+	//Locator For The English Filter
+	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
+	private WebElement englishFilterCheckBox;
+
+	//Locator For The Beginner Filter
+	@FindBy(xpath="//span[text()='Beginner']//ancestor::div[2]//descendant::input")
+	private WebElement beginnerFilterCheckBox;
+		
+	//Locator For Course Names
+	@FindBy(className = "cds-CommonCard-title")
+	private List<WebElement> courseCardTitles;
+		
+	//Locator For Course Ratings
+	@FindBy(xpath = "//div[contains(@class,'RatingStat')]//descendant::span[1]")
+	private List<WebElement> courseCardRatings;
+
+	//Locator For Course Durations
+	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
+	private List<WebElement> courseCardDurations;
+	
 	/*
 	public boolean isFilterSectionAccessible() {
 		return filters_section.isDisplayed();
@@ -103,5 +123,55 @@ public class ResultPage extends Base_Page{
 	public List<String> getListOfLanguages() {
 		
 		return mu.getNameList(languageList);
+	}
+	
+	//Method for checking the beginnerFilterClickable
+	public boolean beginnerFilterDisplayStatus() {
+		return beginnerFilterCheckBox.isDisplayed();
+	}
+		
+	//Method for checking the beginnerFilterClickable
+	public boolean englishFilterDisplayStatus() {
+		return englishFilterCheckBox.isDisplayed();
+	}
+		
+	public boolean beginnerFilterSelectStatus() {
+		return beginnerFilterCheckBox.isSelected();
+	}
+		
+	//Method for checking the beginnerFilterClickable
+	public boolean englishFilterSelectStatus() {
+		return englishFilterCheckBox.isSelected();
+	}
+		
+	//Method for applying English filter
+	public void applyEnglishFilter() {
+		englishFilterCheckBox.click();
+	}
+		
+	//Method for applying Beginner filter
+	public void applyBeginnerFilter() {
+		beginnerFilterCheckBox.click();
+	}
+		
+	//Method for printing top 2 Courses Name, Rating and Duration
+	public void printTopCourseDetails() {
+	    int count = Math.min(2, Math.min(courseCardTitles.size(),
+	                        Math.min(courseCardRatings.size(), courseCardDurations.size())));
+
+	    for (int i = 0; i < count; i++) {
+	        String title = courseCardTitles.get(i).getText().trim();
+	        String rating = courseCardRatings.get(i).getText().trim();
+
+	        String metadata = courseCardDurations.get(i).getText();
+	        String[] parts = metadata.split("·");
+	        String duration = parts.length > 2 ? parts[2].trim() : "N/A";
+
+	        System.out.println("Course " + (i + 1) + ":");
+	        System.out.println("  Title   : " + title);
+	        System.out.println("  Rating  : " + rating);
+	        System.out.println("  Duration: " + duration);
+	        System.out.println("-----------------------------------");
+	    }
 	}
 }
