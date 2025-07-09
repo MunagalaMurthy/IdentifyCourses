@@ -9,7 +9,6 @@ import com.cognizant.utilities.SelectUtils;
 
 public class ForEnterprisePage extends Base_Page{
 	//Locators & Variables
-	private SelectUtils select;
 	@FindBy(id="FirstName") private WebElement firstNameElem;
 	@FindBy(id="LastName") private WebElement lastNameElem;
 	@FindBy(id="Email") private WebElement emailElem;
@@ -20,6 +19,7 @@ public class ForEnterprisePage extends Base_Page{
 	@FindBy(id="Self_reported_employees_to_buy_for__c") private WebElement noOfLearnersElem;
 	@FindBy(id="Country") private WebElement countryElem;
 	@FindBy(id="State") private WebElement stateElem;
+	@FindBy(xpath="//*[@id=\"mktoForm_2666\"]/div[54]/span/button") private WebElement submitBtn; 
 	
 	//Constructors
 	public ForEnterprisePage(WebDriver driver) {
@@ -40,6 +40,11 @@ public class ForEnterprisePage extends Base_Page{
 		 lastNameElem.sendKeys(lastName);
 		 emailElem.sendKeys(email);
 		 phoneNumberElem.sendKeys(phoneNumber);
+		 SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
 		 titleElem.sendKeys(jobTitle);
+		 SelectUtils.selectFromVisibleText(needDiscribeElem, businessNeeds);
+		 SelectUtils.selectFromVisibleText(countryElem, country);
+		 SelectUtils.selectFromVisibleText(stateElem, state);
+		 submitBtn.click();
 	}
 }
