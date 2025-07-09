@@ -1,4 +1,4 @@
-package com.cognizant.element_repository;
+package com.cognizant.elementRepository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
