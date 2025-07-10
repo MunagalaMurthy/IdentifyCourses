@@ -83,51 +83,6 @@ public class ForEnterprisePage extends Base_Page{
 		submitBtn.click();
 	}
 	
-//	public void fillFormForBusinessIndividual(String firstName,
-//											  String lastName,
-//											  String email,
-//											  String phoneNumber, 
-//											  String orgType,
-//											  String jobTitle,
-//											  String businessNeeds,
-//											  String country,
-//											  String state) {
-//	    forEnterpriseElem.click();
-//		firstNameElem.sendKeys(firstName);
-//		lastNameElem.sendKeys(lastName);
-//		emailElem.sendKeys(email);
-//		phoneNumberElem.sendKeys(phoneNumber);
-//		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-//		titleElem.sendKeys(jobTitle);
-//		SelectUtils.selectFromVisibleText(needDiscribeElem, businessNeeds);
-//		SelectUtils.selectFromVisibleText(countryElem, country);
-//		SelectUtils.selectFromVisibleText(stateElem, state);
-//		submitBtn.click();
-//	}
-//	
-//	public void fillFormForBusinessLearnerSupport(String firstName,
-//												  String lastName,
-//												  String email,
-//												  String phoneNumber, 
-//												  String orgType,
-//												  String jobTitle,
-//												  String businessNeeds,
-//												  String country,
-//												  String state) {
-
-//	    forEnterpriseElem.click();
-//		firstNameElem.sendKeys(firstName);
-//		lastNameElem.sendKeys(lastName);
-//		emailElem.sendKeys(email);
-//		phoneNumberElem.sendKeys(phoneNumber);
-//		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-//		titleElem.sendKeys(jobTitle);
-//		SelectUtils.selectFromVisibleText(needDiscribeElem, businessNeeds);
-//		SelectUtils.selectFromVisibleText(countryElem, country);
-//		SelectUtils.selectFromVisibleText(stateElem, state);
-//		submitBtn.click();
-//	}
-	
 	public void fillFormForBusiness(String firstName,
 									String lastName,
 									String email,
