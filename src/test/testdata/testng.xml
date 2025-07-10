@@ -4,6 +4,7 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.cognizant.base.Base_Test"/>
+      <class name="com.cognizant.TS01CourseSearchAndFiltering.TCLevelSection"/>	
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

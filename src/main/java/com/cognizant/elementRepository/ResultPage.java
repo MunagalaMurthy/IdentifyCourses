@@ -30,6 +30,12 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
 	private WebElement showMoreLink;
 	
+	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
+	private WebElement beginnerTag;
+	
+	@FindBy(xpath="//button[contains(normalize-space(),\"English\")]")
+	private WebElement englishTag;
+	
 	//Locator For The English Filter
 	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
 	private WebElement englishFilterCheckBox;
@@ -99,6 +105,10 @@ public class ResultPage extends Base_Page{
 	
 	public int getNumberOfLevels() {
 		return levelsList.size();
+	}
+	
+	public boolean isBeginnerLevelFilterDisplayed() {
+		return beginnerTag.isDisplayed();
 	}
 	
 	public int getNumberOfLanguages() {
