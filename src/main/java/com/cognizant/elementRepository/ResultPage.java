@@ -1,5 +1,6 @@
 package com.cognizant.elementRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -55,6 +56,14 @@ public class ResultPage extends Base_Page{
 	//Locator For Course Durations
 	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
 	private List<WebElement> courseCardDurations;
+	
+	//Locator for Filters Chips
+	@FindBy(className="cds-Chip-label")
+	private List<WebElement> filtersApplied;
+	
+	//Locator for Clear All
+	@FindBy(xpath="//span[normalize-space()='Clear all']")
+	private WebElement clearAllFiltersButton;
 	
 	/*
 	public boolean isFilterSectionAccessible() {
@@ -140,16 +149,17 @@ public class ResultPage extends Base_Page{
 		return beginnerFilterCheckBox.isDisplayed();
 	}
 		
-	//Method for checking the beginnerFilterClickable
+	//Method for checking the englishFilterClickable
 	public boolean englishFilterDisplayStatus() {
 		return englishFilterCheckBox.isDisplayed();
 	}
 		
+	//Method for checking beginnerFilterStatus
 	public boolean beginnerFilterSelectStatus() {
 		return beginnerFilterCheckBox.isSelected();
 	}
 		
-	//Method for checking the beginnerFilterClickable
+	//Method for checking englishFilterStatus
 	public boolean englishFilterSelectStatus() {
 		return englishFilterCheckBox.isSelected();
 	}
@@ -164,6 +174,11 @@ public class ResultPage extends Base_Page{
 		beginnerFilterCheckBox.click();
 	}
 		
+	//Method for Clearing Filters
+	public void clearAllAppliedFilters() {
+		clearAllFiltersButton.click();
+	}
+	
 	//Method for printing top 2 Courses Name, Rating and Duration
 	public void printTopCourseDetails() {
 	    int count = Math.min(2, Math.min(courseCardTitles.size(),
@@ -184,4 +199,70 @@ public class ResultPage extends Base_Page{
 	        System.out.println("-----------------------------------");
 	    }
 	}
+	
+	public boolean isFilterApplied(String filterName) {
+		for (WebElement filter : filtersApplied) {
+			if (filter.getText().trim().equalsIgnoreCase(filterName)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public void printAppliedFilters() {
+		for(WebElement filter:filtersApplied) {
+			System.out.println(filter.getText());
+		}
+	}
+	
+	public ArrayList<String> getAppliedFilters() {
+		ArrayList<String> filtersAppliedOnResults=new ArrayList<String>();
+		for(WebElement filter:filtersApplied) {
+			String fil=filter.getText();
+			filtersAppliedOnResults.add(fil);
+		}
+		return filtersAppliedOnResults;
+	}
+	
+	public boolean areCourseFieldsPresent() {
+	    if (courseCardTitles.isEmpty() || courseCardRatings.isEmpty() || courseCardDurations.isEmpty()) {
+	        return false;
+	    }
+
+	    String title = courseCardTitles.get(0).getText().trim();
+	    String rating = courseCardRatings.get(0).getText().trim();
+	    String metadata = courseCardDurations.get(0).getText();
+	    String[] parts = metadata.split("·");
+	    String duration = parts.length > 2 ? parts[2].trim() : "";
+
+	    return !title.isEmpty() && !rating.isEmpty() && !duration.isEmpty();
+	}
+	
+	public ArrayList<Float> ratingValuesCheck(){
+		ArrayList<Float> ratings=new ArrayList<Float>();
+		int i=1;
+		for(WebElement elem:courseCardRatings) {
+			if(i>2)
+				break;
+			String data=elem.getText();
+			Float rating=Float.parseFloat(data);
+			ratings.add(rating);
+			i++;
+		}
+		return ratings;
+		
+	}
+	
+	public void printSearchResults() {
+		int i=1;
+		for(WebElement elem:courseCardTitles) {
+			if(i>10)
+				break;
+			System.out.println(elem.getText());
+			i++;
+		}
+
+	}
+	
+	
 }
