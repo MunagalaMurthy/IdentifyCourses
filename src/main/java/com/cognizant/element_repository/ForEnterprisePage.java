@@ -35,7 +35,7 @@ public class ForEnterprisePage extends Base_Page{
 		super(driver);
 	}
 	
-	public void fillFormForBusinessSales(String firstName,
+	public String fillFormForBusinessSales(String firstName,
 										 String email,
 										 String phoneNumber, 
 										 String lastName,
@@ -57,9 +57,10 @@ public class ForEnterprisePage extends Base_Page{
 		 SelectUtils.selectFromVisibleText(countryElem, country);
 		 SelectUtils.selectFromVisibleText(stateElem, state);
 		 submitBtn.click();
+		 return driver.getTitle();
 	}
 	
-	public void fillFormForBusinessOther(String firstName,
+	public String fillFormForBusinessOther(String firstName,
 										 String lastName,
 										 String email,
 										 String phoneNumber, 
@@ -81,9 +82,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		descriptionElem.sendKeys(description);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForBusiness(String firstName,
+	public String fillFormForBusiness(String firstName,
 									String lastName,
 									String email,
 									String phoneNumber, 
@@ -103,9 +105,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForGovernmentUpskilling(String firstName,
+	public String fillFormForGovernmentUpskilling(String firstName,
 											    String lastName,
 											    String email,
 									 		    String phoneNumber, 
@@ -131,9 +134,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForGovernmentLearner(String firstName,
+	public String fillFormForGovernmentLearner(String firstName,
 											   String lastName,
 											   String email,
 											   String phoneNumber, 
@@ -157,9 +161,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForGovernmentOthers(String firstName,
+	public String fillFormForGovernmentOthers(String firstName,
 										    String lastName,
 										    String email,
 										    String phoneNumber, 
@@ -185,10 +190,11 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		descriptionElem.sendKeys(description);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
 	
-	public void fillFormForCollegeSales(String firstName,
+	public String fillFormForCollegeSales(String firstName,
 										String lastName,
 										String email,
 										String phoneNumber, 
@@ -218,9 +224,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForCollege(String firstName,
+	public String fillFormForCollege(String firstName,
 								   String lastName,
 								   String email,
 								   String phoneNumber, 
@@ -249,9 +256,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForCollegeOthers(String firstName,
+	public String fillFormForCollegeOthers(String firstName,
 									     String lastName,
 									     String email,
 									     String phoneNumber, 
@@ -281,9 +289,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		descriptionElem.sendKeys(description);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForNonProfitSales(String firstName,
+	public String fillFormForNonProfitSales(String firstName,
 										  String email,
 										  String phoneNumber, 
 										  String lastName,
@@ -309,9 +318,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForNonProfit (String firstName,
+	public String fillFormForNonProfit (String firstName,
 									  String email,
 									  String phoneNumber, 
 									  String lastName,
@@ -335,9 +345,10 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
-	public void fillFormForNonProfitOthers(String firstName,
+	public String fillFormForNonProfitOthers(String firstName,
 										   String email,
 										   String phoneNumber, 
 										   String lastName,
@@ -363,6 +374,7 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		descriptionElem.sendKeys(description);
 		submitBtn.click();
+		return driver.getTitle();
 	}
 	
 }
