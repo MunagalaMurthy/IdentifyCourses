@@ -15,7 +15,7 @@ public class HomePage extends Base_Page{
 	}
 	
 	@FindBy(id="search-autocomplete-input")
-	WebElement searchBox;
+	public WebElement searchBox;
 	
 	@FindBy(xpath="//button[contains(@class,'search-button')]/div")
 	WebElement searchButton;

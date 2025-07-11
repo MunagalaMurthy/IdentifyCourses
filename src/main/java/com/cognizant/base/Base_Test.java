@@ -7,12 +7,18 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+
+import com.cognizant.elementRepository.HomePage;
+import com.cognizant.elementRepository.ResultPage;
 
 public class Base_Test {
 	
-	private WebDriver driver;
-	private Properties prop;
+	protected WebDriver driver;
+	protected Properties prop;
+	protected HomePage hp;
+	protected ResultPage rp;
 	
 	@BeforeSuite
 	public void setup() throws Exception {
@@ -28,6 +34,8 @@ public class Base_Test {
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		hp = new HomePage(driver);
+		rp = new ResultPage(driver);
 	}
 	
 	@AfterSuite
