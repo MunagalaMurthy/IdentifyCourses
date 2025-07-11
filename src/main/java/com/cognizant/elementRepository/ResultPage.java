@@ -18,10 +18,10 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../..")
 	private WebElement languageSection;
 	
-	@FindBy(xpath="//div[contains(text(),\"Level\")]/../..")
+	@FindBy(xpath="//div[data-testid=\"search-filter-group-Level\"]")
 	private WebElement levelSection;
 	
-	@FindBy(xpath="//div[contains(text(),\"Level\")]/../../div/div/div")
+	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
 	private List<WebElement> levelsList;
 	
 	@FindBy(xpath ="//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
@@ -40,8 +40,11 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
 	private WebElement englishFilterCheckBox;
 
-	//Locator For The Beginner Filter
-	@FindBy(xpath="//span[text()='Beginner']//ancestor::div[2]//descendant::input")
+	//Locator For The Checked Begineer Filter
+	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-true\"]")
+	private WebElement beginnerFilterChecked;
+	//Locator For The Unchecked Beginner Filter
+	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-false\"]")
 	private WebElement beginnerFilterCheckBox;
 		
 	//Locator For Course Names
@@ -55,35 +58,6 @@ public class ResultPage extends Base_Page{
 	//Locator For Course Durations
 	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
 	private List<WebElement> courseCardDurations;
-	
-	/*
-	public boolean isFilterSectionAccessible() {
-		return filters_section.isDisplayed();
-	}
-	
-	public boolean isLevelSectionAccessible() {
-		return level_section.isDisplayed();
-	}
-	public int getNumberOfLevels() {
-		return levels_list.size();
-	}
-	
-	public boolean isCountAvailableForLevels() {
-		MiscUtils mu = new MiscUtils();
-		return mu.isCountAvailable(levels_list);
-	}
-	
-	public List<String> getListOfLevels() {
-		List<String> levelsList = new ArrayList<>();
-		for(WebElement level: levels_list) {
-			levelsList.add(level.getText());
-		}
-		
-		return levelsList;
-	}
-	
-	
-	*/
 	
 	MiscUtils mu = new MiscUtils();
 	
@@ -115,14 +89,19 @@ public class ResultPage extends Base_Page{
 		return languageList.size();
 	}
 	
-	public boolean isCountAvailableForLevels() {
-		
-		return mu.isCountAvailable(levelsList);
+	public boolean isBeginnerChkd() {
+		return mu.isSectionDisplayed(beginnerFilterChecked);
 	}
 	
-	public boolean isCountAvailableForLanguages() {
-		
-		return mu.isCountAvailable(languageList);
+	public boolean isCountDisplayed(String value) {
+		value = value.toLowerCase();
+		switch(value) {
+		case "level":
+			return mu.isCountAvailable(levelsList);
+		case "language":
+			return mu.isCountAvailable(languageList);
+		}
+		return false;
 	}
 	
 	public List<String> getListOfLevels() {
