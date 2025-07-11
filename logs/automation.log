@@ -1,0 +1,26 @@
+2025-07-11 16:46:17 INFO  TS01_TestCases:19 - Hello Hi
+2025-07-11 16:57:55 INFO  TS01_TestCases:19 - CS-TC-07: Verifying that the Beginners Level filter applies correctly.
+2025-07-11 16:58:30 INFO  TS01_TestCases:19 - CS-TC-07: Verifying that the Beginners Level filter applies correctly.
+2025-07-11 16:58:44 INFO  TS01_TestCases:27 - CS-TC-08: Testing default state of Language and Levels checkboxes.
+2025-07-11 16:58:56 INFO  TS01_TestCases:35 - CS-TC-09: Testing application of multiple filters together.
+2025-07-11 16:59:10 INFO  TS01_TestCases:45 - CS-TC-10: Verifying presence of all required fields in the results.
+2025-07-11 16:59:25 INFO  TS01_TestCases:54 - CS-TC-11: Verifying that rating data is within the valid range.
+2025-07-11 16:59:38 INFO  TS01_TestCases:66 - CS-TC-12: Testing behavior of search field when no input is provided.
+2025-07-11 16:59:52 INFO  TS01_TestCases:74 - CS-TC-13: Testing functionality of Clear Filters option.
+2025-07-11 17:00:16 INFO  TS01_TestCases:86 - CS-TC-14: Testing functionality of search box auto-suggestion.
+2025-07-11 17:00:32 INFO  TS01_TestCases:94 - Main-Test-Case: For Retreiving Top 2 Filtered Courses Details
+2025-07-11 17:12:43 INFO  TS01_TestCases:27 - CS-TC-08: Testing default state of Language and Levels checkboxes.
+2025-07-11 17:12:57 INFO  TS01_TestCases:19 - CS-TC-07: Verifying that the Beginners Level filter applies correctly.
+2025-07-11 17:13:12 INFO  TS01_TestCases:35 - CS-TC-09: Testing application of multiple filters together.
+2025-07-11 17:13:23 INFO  TS01_TestCases:66 - CS-TC-12: Testing behavior of search field when no input is provided.
+2025-07-11 17:13:36 INFO  TS01_TestCases:74 - CS-TC-14: Testing functionality of search box auto-suggestion.
+2025-07-11 17:13:50 INFO  TS01_TestCases:82 - Main-Test-Case: For Retreiving Top 2 Filtered Courses Details
+2025-07-11 17:16:40 INFO  TS01_TestCases:19 - CS-TC-07: Verifying that the Beginners Level filter applies correctly.
+2025-07-11 17:16:54 INFO  TS01_TestCases:27 - CS-TC-08: Testing default state of Language and Levels checkboxes.
+2025-07-11 17:17:05 INFO  TS01_TestCases:35 - CS-TC-09: Testing application of multiple filters together.
+2025-07-11 17:17:19 INFO  TS01_TestCases:45 - CS-TC-10: Verifying presence of all required fields in the results.
+2025-07-11 17:17:33 INFO  TS01_TestCases:54 - CS-TC-11: Verifying that rating data is within the valid range.
+2025-07-11 17:17:47 INFO  TS01_TestCases:66 - CS-TC-12: Testing behavior of search field when no input is provided.
+2025-07-11 17:18:00 INFO  TS01_TestCases:74 - CS-TC-13: Testing functionality of Clear Filters option.
+2025-07-11 17:18:24 INFO  TS01_TestCases:85 - Main-Test-Case For Retreiving Top 2 Filtered Courses
+2025-07-11 17:18:37 INFO  TS01_TestCases:95 - CS-TC-14: Testing functionality of search box auto-suggestion.

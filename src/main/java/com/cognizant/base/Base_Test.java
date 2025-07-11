@@ -9,6 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.apache.logging.log4j.LogManager;//log4j
+import org.apache.logging.log4j.Logger;   //log4j
 
 import com.cognizant.elementRepository.HomePage;
 import com.cognizant.elementRepository.ResultPage;
@@ -19,9 +21,12 @@ public class Base_Test {
 	private Properties prop;
 	protected ResultPage rp;
 	protected HomePage hp;
+	public Logger logger;
+	
 	
 	@BeforeClass
 	public void setup() throws Exception {
+		logger=LogManager.getLogger(this.getClass());
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);
