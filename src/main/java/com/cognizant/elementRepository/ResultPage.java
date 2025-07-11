@@ -51,7 +51,7 @@ public class ResultPage extends Base_Page{
 	
 	//Locator for applied filters list
 	@FindBy(xpath="//span[@class='cds-Chip-label']")
-	private List<WebElement> appliedFilters;
+	public List<WebElement> appliedFilters;
 	
 	//Locator for Course Cards
 	@FindBy(className = "css-1whl2ol")
@@ -95,13 +95,14 @@ public class ResultPage extends Base_Page{
 		return levelsList;
 	}
 	
-	
-	*/
-	@FindBy(className="cds-Chip-label")
-	private List<WebElement> filtersApplied;
-	
+	//Locator to find the clear all filters button
 	@FindBy(xpath="//span[normalize-space()='Clear all']")
 	private WebElement clearAllFiltersButton; 
+	*/
+	
+	//Locator to find the applied filters
+	@FindBy(className="cds-Chip-label")
+	private List<WebElement> filtersApplied;
 	
 	MiscUtils mu = new MiscUtils();
 	
@@ -151,6 +152,7 @@ public class ResultPage extends Base_Page{
 	}
 	*/
 	
+	//Method to check if atleast one course card is displayed or not
 	public boolean checkCourseCardsDisplay() {
 		if(courseCards.size()>0)
 			return true;
@@ -158,13 +160,16 @@ public class ResultPage extends Base_Page{
 			return false;
 	}
 	
+	//Method to check whether the course cards displayed on the search results page are relevant to the search key
 	public boolean CourseCardsRelevanceCheck() throws IOException {
-	 //= {"html","css","javascript","full-stack","full stack","web","development","front end","back end"};
+		//Using checkWords excel file, which contains key words used to compare with the titles of the courses to check relevance
 		ExcelUtils excel = new ExcelUtils("C:\\Users\\2407200\\eclipse-workspace\\AutomationSamples\\src\\main\\resources\\Checkwords.xlsx");
 		int count = excel.getRowCount("Sheet1");
+		//Creating an array to store the checking key words
 		String[] checkWords = new String[count];
 		for(int i=1;i<=count;i++)
 			checkWords[i-1] = excel.getCellData("Sheet1", i, 0);
+		//Checking whether the course titles contain atleast one of the key words from the array
 		int trueCount = 0;
 		for(WebElement title:courseCardTitles) {
 			for(String checkWord:checkWords) {
@@ -175,17 +180,20 @@ public class ResultPage extends Base_Page{
 			}
 		}
 		
+		//Debug print statements to check how many course are relevant out of all
 		System.out.println("Total Count:"+courseCardTitles.size());
 		System.out.println("Relevant Count:"+trueCount);
+		//Conditional checking if all the courses consist of atleast 75% of the truly relevant courses
 		if(trueCount>=(0.75*courseCardTitles.size()))
 			return true;
 		else
 			return false;
 	}
 	
-	//Method for checking the beginnerFilterClickable
+	//Method for checking whether the given filter is displayed or not
 	public boolean filterDisplayStatus(String filterName) {
 		boolean returnValue = false;
+		//Using the name of the filter provided to check if the respective check box is displayed
 		switch (filterName) {
 			case "English":
 				returnValue = englishFilterCheckBox.isDisplayed();
@@ -197,15 +205,20 @@ public class ResultPage extends Base_Page{
 		return returnValue;
 	}
 		
-	//Method for checking the beginnerFilterClickable
+	//Method for checking whether the given filter is selected or not
 	public boolean filterSelectStatus(String filterName) {
 		boolean returnValue = false;
+		//Using the name of the filter provided to check if the respective check box is selected
 		switch (filterName) {
 			case "English":
+				System.out.println(englishFilterCheckBox.getAttribute("data-testid"));
+				//checks if the filter's attribute ends with 'true'- meaning checkbox is selected
 				if(englishFilterCheckBox.getAttribute("data-testid").endsWith("true"))
 					returnValue = true;
 				break;
 			case "Beginner":
+				System.out.println(beginnerFilterCheckBox.getAttribute("data-testid"));
+				//checks if the filter's attribute ends with 'true'- meaning checkbox is selected
 				if(beginnerFilterCheckBox.getAttribute("data-testid").endsWith("true"))
 					returnValue = true;
 				break;
@@ -213,8 +226,9 @@ public class ResultPage extends Base_Page{
 		return returnValue;
 	}
 	
-	//Method for applying English filter
+	//Method for applying the given filter
 	public void applyFilter(String filterName) {
+		//Using the name of the filter provided to click the respective checkbox
 		switch (filterName) {
 			case "English":
 				englishFilterCheckBox.click();
@@ -225,8 +239,10 @@ public class ResultPage extends Base_Page{
 		}
 	}
 	
+	//Method to check if the selected filter is applied properly
 	public boolean checkAppliedFilter(String filterName) {
 		boolean check = false;
+		//Using the name of the filter provided to check if the selected filter is applied as required
 		for(WebElement filter:appliedFilters) {
 			if(filter.getText().contains(filterName))
 				check = true;
