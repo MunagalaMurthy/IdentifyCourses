@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 
 import com.cognizant.base.Base_Page;
 import com.cognizant.utilities.ActionUtils;
+import com.cognizant.utilities.MiscUtils;
 import com.cognizant.utilities.SelectUtils;
 
 public class ForEnterprisePage extends Base_Page{
@@ -37,6 +38,9 @@ public class ForEnterprisePage extends Base_Page{
 	@FindBy(id="Company") private WebElement companyElem;
 	@FindBy(id="Employee_Range__c") private WebElement companySizeElem;
 	
+	
+	MiscUtils mu = new MiscUtils();
+	
 	//Constructors
 	public ForEnterprisePage(WebDriver driver) {
 		super(driver);
@@ -55,13 +59,13 @@ public class ForEnterprisePage extends Base_Page{
 		 action.mouseHoverToElement(forEnterpriseElem);
 		 forEnterpriseElem.click();
 		 action.mouseHoverToElement(firstNameElem);
-		 firstNameElem.sendKeys(firstName);
-		 lastNameElem.sendKeys(lastName);
-		 emailElem.sendKeys(email);
-		 phoneNumberElem.sendKeys(phoneNumber);
+		 mu.sendValues(firstNameElem, firstName);
+		 mu.sendValues(lastNameElem, lastName);
+		 mu.sendValues(emailElem, email);
+		 mu.sendValues(phoneNumberElem, phoneNumber);
 		 SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		 titleElem.sendKeys(jobTitle);
-		 needDiscribeElem.sendKeys(businessNeeds);
+		 mu.sendValues(titleElem, jobTitle);
+		 mu.sendValues(needDiscribeElem, businessNeeds);
 		 SelectUtils.selectFromVisibleText(noOfLearnersElem, noOfLearners);
 		 SelectUtils.selectFromVisibleText(countryElem, country);
 		 SelectUtils.selectFromVisibleText(stateElem, state);
@@ -81,16 +85,16 @@ public class ForEnterprisePage extends Base_Page{
 										   String state,
 										   String description) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
-		descriptionElem.sendKeys(description);
+		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
 		return driver.getTitle();
 	}
@@ -105,13 +109,13 @@ public class ForEnterprisePage extends Base_Page{
 									  String country,
 									  String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
@@ -131,15 +135,15 @@ public class ForEnterprisePage extends Base_Page{
 											      String country,
 											      String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(noOfLearnersElem, noOfLearners);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
@@ -159,15 +163,15 @@ public class ForEnterprisePage extends Base_Page{
 											   String country,
 											   String state) {
 		forEnterpriseElem.click(); 
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
@@ -187,18 +191,18 @@ public class ForEnterprisePage extends Base_Page{
 										      String state,
 										      String description) {
 		forEnterpriseElem.click();  
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
-		descriptionElem.sendKeys(description);
+		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
 		return driver.getTitle();
 	}
@@ -219,17 +223,17 @@ public class ForEnterprisePage extends Base_Page{
 										  String country,
 										  String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
-		companyElem.sendKeys(company);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		SelectUtils.selectFromVisibleText(departmentElem, department);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(noOfLearnersElem,	noOfLearners);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
@@ -251,18 +255,18 @@ public class ForEnterprisePage extends Base_Page{
 								     String country,
 								     String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 //		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		orgTypeElem.sendKeys(orgType);
+		mu.sendValues(orgTypeElem, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
-		companyElem.sendKeys(company);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		SelectUtils.selectFromVisibleText(departmentElem, department);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
@@ -284,20 +288,20 @@ public class ForEnterprisePage extends Base_Page{
 									       String state,
 									       String description) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
-		companyElem.sendKeys(company);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		SelectUtils.selectFromVisibleText(departmentElem, department);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
-		descriptionElem.sendKeys(description);
+		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
 		return driver.getTitle();
 	}
@@ -315,15 +319,15 @@ public class ForEnterprisePage extends Base_Page{
 										    String country,
 										    String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(noOfLearnersElem, noOfLearners);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
@@ -343,15 +347,15 @@ public class ForEnterprisePage extends Base_Page{
 									    String country,
 									    String state) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
@@ -371,18 +375,18 @@ public class ForEnterprisePage extends Base_Page{
 										     String state,
 										     String description) {
 		forEnterpriseElem.click();
-		firstNameElem.sendKeys(firstName);
-		lastNameElem.sendKeys(lastName);
-		emailElem.sendKeys(email);
-		phoneNumberElem.sendKeys(phoneNumber);
+		mu.sendValues(firstNameElem, firstName);
+		mu.sendValues(lastNameElem, lastName);
+		mu.sendValues(emailElem, email);
+		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		titleElem.sendKeys(jobTitle);
-		companyElem.sendKeys(company);
+		mu.sendValues(titleElem, jobTitle);
+		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		needDiscribeElem.sendKeys(businessNeeds);
+		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
-		descriptionElem.sendKeys(description);
+		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
 		return driver.getTitle();
 	}
