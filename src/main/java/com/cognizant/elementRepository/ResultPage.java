@@ -211,13 +211,13 @@ public class ResultPage extends Base_Page{
 		//Using the name of the filter provided to check if the respective check box is selected
 		switch (filterName) {
 			case "English":
-				System.out.println(englishFilterCheckBox.getAttribute("data-testid"));
+				//System.out.println(englishFilterCheckBox.getAttribute("data-testid"));
 				//checks if the filter's attribute ends with 'true'- meaning checkbox is selected
 				if(englishFilterCheckBox.getAttribute("data-testid").endsWith("true"))
 					returnValue = true;
 				break;
 			case "Beginner":
-				System.out.println(beginnerFilterCheckBox.getAttribute("data-testid"));
+				//System.out.println(beginnerFilterCheckBox.getAttribute("data-testid"));
 				//checks if the filter's attribute ends with 'true'- meaning checkbox is selected
 				if(beginnerFilterCheckBox.getAttribute("data-testid").endsWith("true"))
 					returnValue = true;
