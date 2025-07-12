@@ -18,7 +18,7 @@ import com.cognizant.elementRepository.ResultPage;
 public class Base_Test {
 	
 	public WebDriver driver;
-	private Properties prop;
+	protected Properties prop;
 	protected ResultPage rp;
 	protected HomePage hp;
 	public Logger logger;

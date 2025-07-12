@@ -37,12 +37,12 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//button[contains(normalize-space(),\"English\")]")
 	private WebElement englishTag;
 	
-	//Locator For The English Filter
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
+	//Locator For The English Filter Selector
+	@FindBy(xpath = "//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
 	private WebElement englishFilterCheckBox;
 
-	//Locator For The Beginner Filter
-	@FindBy(xpath="//span[text()='Beginner']//ancestor::div[2]//descendant::input")
+	//Locator For The Beginner Filter Selector
+	@FindBy(xpath="//div[contains(@data-testid,'Beginner') and contains(@data-testid,'Level')]")
 	private WebElement beginnerFilterCheckBox;
 		
 	//Locator For Course Names
