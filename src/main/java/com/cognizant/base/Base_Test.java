@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -20,6 +22,7 @@ public class Base_Test {
 	protected Properties prop;
 	protected HomePage hp;
 	protected ResultPage rp;
+	protected Logger logger;
 	
 	@BeforeClass
 	public void setup() throws Exception {
@@ -42,6 +45,7 @@ public class Base_Test {
 		//Creating the required class objects to use in the test cases
 		hp = new HomePage(driver);
 		rp = new ResultPage(driver);
+		logger=LogManager.getLogger(this.getClass());
 	}
 	
 	@AfterClass

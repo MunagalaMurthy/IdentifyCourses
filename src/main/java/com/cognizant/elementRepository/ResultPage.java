@@ -173,7 +173,7 @@ public class ResultPage extends Base_Page{
 	//Method to check whether the course cards displayed on the search results page are relevant to the search key
 	public boolean CourseCardsRelevanceCheck() throws IOException {
 		//Using checkWords excel file, which contains key words used to compare with the titles of the courses to check relevance
-		ExcelUtils excel = new ExcelUtils("C:\\Users\\2407200\\eclipse-workspace\\AutomationSamples\\src\\main\\resources\\Checkwords.xlsx");
+		ExcelUtils excel = new ExcelUtils(System.getProperty("user.dir")+"/src/main/resources/Checkwords.xlsx");
 		int count = excel.getRowCount("Sheet1");
 		//Creating an array to store the checking key words
 		String[] checkWords = new String[count];

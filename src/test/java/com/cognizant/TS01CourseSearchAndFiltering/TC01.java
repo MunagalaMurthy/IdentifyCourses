@@ -17,13 +17,8 @@ import com.cognizant.base.Base_Test;
 
 public class TC01 extends Base_Test{
 	
-	public Logger logger;
-	int i=4;
 	
-	@BeforeClass
-	public void loggerInitiation() {
-		logger=LogManager.getLogger(this.getClass());
-	}
+	int i=4;
 	
 	//Test 1: testing whether search box accepts any text input
 	@Test(priority=1,groups= {"Smoke"})

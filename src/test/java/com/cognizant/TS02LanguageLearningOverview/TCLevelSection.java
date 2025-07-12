@@ -1,4 +1,4 @@
-package com.cognizant.TS01CourseSearchAndFiltering;
+package com.cognizant.TS02LanguageLearningOverview;
 
 import org.testng.Assert;
 import org.testng.Reporter;

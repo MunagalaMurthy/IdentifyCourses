@@ -1,0 +1,86 @@
+2025-07-12 19:07:45 INFO  TC01:26 - CS-TC-01: To Verify That Search Input Field Accepts Text
+2025-07-12 19:07:45 INFO  TC01:28 - 	CS-TC-01: Started
+2025-07-12 19:07:45 INFO  TC01:30 - 	CS-TC-01: Entering Search Key into Search Box
+2025-07-12 19:07:45 INFO  TC01:34 - 	CS-TC-01: Checking if input stays in Search Box
+2025-07-12 19:07:46 INFO  TC01:39 - 	CS-TC-01: Successfully Passed
+2025-07-12 19:07:46 INFO  TC01:51 - CS-TC-02: To Verify That Search Button Click Triggers Search
+2025-07-12 19:07:46 INFO  TC01:53 - 	CS-TC-02: Started
+2025-07-12 19:07:46 INFO  TC01:54 - 	CS-TC-02: Triggering Search
+2025-07-12 19:08:03 ERROR TC01:60 - expected [null] but found [https://www.coursera.org/search?query=Web%20Development&]
+2025-07-12 19:08:03 INFO  TC01:69 - CS-TC-03: To Verify That Search Results Are Displayed Correctly
+2025-07-12 19:08:03 INFO  TC01:71 - 	CS-TC-03: Started
+2025-07-12 19:08:03 INFO  TC01:72 - 	CS-TC-03: Checking the result page
+2025-07-12 19:08:03 INFO  TC01:75 - 	CS-TC-03: Results Displayed
+2025-07-12 19:08:03 INFO  TC01:76 - 	CS-TC-03: Checking Relevancy of Results
+2025-07-12 19:08:09 INFO  TC01:79 - 	CS-TC-03: Successfully Passed
+2025-07-12 19:08:09 INFO  TC01:97 - CS-TC-04: Test English Checkbox is Clickable
+2025-07-12 19:08:09 INFO  TC01:99 - 	CS-TC-04: Started
+2025-07-12 19:08:09 INFO  TC01:100 - 	CS-TC-04: Checking presence and state of checkbox
+2025-07-12 19:08:09 INFO  TC01:104 - 	CS-TC-04: Successfully Passed
+2025-07-12 19:08:09 INFO  TC01:106 - CS-TC-05: To Verify That English Filter Gets Applied
+2025-07-12 19:08:09 INFO  TC01:107 - 	CS-TC-05: Started
+2025-07-12 19:08:09 INFO  TC01:108 - 	CS-TC-05: Applying the English filter
+2025-07-12 19:08:10 ERROR TC01:125 - element click intercepted: Element <div class="css-1xi2dvh" data-testid="language:English-false">...</div> is not clickable at point (171, 222). Other element would receive the click: <span class="css-ebbjlp">...</span>
+  (Session info: chrome=137.0.7151.69)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [68d217a5b15a148600dc29718a705b27, clickElement {id=f.E72E68E80B07C7778750049A3A023711.d.C18ABE30922D2177DC5BBB7CD3681CC7.e.137}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\2406730\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64508}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64508/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (68d217a5b15a148600dc29718a705b27)] -> xpath: //div[contains(@data-testid,'English') and contains(@data-testid,'language')]]
+Session ID: 68d217a5b15a148600dc29718a705b27
+2025-07-12 19:08:10 INFO  TC01:97 - CS-TC-05: Test Beginner Checkbox is Clickable
+2025-07-12 19:08:10 INFO  TC01:99 - 	CS-TC-05: Started
+2025-07-12 19:08:10 INFO  TC01:100 - 	CS-TC-05: Checking presence and state of checkbox
+2025-07-12 19:08:10 INFO  TC01:104 - 	CS-TC-05: Successfully Passed
+2025-07-12 19:08:10 INFO  TC01:106 - CS-TC-06: To Verify That Beginner Filter Gets Applied
+2025-07-12 19:08:10 INFO  TC01:107 - 	CS-TC-06: Started
+2025-07-12 19:08:10 INFO  TC01:108 - 	CS-TC-06: Applying the Beginner filter
+2025-07-12 19:08:11 INFO  TC01:111 - 	CS-TC-06: Beginner filter applied successfully
+2025-07-12 19:08:11 INFO  TC01:113 - 	CS-TC-06: Loading filtered results
+2025-07-12 19:08:21 ERROR TC01:125 - no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=137.0.7151.69)
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [68d217a5b15a148600dc29718a705b27, findElements {using=xpath, value=//span[@class='cds-Chip-label']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\2406730\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64508}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64508/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 68d217a5b15a148600dc29718a705b27
+2025-07-12 19:10:24 INFO  TC01:26 - CS-TC-01: To Verify That Search Input Field Accepts Text
+2025-07-12 19:10:24 INFO  TC01:28 - 	CS-TC-01: Started
+2025-07-12 19:10:24 INFO  TC01:30 - 	CS-TC-01: Entering Search Key into Search Box
+2025-07-12 19:10:24 INFO  TC01:34 - 	CS-TC-01: Checking if input stays in Search Box
+2025-07-12 19:10:25 INFO  TC01:39 - 	CS-TC-01: Successfully Passed
+2025-07-12 19:10:25 INFO  TC01:51 - CS-TC-02: To Verify That Search Button Click Triggers Search
+2025-07-12 19:10:25 INFO  TC01:53 - 	CS-TC-02: Started
+2025-07-12 19:10:25 INFO  TC01:54 - 	CS-TC-02: Triggering Search
+2025-07-12 19:10:37 ERROR TC01:60 - expected [null] but found [https://www.coursera.org/search?query=Web%20Development&]
+2025-07-12 19:10:37 INFO  TC01:69 - CS-TC-03: To Verify That Search Results Are Displayed Correctly
+2025-07-12 19:10:37 INFO  TC01:71 - 	CS-TC-03: Started
+2025-07-12 19:10:37 INFO  TC01:72 - 	CS-TC-03: Checking the result page
+2025-07-12 19:10:37 INFO  TC01:75 - 	CS-TC-03: Results Displayed
+2025-07-12 19:10:37 INFO  TC01:76 - 	CS-TC-03: Checking Relevancy of Results
+2025-07-12 19:10:43 INFO  TC01:79 - 	CS-TC-03: Successfully Passed
+2025-07-12 19:10:43 INFO  TC01:97 - CS-TC-04: Test English Checkbox is Clickable
+2025-07-12 19:10:43 INFO  TC01:99 - 	CS-TC-04: Started
+2025-07-12 19:10:43 INFO  TC01:100 - 	CS-TC-04: Checking presence and state of checkbox
+2025-07-12 19:10:43 INFO  TC01:104 - 	CS-TC-04: Successfully Passed
+2025-07-12 19:10:43 INFO  TC01:106 - CS-TC-05: To Verify That English Filter Gets Applied
+2025-07-12 19:10:43 INFO  TC01:107 - 	CS-TC-05: Started
+2025-07-12 19:10:43 INFO  TC01:108 - 	CS-TC-05: Applying the English filter
+2025-07-12 19:10:44 INFO  TC01:111 - 	CS-TC-05: English filter applied successfully
+2025-07-12 19:10:44 INFO  TC01:113 - 	CS-TC-05: Loading filtered results
+2025-07-12 19:10:46 INFO  TC01:116 - 	CS-TC-05: Checking status of filter after applying
+2025-07-12 19:10:46 INFO  TC01:120 - 	CS-TC-05: Successfully Passed
+2025-07-12 19:10:46 INFO  TC01:97 - CS-TC-06: Test Beginner Checkbox is Clickable
+2025-07-12 19:10:46 INFO  TC01:99 - 	CS-TC-06: Started
+2025-07-12 19:10:46 INFO  TC01:100 - 	CS-TC-06: Checking presence and state of checkbox
+2025-07-12 19:10:46 INFO  TC01:104 - 	CS-TC-06: Successfully Passed
+2025-07-12 19:10:46 INFO  TC01:106 - CS-TC-07: To Verify That Beginner Filter Gets Applied
+2025-07-12 19:10:46 INFO  TC01:107 - 	CS-TC-07: Started
+2025-07-12 19:10:46 INFO  TC01:108 - 	CS-TC-07: Applying the Beginner filter
+2025-07-12 19:10:47 INFO  TC01:111 - 	CS-TC-07: Beginner filter applied successfully
+2025-07-12 19:10:47 INFO  TC01:113 - 	CS-TC-07: Loading filtered results
+2025-07-12 19:10:50 INFO  TC01:116 - 	CS-TC-07: Checking status of filter after applying
+2025-07-12 19:10:50 INFO  TC01:120 - 	CS-TC-07: Successfully Passed
