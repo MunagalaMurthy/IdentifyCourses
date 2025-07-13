@@ -1,4 +1,4 @@
-package com.cognizant.element_repository;
+package com.cognizant.elementRepository;
 
 
 
