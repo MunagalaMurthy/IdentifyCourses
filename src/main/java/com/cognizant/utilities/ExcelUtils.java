@@ -50,7 +50,7 @@ public class ExcelUtils {
 		fi = new FileInputStream(path); // Open the Excel file for reading.
 		workbook = new XSSFWorkbook(fi); // Create a workbook object from the input stream.
 		sheet = workbook.getSheet(sheetName); // Get the specified sheet.
-		int rowcount = sheet.getLastRowNum(); // Get the last row number (0-indexed).
+		int rowcount = sheet.getLastRowNum()+1; // Get the last row number (0-indexed).
 		workbook.close(); // Close the workbook.
 		fi.close(); // Close the file input stream.
 		return rowcount;		

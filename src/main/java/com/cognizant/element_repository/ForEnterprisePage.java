@@ -37,9 +37,49 @@ public class ForEnterprisePage extends Base_Page{
 	@FindBy(id="Department") private WebElement departmentElem;
 	@FindBy(id="Company") private WebElement companyElem;
 	@FindBy(id="Employee_Range__c") private WebElement companySizeElem;
+	@FindBy(id="ValidMsgEmail") private WebElement emailErrorElem;
+	@FindBy(id="ValidMsgPhone") private WebElement phoneErrorElem;
 	
 	
 	MiscUtils mu = new MiscUtils();
+	
+	
+	public String errorEmailChecker() {
+		try {
+			if(emailErrorElem.isDisplayed()) return emailErrorElem.getText();
+			return null;
+		}catch(Exception e) {
+			return null;
+		}
+	}
+	
+	public String errorPhoneChecker() {
+		try {
+			if(phoneErrorElem.isDisplayed()) return phoneErrorElem.getText();
+			return null;
+		}catch(Exception e) {
+			return null;
+		}
+	}
+	
+	public String errorChecker() {
+		String error = errorEmailChecker();
+		if(error != null)return error;
+		error = errorPhoneChecker();
+		if(error != null) return error;
+		return null;
+	}
+	
+	public void mandatoryInfo(String firstName,String lastName,String email,String phoneNumber,String orgType) {
+		 action.mouseHoverToElement(forEnterpriseElem);
+		 forEnterpriseElem.click();
+		 action.mouseHoverToElement(firstNameElem);
+		 mu.sendValues(firstNameElem, firstName);
+		 mu.sendValues(lastNameElem, lastName);
+		 mu.sendValues(emailElem, email);
+		 mu.sendValues(phoneNumberElem, phoneNumber);
+		 SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+	}
 	
 	//Constructors
 	public ForEnterprisePage(WebDriver driver) {
@@ -56,46 +96,40 @@ public class ForEnterprisePage extends Base_Page{
 										   String noOfLearners,
 										   String country,
 										   String state) {
-		 action.mouseHoverToElement(forEnterpriseElem);
-		 forEnterpriseElem.click();
-		 action.mouseHoverToElement(firstNameElem);
-		 mu.sendValues(firstNameElem, firstName);
-		 mu.sendValues(lastNameElem, lastName);
-		 mu.sendValues(emailElem, email);
-		 mu.sendValues(phoneNumberElem, phoneNumber);
-		 SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		 mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		 mu.sendValues(titleElem, jobTitle);
 		 mu.sendValues(needDiscribeElem, businessNeeds);
 		 SelectUtils.selectFromVisibleText(noOfLearnersElem, noOfLearners);
 		 SelectUtils.selectFromVisibleText(countryElem, country);
 		 SelectUtils.selectFromVisibleText(stateElem, state);
 		 submitBtn.click();
+		 String error = errorChecker();
+		 if(error != null) return error;
 		 wait.until(ExpectedConditions.titleContains("Thank"));
 		 return driver.getTitle();
 	}
 	
-	public String fillFormForBusinessOther(String firstName,
+	public String fillFormForCollegeOthers(String firstName,
 										   String lastName,
 										   String email,
 										   String phoneNumber, 
 										   String orgType,
+										   String instituteType,
 										   String jobTitle,
 										   String businessNeeds,
 										   String country,
 										   String state,
 										   String description) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -108,17 +142,15 @@ public class ForEnterprisePage extends Base_Page{
 									  String businessNeeds,
 									  String country,
 									  String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -134,12 +166,7 @@ public class ForEnterprisePage extends Base_Page{
 											      String noOfLearners,
 											      String country,
 											      String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -148,6 +175,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -162,12 +192,7 @@ public class ForEnterprisePage extends Base_Page{
 											   String businessNeeds,
 											   String country,
 											   String state) {
-		forEnterpriseElem.click(); 
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -175,6 +200,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -190,12 +218,7 @@ public class ForEnterprisePage extends Base_Page{
 										      String country,
 										      String state,
 										      String description) {
-		forEnterpriseElem.click();  
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -204,6 +227,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -222,12 +248,7 @@ public class ForEnterprisePage extends Base_Page{
 										  String noOfLearners,
 										  String country,
 										  String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -238,6 +259,57 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
+		return driver.getTitle();
+	}
+	
+	public String fillFormForCollege(String firstName,
+								     String lastName,
+								     String email,
+								     String phoneNumber, 
+								     String orgType,
+								     String institutionType,
+								     String jobRole,
+								     String department,
+								     String businessNeeds,
+								     String country,
+								     String state) {
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
+		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
+		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
+		SelectUtils.selectFromVisibleText(departmentElem, department);
+		mu.sendValues(needDiscribeElem, businessNeeds);
+		SelectUtils.selectFromVisibleText(countryElem, country);
+		SelectUtils.selectFromVisibleText(stateElem, state);
+		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
+		return driver.getTitle();
+	}
+	
+	public String fillFormForCollege(String firstName,
+								     String lastName,
+								     String email,
+								     String phoneNumber, 
+								     String orgType,
+								     String institutionType,
+								     String jobRole,
+								     String businessNeeds,
+								     String country,
+								     String state) {
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
+		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
+		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
+		mu.sendValues(needDiscribeElem, businessNeeds);
+		SelectUtils.selectFromVisibleText(countryElem, country);
+		SelectUtils.selectFromVisibleText(stateElem, state);
+		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -254,13 +326,7 @@ public class ForEnterprisePage extends Base_Page{
 								     String businessNeeds,
 								     String country,
 								     String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-//		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		mu.sendValues(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -270,46 +336,39 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
-	public String fillFormForCollegeOthers(String firstName,
+	public String fillFormForBusinessOthers(String firstName,
 									       String lastName,
 									       String email,
 									       String phoneNumber, 
 									       String orgType,
-									       String institutionType,
-									       String company,
-									       String companySize,
-									       String jobRole,
-									       String department,
+									       String jobTitle,
 									       String businessNeeds,
 									       String country,
 									       String state,
 									       String description) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
-		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
-		mu.sendValues(companyElem, company);
-		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
-		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
-		SelectUtils.selectFromVisibleText(departmentElem, department);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
+		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
 	public String fillFormForNonProfitSales(String firstName,
 										    String lastName,
-										    String phoneNumber, 
-										    String email,  
+										    String email,
+										    String phoneNumber,   
 										    String orgType,
 										    String jobTitle,
 										    String company,
@@ -318,12 +377,7 @@ public class ForEnterprisePage extends Base_Page{
 										    String noOfLearners,
 										    String country,
 										    String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -332,6 +386,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -346,12 +403,7 @@ public class ForEnterprisePage extends Base_Page{
 									    String businessNeeds,
 									    String country,
 									    String state) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -359,6 +411,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
@@ -374,12 +429,7 @@ public class ForEnterprisePage extends Base_Page{
 										     String country,
 										     String state,
 										     String description) {
-		forEnterpriseElem.click();
-		mu.sendValues(firstNameElem, firstName);
-		mu.sendValues(lastNameElem, lastName);
-		mu.sendValues(emailElem, email);
-		mu.sendValues(phoneNumberElem, phoneNumber);
-		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		mu.sendValues(companyElem, company);
 		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
@@ -388,6 +438,9 @@ public class ForEnterprisePage extends Base_Page{
 		SelectUtils.selectFromVisibleText(stateElem, state);
 		mu.sendValues(descriptionElem, description);
 		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
 	
