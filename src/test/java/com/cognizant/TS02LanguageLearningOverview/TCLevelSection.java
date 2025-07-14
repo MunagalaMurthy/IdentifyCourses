@@ -2,6 +2,7 @@ package com.cognizant.TS02LanguageLearningOverview;
 
 import java.io.IOException;
 
+import org.openqa.selenium.devtools.v135.page.model.Screenshot;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -10,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.cognizant.base.Base_Test;
+import com.cognizant.utilities.ScreenshotUtils;
 
 public class TCLevelSection extends Base_Test {
 
@@ -23,14 +25,19 @@ public class TCLevelSection extends Base_Test {
 			
 			test.log(Status.INFO, "Checking if Filter section is visible or not");
 			Assert.assertTrue(rp.isFilterSectionAccessible());
+			screenshotPath = su.takeScreenshot("LL_TC01_pass");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC01_pass.png");
 			logger.info("\tLL-TC-01: Successfully Passed");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC01_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC01_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC01_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 		
 	}
@@ -39,20 +46,24 @@ public class TCLevelSection extends Base_Test {
 	public void tc06ToVerifyLevelSectionAccessible() throws IOException {
 		logger.info("LL-TC-06: To verify that course level section is accessible");
 		ExtentTest test = extent.createTest("LL-TC-06: To verify that course level section is accessible");
-		String screenshotPath = null;
 		try {
 			logger.info("\tLL-TC-06: Started");
 			logger.info("\tLL-TC-06: Checking if Course level section is visible in Filter By section or not");
 			test.log(Status.INFO, "Checking if Filter section is visible or not");
 			Assert.assertTrue(rp.isLevelSectionAccessible());
+			screenshotPath = su.takeScreenshot("LL_TC06_pass");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC06_pass.png");
 			logger.info("\tLL-TC-06: Successfully Passed");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC06_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC06_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC06_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 		
 	}
@@ -65,14 +76,20 @@ public class TCLevelSection extends Base_Test {
 			logger.info("\tLL-TC-08: Checking Whether the count of languages is same as the total language displayed");
 			test.log(Status.INFO, "Checking Whether the count of languages is same as the total language displayed");
 			Assert.assertEquals(rp.getNumberOfLevels(), 4);
+			screenshotPath = su.takeScreenshot("LL_TC08_pass");
 			test.log(Status.PASS,"Successfully Passed");
 			test.addScreenCaptureFromPath("LL_TC08_pass.png");
 			logger.info("\tLL-TC-08: Successfully Passed");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC08_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC08_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC08_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 		
 	}
@@ -85,6 +102,7 @@ public class TCLevelSection extends Base_Test {
 			logger.info("\tLL-TC-07: Checking if Course level section is visible in Filter By section or not");
 			test.log(Status.INFO, "Checking if Course level section is visible in Filter By section or not");
 			Assert.assertTrue(rp.isCountDisplayed("level"));
+			screenshotPath = su.takeScreenshot("LL_TC07_pass");
 			Reporter.log("Available levels and Count of courses:");
 			for(String lvl: rp.getListOfLevels()) {
 				Reporter.log(lvl+"\n");
@@ -95,9 +113,14 @@ public class TCLevelSection extends Base_Test {
 			test.addScreenCaptureFromPath("LL_TC07_pass.png");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
-			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC06_fail.png").build());
+			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC07_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC07_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC07_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 	}
 
@@ -112,14 +135,20 @@ public class TCLevelSection extends Base_Test {
 			test.log(Status.INFO, "Checking Whether the Beginner level checkbox is checked or not");
 			rp.applyBeginnerFilter();
 			Assert.assertTrue(rp.isBeginnerChkd());
+			screenshotPath = su.takeScreenshot("LL_TC11_pass");
 			logger.info("\tLL-TC-11: Successfully Passed");
 			test.log(Status.PASS,"Successfully Passed");
 			test.addScreenCaptureFromPath("LL_TC11_pass.png");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC11_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC11_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC11_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 	}
 	
@@ -134,6 +163,7 @@ public class TCLevelSection extends Base_Test {
 			for(String lvl: rp.getListOfLevels()) {
 				if(lvl.contains("Beginner")) {
 					Assert.assertTrue(true);
+					screenshotPath = su.takeScreenshot("LL_TC09_pass");
 					return;
 				}
 			}
@@ -143,8 +173,13 @@ public class TCLevelSection extends Base_Test {
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC09_fail.png").build());
+			screenshotPath = su.takeScreenshot("LL_TC09_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
+			screenshotPath = su.takeScreenshot("LL_TC09_fail");
+		}
+		finally {
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 		Assert.assertFalse(true);
 	}

@@ -15,6 +15,7 @@ import org.testng.annotations.BeforeClass;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.cognizant.elementRepository.ResultPage;
+import com.cognizant.utilities.ScreenshotUtils;
 
 public class Base_Test {
 	
@@ -24,6 +25,8 @@ public class Base_Test {
 	protected Logger logger;
 	protected ExtentHtmlReporter htmlReporter;
 	protected ExtentReports extent;
+	protected String screenshotPath = null;
+	protected ScreenshotUtils su;
 	
 	@BeforeClass
 	public void setup() throws Exception {
@@ -46,6 +49,7 @@ public class Base_Test {
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
 		rp = new ResultPage(driver);
+		su = new ScreenshotUtils(driver);
 	}
 	
 	@AfterClass
