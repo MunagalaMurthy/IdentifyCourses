@@ -1,166 +1,47 @@
-package com.cognizant.elementRepository;
+package com.cognizant.utilities;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 
-import com.cognizant.base.Base_Page;
-import com.cognizant.utilities.MiscUtils;
-
-public class ResultPage extends Base_Page{
+public class MiscUtils {
 	
-	
-	@FindBy(xpath="//div[@aria-label=\"Filters\"]")
-	private WebElement filtersSection;
-	
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../..")
-	private WebElement languageSection;
-	
-	@FindBy(xpath="//div[data-testid=\"search-filter-group-Level\"]")
-	private WebElement levelSection;
-	
-	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
-	private List<WebElement> levelsList;
-	
-	@FindBy(xpath ="//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
-	private List<WebElement> languageList;
-	
-	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
-	private WebElement showMoreLink;
-	
-	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
-	private WebElement beginnerTag;
-	
-	@FindBy(xpath="//button[contains(normalize-space(),\"English\")]")
-	private WebElement englishTag;
-	
-	//Locator For The English Filter
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
-	private WebElement englishFilterCheckBox;
-
-	//Locator For The Checked Begineer Filter
-	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-true\"]")
-	private WebElement beginnerFilterChecked;
-	//Locator For The Unchecked Beginner Filter
-	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-false\"]")
-	private WebElement beginnerFilterCheckBox;
-		
-	//Locator For Course Names
-	@FindBy(className = "cds-CommonCard-title")
-	private List<WebElement> courseCardTitles;
-		
-	//Locator For Course Ratings
-	@FindBy(xpath = "//div[contains(@class,'RatingStat')]//descendant::span[1]")
-	private List<WebElement> courseCardRatings;
-
-	//Locator For Course Durations
-	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
-	private List<WebElement> courseCardDurations;
-	
-	MiscUtils mu = new MiscUtils();
-	
-	public ResultPage(WebDriver driver) {
-		super(driver);
+	public int getElementsCount(List<WebElement> elements_list) {
+		return elements_list.size();
 	}
 	
-	public boolean isFilterSectionAccessible() {
-		return mu.isSectionDisplayed(filtersSection);
-	}
-	
-	public boolean isLevelSectionAccessible() {
-		return mu.isSectionDisplayed(levelSection);
-	}
-	
-	public boolean isLanguageSectionAccessible() {
-		return mu.isSectionDisplayed(languageSection);
-	}
-	
-	public int getNumberOfLevels() {
-		return levelsList.size();
-	}
-	
-	public boolean isBeginnerLevelFilterDisplayed() {
-		return beginnerTag.isDisplayed();
-	}
-	
-	public int getNumberOfLanguages() {
-		return languageList.size();
-	}
-	
-	public boolean isBeginnerChkd() {
-		return mu.isSectionDisplayed(beginnerFilterChecked);
-	}
-	
-	public boolean isCountDisplayed(String value) {
-		value = value.toLowerCase();
-		switch(value) {
-		case "level":
-			return mu.isCountAvailable(levelsList);
-		case "language":
-			return mu.isCountAvailable(languageList);
+	private int getNumberLength(String str) {
+		int cnt=0;
+		String num = str.substring( str.indexOf("(")+1, str.indexOf(")"));
+		for(int i=0;i<num.length();i++) {
+			if(num.charAt(i)>='0' && num.charAt(i)<='9') {
+				cnt++;
+			}
 		}
+		return cnt;
+		
+	}
+	
+	public boolean isCountAvailable(List<WebElement> ls) {
+		int cnt=0;
+		for(WebElement element: ls) {
+			if(getNumberLength(element.getText())>0) cnt++;
+		}
+		if(cnt == ls.size()) return true;
 		return false;
 	}
 	
-	public List<String> getListOfLevels() {
-		
-		return mu.getNameList(levelsList);
+	public boolean isSectionDisplayed(WebElement Section) {
+		return Section.isDisplayed();
 	}
 	
-	public List<String> getListOfLanguages() {
+	public List<String> getNameList(List<WebElement> elementNames) {
+		List<String> elementNamesList = new ArrayList<>();
+		for(WebElement ele:elementNames ) {
+			elementNamesList.add(ele.getText());
+		}
 		
-		return mu.getNameList(languageList);
-	}
-	
-	//Method for checking the beginnerFilterClickable
-	public boolean beginnerFilterDisplayStatus() {
-		return beginnerFilterCheckBox.isDisplayed();
-	}
-		
-	//Method for checking the beginnerFilterClickable
-	public boolean englishFilterDisplayStatus() {
-		return englishFilterCheckBox.isDisplayed();
-	}
-		
-	public boolean beginnerFilterSelectStatus() {
-		return beginnerFilterCheckBox.isSelected();
-	}
-		
-	//Method for checking the beginnerFilterClickable
-	public boolean englishFilterSelectStatus() {
-		return englishFilterCheckBox.isSelected();
-	}
-		
-	//Method for applying English filter
-	public void applyEnglishFilter() {
-		englishFilterCheckBox.click();
-	}
-		
-	//Method for applying Beginner filter
-	public void applyBeginnerFilter() {
-		beginnerFilterCheckBox.click();
-	}
-		
-	//Method for printing top 2 Courses Name, Rating and Duration
-	public void printTopCourseDetails() {
-	    int count = Math.min(2, Math.min(courseCardTitles.size(),
-	                        Math.min(courseCardRatings.size(), courseCardDurations.size())));
-
-	    for (int i = 0; i < count; i++) {
-	        String title = courseCardTitles.get(i).getText().trim();
-	        String rating = courseCardRatings.get(i).getText().trim();
-
-	        String metadata = courseCardDurations.get(i).getText();
-	        String[] parts = metadata.split("·");
-	        String duration = parts.length > 2 ? parts[2].trim() : "N/A";
-
-	        System.out.println("Course " + (i + 1) + ":");
-	        System.out.println("  Title   : " + title);
-	        System.out.println("  Rating  : " + rating);
-	        System.out.println("  Duration: " + duration);
-	        System.out.println("-----------------------------------");
-	    }
+		return elementNamesList;
 	}
 }
