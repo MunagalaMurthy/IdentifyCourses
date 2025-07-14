@@ -1,5 +1,6 @@
 package com.cognizant.utilities;
 
+import java.awt.event.ItemEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +10,18 @@ public class MiscUtils {
 	
 	public int getElementsCount(List<WebElement> elements_list) {
 		return elements_list.size();
+	}
+	
+	public boolean isItDisplayed(WebElement item) {
+		return item.isDisplayed();
+	}
+	
+	public boolean isItSelected(WebElement element) {
+		return element.isSelected();
+	}
+	
+	public void ClickOnElement(WebElement element) {
+		element.click();
 	}
 	
 	private int getNumberLength(String str) {
@@ -32,9 +45,7 @@ public class MiscUtils {
 		return false;
 	}
 	
-	public boolean isSectionDisplayed(WebElement Section) {
-		return Section.isDisplayed();
-	}
+	
 	
 	public List<String> getNameList(List<WebElement> elementNames) {
 		List<String> elementNamesList = new ArrayList<>();

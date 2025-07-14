@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 
 import com.cognizant.base.Base_Page;
 import com.cognizant.utilities.MiscUtils;
+import com.google.common.base.CaseFormat;
 
 public class ResultPage extends Base_Page{
 	
@@ -27,7 +28,7 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath ="//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
 	private List<WebElement> languageList;
 	
-	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
+	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
 	
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
@@ -39,10 +40,14 @@ public class ResultPage extends Base_Page{
 	//Locator For The English Filter
 	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
 	private WebElement englishFilterCheckBox;
-
-	//Locator For The Checked Begineer Filter
+	
+	@FindBy(xpath = "//div[@data-testid='language:English-true']")
+	private WebElement englishFilterChecked;
+	
+	//Locator For The Checked Beginner Filter
 	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-true\"]")
 	private WebElement beginnerFilterChecked;
+	
 	//Locator For The Unchecked Beginner Filter
 	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-false\"]")
 	private WebElement beginnerFilterCheckBox;
@@ -59,39 +64,72 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
 	private List<WebElement> courseCardDurations;
 	
+	
+	
 	MiscUtils mu = new MiscUtils();
 	
 	public ResultPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public boolean isFilterSectionAccessible() {
-		return mu.isSectionDisplayed(filtersSection);
+	public String ShowMoreText() {
+		return showMoreLink.getText();
 	}
 	
-	public boolean isLevelSectionAccessible() {
-		return mu.isSectionDisplayed(levelSection);
+	
+	public boolean isAccessible(String value) {
+		value = value.toLowerCase();
+		switch(value) {
+		case "filter":
+			return mu.isItDisplayed(filtersSection);
+		case "level":
+			return mu.isItDisplayed(levelSection);
+		case "language":
+			return mu.isItDisplayed(languageSection);
+		case "showmore":
+			return mu.isItDisplayed(showMoreLink);
+		}
+		return false; 
+			
 	}
 	
-	public boolean isLanguageSectionAccessible() {
-		return mu.isSectionDisplayed(languageSection);
+	public boolean isBeginnerChkd() {
+		return mu.isItDisplayed(beginnerFilterChecked);
 	}
 	
-	public int getNumberOfLevels() {
-		return levelsList.size();
+	public boolean isEnglishChecked() {
+		return mu.isItDisplayed(englishFilterChecked);
 	}
 	
 	public boolean isBeginnerLevelFilterDisplayed() {
 		return beginnerTag.isDisplayed();
 	}
 	
-	public int getNumberOfLanguages() {
-		return languageList.size();
+	//Method for checking the beginnerFilterClickable
+	public boolean beginnerFilterDisplayStatus() {
+		return beginnerFilterCheckBox.isDisplayed();
+	}
+		
+	//Method for checking the beginnerFilterClickable
+	public boolean englishFilterDisplayStatus() {
+		return englishFilterCheckBox.isDisplayed();
 	}
 	
-	public boolean isBeginnerChkd() {
-		return mu.isSectionDisplayed(beginnerFilterChecked);
+	
+	public int getTotalNumberOfElementsInList(String value) {
+		value = value.toLowerCase();
+		switch (value) {
+		case "level":
+			return mu.getElementsCount(levelsList);
+		case "language":
+			mu.ClickOnElement(showMoreLink);
+			return mu.getElementsCount(languageList);
+			
+		}
+		return 0;
 	}
+	
+	
 	
 	public boolean isCountDisplayed(String value) {
 		value = value.toLowerCase();
@@ -104,25 +142,20 @@ public class ResultPage extends Base_Page{
 		return false;
 	}
 	
-	public List<String> getListOfLevels() {
+	public List<String> getList(String value){
+		value = value.toLowerCase();
+		switch(value) {
+		case "level":
+			return mu.getNameList(levelsList);
+		case "language":
+			return mu.getNameList(languageList);
 		
-		return mu.getNameList(levelsList);
+		}
+		return null;	
+		
 	}
 	
-	public List<String> getListOfLanguages() {
-		
-		return mu.getNameList(languageList);
-	}
 	
-	//Method for checking the beginnerFilterClickable
-	public boolean beginnerFilterDisplayStatus() {
-		return beginnerFilterCheckBox.isDisplayed();
-	}
-		
-	//Method for checking the beginnerFilterClickable
-	public boolean englishFilterDisplayStatus() {
-		return englishFilterCheckBox.isDisplayed();
-	}
 		
 	public boolean beginnerFilterSelectStatus() {
 		return beginnerFilterCheckBox.isSelected();

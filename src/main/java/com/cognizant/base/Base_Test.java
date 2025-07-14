@@ -9,10 +9,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.*;
 
+import com.cognizant.elementRepository.ResultPage;
+
 public class Base_Test {
 	
-	private WebDriver driver;
+	protected WebDriver driver;
 	private Properties prop;
+	protected ResultPage rp;
 	
 	@BeforeSuite
 	public void setup() throws Exception {
@@ -28,11 +31,13 @@ public class Base_Test {
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		rp =  new ResultPage(driver);
 	}
+	
 	
 	@AfterSuite
 	public void  tearDown() {
 		driver.quit();
 	}
-		
+	
 }
