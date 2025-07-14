@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -17,6 +19,7 @@ public class Base_Test {
 	public WebDriver driver;
 	private Properties prop;
 	protected ResultPage rp;
+	protected Logger logger;
 	
 	@BeforeClass
 	public void setup() throws Exception {
@@ -32,12 +35,14 @@ public class Base_Test {
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+		logger=LogManager.getLogger(this.getClass());
 		rp = new ResultPage(driver);
 	}
 	
 	@AfterClass
 	public void  tearDown() {
-//		driver.quit();
+		driver.quit();
 	}
 		
 }
