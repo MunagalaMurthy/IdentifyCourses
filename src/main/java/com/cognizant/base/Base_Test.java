@@ -12,6 +12,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.cognizant.elementRepository.ResultPage;
 
 public class Base_Test {
@@ -20,6 +22,8 @@ public class Base_Test {
 	private Properties prop;
 	protected ResultPage rp;
 	protected Logger logger;
+	protected ExtentHtmlReporter htmlReporter;
+	protected ExtentReports extent;
 	
 	@BeforeClass
 	public void setup() throws Exception {
@@ -37,11 +41,16 @@ public class Base_Test {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		logger=LogManager.getLogger(this.getClass());
+		htmlReporter = new ExtentHtmlReporter("extent.html");
+        // create ExtentReports and attach reporter(s)
+        extent = new ExtentReports();
+        extent.attachReporter(htmlReporter);
 		rp = new ResultPage(driver);
 	}
 	
 	@AfterClass
 	public void  tearDown() {
+		extent.flush();
 		driver.quit();
 	}
 		

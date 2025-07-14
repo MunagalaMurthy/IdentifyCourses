@@ -15,19 +15,19 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//div[@aria-label=\"Filters\"]")
 	private WebElement filtersSection;
 	
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../..")
+	@FindBy(xpath = "//div[@data-testid=\"search-filter-group-Language\"]")
 	private WebElement languageSection;
 	
-	@FindBy(xpath="//div[data-testid=\"search-filter-group-Level\"]")
+	@FindBy(xpath="//div[@data-testid=\"search-filter-group-Level\"]")
 	private WebElement levelSection;
 	
 	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
 	private List<WebElement> levelsList;
 	
-	@FindBy(xpath ="//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
+	@FindBy(xpath ="//div[contains(@data-testid,\"language\")]")
 	private List<WebElement> languageList;
 	
-	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
+	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
 	
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
