@@ -14,7 +14,7 @@ import org.testng.annotations.BeforeClass;
 
 import com.cognizant.elementRepository.HomePage;
 import com.cognizant.elementRepository.ResultPage;
-import com.cognizant.element_repository.ForEnterprisePage;
+import com.cognizant.elementRepository.ForEnterprisePage;
 
 public class Base_Test {
 	
@@ -24,10 +24,12 @@ public class Base_Test {
 	protected ForEnterprisePage fep;
 	protected ResultPage rp;
 	protected Logger logger;
+	protected String url;
 	
 	@BeforeClass
 	public void setup() throws Exception {
 		//Loading the config.properties file into the project to use for inputs
+		logger = LogManager.getLogger(this.getClass());
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);

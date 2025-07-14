@@ -77,11 +77,11 @@ public class ResultPage extends Base_Page{
 	private List<WebElement> courseCardDurations;
 	
 	public boolean isFilterSectionAccessible() {
-		return filters_section.isDisplayed();
+		return filtersSection.isDisplayed();
 	}
 	
 	public boolean isLevelSectionAccessible() {
-		return level_section.isDisplayed();
+		return levelSection.isDisplayed();
 	}
 	public int getNumberOfLevels() {
 		return levels_list.size();

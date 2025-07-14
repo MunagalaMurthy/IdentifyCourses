@@ -1,5 +1,8 @@
 package com.cognizant.utilities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 
 public class MiscUtils {
