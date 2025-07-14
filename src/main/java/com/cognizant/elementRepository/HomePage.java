@@ -18,13 +18,7 @@ public class HomePage extends Base_Page{
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
-	
-<<<<<<< HEAD
-	//Locators
-=======
-	@FindBy(id="search-autocomplete-input")
-	public WebElement searchBox;
->>>>>>> refs/heads/Nishanth/FilterResults
+
 	
 	//Locator to find the search box in the homepage
 	@FindBy(id="search-autocomplete-input")

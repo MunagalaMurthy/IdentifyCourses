@@ -1,6 +1,7 @@
 package com.cognizant.elementRepository;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
@@ -42,11 +43,6 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
 	private WebElement englishFilterCheckBox;
 
-	
-	
-	//Locator for The English filter selector
-	@FindBy(xpath="//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
-	private WebElement englishFilterCheckBox;
 	
 	//Locator for The English filter selector
 	@FindBy(xpath="//div[contains(@data-testid,'Beginner') and contains(@data-testid,'Level')]")
@@ -111,9 +107,6 @@ public class ResultPage extends Base_Page{
 	private WebElement clearAllFiltersButton; 
 	*/
 	
-	//Locator to find the applied filters
-	@FindBy(className="cds-Chip-label")
-	private List<WebElement> filtersApplied;
 	
 	MiscUtils mu = new MiscUtils();
 	
