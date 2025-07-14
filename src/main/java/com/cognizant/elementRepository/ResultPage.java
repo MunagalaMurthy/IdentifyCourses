@@ -13,7 +13,7 @@ import com.cognizant.utilities.MiscUtils;
 
 public class ResultPage extends Base_Page{
 	
-	/*
+	
 	@FindBy(xpath="//div[@aria-label=\"Filters\"]")
 	private WebElement filtersSection;
 	
@@ -38,14 +38,11 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//button[contains(normalize-space(),\"English\")]")
 	private WebElement englishTag;
 	
-	//Locator For The English Filter
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
+	//Locator For The English Filter Selector
+	@FindBy(xpath = "//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
 	private WebElement englishFilterCheckBox;
 
-	//Locator For The Beginner Filter
-	@FindBy(xpath="//span[text()='Beginner']//ancestor::div[2]//descendant::input")
-	private WebElement beginnerFilterCheckBox;
-	*/
+	
 	
 	//Locator for The English filter selector
 	@FindBy(xpath="//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
@@ -58,6 +55,9 @@ public class ResultPage extends Base_Page{
 	//Locator for applied filters list
 	@FindBy(xpath="//span[@class='cds-Chip-label']")
 	public List<WebElement> appliedFilters;
+	//Locator for Filters Chips
+	@FindBy(className="cds-Chip-label")
+	private List<WebElement> filtersApplied;
 	
 	//Locator for Course Cards
 	@FindBy(className = "css-1whl2ol")
@@ -67,7 +67,7 @@ public class ResultPage extends Base_Page{
 	@FindBy(className = "cds-CommonCard-title")
 	private List<WebElement> courseCardTitles;
 	
-	/*
+	
 	//Locator For Course Ratings
 	@FindBy(xpath = "//div[contains(@class,'RatingStat')]//descendant::span[1]")
 	private List<WebElement> courseCardRatings;
@@ -76,6 +76,11 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
 	private List<WebElement> courseCardDurations;
 	
+	//Locator for Clear All
+		@FindBy(xpath="//span[normalize-space()='Clear all']")
+		private WebElement clearAllFiltersButton;
+		
+	/*
 	public boolean isFilterSectionAccessible() {
 		return filtersSection.isDisplayed();
 	}
@@ -201,7 +206,11 @@ public class ResultPage extends Base_Page{
 		else
 			return false;
 	}
-	
+	//Method for checking the englishFilterClickable
+		public boolean englishFilterDisplayStatus() {
+			return englishFilterCheckBox.isDisplayed();
+		}
+		
 	//Method for checking whether the given filter is displayed or not
 	public boolean filterDisplayStatus(String filterName) {
 		boolean returnValue = false;
@@ -216,6 +225,15 @@ public class ResultPage extends Base_Page{
 		}
 		return returnValue;
 	}
+	//Method for checking beginnerFilterStatus
+		public boolean beginnerFilterSelectStatus() {
+			return beginnerFilterCheckBox.isSelected();
+		}
+			
+		//Method for checking englishFilterStatus
+		public boolean englishFilterSelectStatus() {
+			return englishFilterCheckBox.isSelected();
+		}
 		
 	//Method for checking whether the given filter is selected or not
 	public boolean filterSelectStatus(String filterName) {
@@ -250,6 +268,15 @@ public class ResultPage extends Base_Page{
 				break;
 		}
 	}
+	//Method for applying English filter
+		public void applyEnglishFilter() {
+			englishFilterCheckBox.click();
+		}
+			
+		//Method for applying Beginner filter
+		public void applyBeginnerFilter() {
+			beginnerFilterCheckBox.click();
+		}
 	
 	//Method to check if the selected filter is applied properly
 	public boolean checkAppliedFilter(String filterName) {
@@ -263,20 +290,9 @@ public class ResultPage extends Base_Page{
 	}
 
 	/*
-	//Method for checking the beginnerFilterClickable
-	public boolean beginnerFilterDisplayStatus() {
-		Actions action = new Actions(driver);
-		action.scrollToElement(beginnerFilterCheckBox).perform();
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println(beginnerFilterCheckBox.isDisplayed());
-		return beginnerFilterCheckBox.isDisplayed();
-	}
+	
 		
+	//Method for checking beginnerFilterStatus
 	public boolean beginnerFilterSelectStatus() {
 		return beginnerFilterCheckBox.isSelected();
 	}
@@ -293,8 +309,12 @@ public class ResultPage extends Base_Page{
 				check = true;
 		}
 		return check;
-	}
+	}*/
 	
+	//Method for Clearing Filters
+		public void clearAllAppliedFilters() {
+			clearAllFiltersButton.click();
+	}
 	//Method for printing top 2 Courses Name, Rating and Duration
 	public void printTopCourseDetails() {
 	    int count = Math.min(2, Math.min(courseCardTitles.size(),
@@ -379,5 +399,5 @@ public class ResultPage extends Base_Page{
 		}
  
 	}
-	*/
+	
 }
