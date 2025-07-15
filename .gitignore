@@ -1,6 +1,6 @@
 /test-output/
 /target/
 desktop.ini
-/logs/
-/screenshots/
-/reports/
+/logs/*
+/screenshots/*
+/reports/*
