@@ -18,19 +18,19 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//div[@aria-label=\"Filters\"]")
 	private WebElement filtersSection;
 	
-	@FindBy(xpath = "//div[contains(text(),\"Language\")]/../../../../../..")
+	@FindBy(xpath = "//div[@data-testid=\"search-filter-group-Language\"]")
 	private WebElement languageSection;
 	
-	@FindBy(xpath="//div[contains(text(),\"Level\")]/../..")
+	@FindBy(xpath="//div[@data-testid=\"search-filter-group-Level\"]")
 	private WebElement levelSection;
 	
-	@FindBy(xpath="//div[contains(text(),\"Level\")]/../../div/div/div")
+	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
 	private List<WebElement> levelsList;
 	
-	@FindBy(xpath ="//div[contains(text(),\"Language\")]/../../../../../div[2]/div/div")
+	@FindBy(xpath ="//div[contains(@data-testid,\"language\")]")
 	private List<WebElement> languageList;
 	
-	@FindBy(xpath="//span[normalize-space()='Show 24 more']")
+	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
 	
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
@@ -43,7 +43,12 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath = "//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
 	private WebElement englishFilterCheckBox;
 
-	
+	//Locator For The Checked Begineer Filter
+		@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-true\"]")
+		private WebElement beginnerFilterChecked;
+		//Locator For The Unchecked Beginner Filter
+		@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-false\"]")
+		private WebElement beginnerFilterCheckBox;
 	//Locator for The English filter selector
 	@FindBy(xpath="//div[contains(@data-testid,'Beginner') and contains(@data-testid,'Level')]")
 	private WebElement beginnerFilterCheckBox;
@@ -114,7 +119,7 @@ public class ResultPage extends Base_Page{
 		super(driver);
 	}
 	
-	/*
+	
 	public boolean isFilterSectionAccessible() {
 		return mu.isSectionDisplayed(filtersSection);
 	}
@@ -139,14 +144,19 @@ public class ResultPage extends Base_Page{
 		return languageList.size();
 	}
 	
-	public boolean isCountAvailableForLevels() {
-		
-		return mu.isCountAvailable(levelsList);
+	public boolean isBeginnerChkd() {
+		return mu.isSectionDisplayed(beginnerFilterChecked);
 	}
 	
-	public boolean isCountAvailableForLanguages() {
-		
-		return mu.isCountAvailable(languageList);
+	public boolean isCountDisplayed(String value) {
+		value = value.toLowerCase();
+		switch(value) {
+		case "level":
+			return mu.isCountAvailable(levelsList);
+		case "language":
+			return mu.isCountAvailable(languageList);
+		}
+		return false;
 	}
 	
 	public List<String> getListOfLevels() {
@@ -158,7 +168,7 @@ public class ResultPage extends Base_Page{
 		
 		return mu.getNameList(languageList);
 	}
-	*/
+	
 	
 	//Method to check if atleast one course card is displayed or not
 	public boolean checkCourseCardsDisplay() {

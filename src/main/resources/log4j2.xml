@@ -9,6 +9,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="${log-pattern}"/>
         </Console>
+<<<<<<< HEAD
 
         <RollingFile name="File" fileName="${log-path}/automation.log"
                      filePattern="${log-path}/automation-%d{MM-dd-yyyy}-%i.log.gz">
@@ -28,3 +29,24 @@
         </Root>
     </Loggers>
 </Configuration>
+=======
+ 
+        <RollingFile name="File" fileName="${log-path}/automation.log"
+                     filePattern="${log-path}/automation-%d{MM-dd-yyyy}-%i.log.gz">
+            <PatternLayout pattern="${log-pattern}"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="1MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingFile>
+    </Appenders>
+ 
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>
+>>>>>>> refs/heads/Vaibhav/LevelsSection
