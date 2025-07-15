@@ -11,12 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import com.cognizant.elementRepository.ForEnterprisePage;
 import com.cognizant.elementRepository.HomePage;
 import com.cognizant.elementRepository.ResultPage;
-import com.cognizant.elementRepository.ForEnterprisePage;
 import com.cognizant.utilities.ScreenshotUtils;
 
 public class Base_Test {
@@ -30,6 +31,7 @@ public class Base_Test {
 	protected String url;
 	protected ExtentHtmlReporter htmlReporter;
 	protected ExtentReports extent;
+    protected ExtentTest test;
 	protected String screenshotPath = null;
 	protected ScreenshotUtils su;
 	
@@ -66,9 +68,13 @@ public class Base_Test {
 	}
 	
 	@AfterClass
-	public void  tearDown() {
-		driver.quit();
-		extent.flush();
-	}
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit(); // Quits the browser opened for the current <test> tag
+        }
+        if (extent != null) {
+            extent.flush(); // Flushes the report for the current <test> tag
+        }
+    }
 		
 }

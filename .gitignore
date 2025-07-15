@@ -4,5 +4,9 @@ desktop.ini
 /logs/*
 /screenshots/*
 /reports/*
+<<<<<<< HEAD
 /target/*
  
+=======
+/target/*
+>>>>>>> 8c01f4c8e65af6f429d9908943606c1ef658cb6e

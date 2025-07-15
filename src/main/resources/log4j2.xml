@@ -9,7 +9,7 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="${log-pattern}"/>
         </Console>
- 
+        
         <RollingFile name="File" fileName="${log-path}/automation.log"
                      filePattern="${log-path}/automation-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout pattern="${log-pattern}"/>

@@ -2,6 +2,7 @@ package com.cognizant.TS02LanguageLearningOverview;
 
 import java.io.IOException;
 
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -20,9 +21,16 @@ public class TCLevelSection extends Base_Test {
 		try {
 			logger.info("\tLL-TC-01: Started");
 			logger.info("\tLL-TC-01: Checking if Filter section is visible or not");
+			//Gathering the input term/search key from the properties file
+			logger.info("\tLL-TC-01: Entering Search Key into Search Box");
+			String searchInput = prop.getProperty("SEARCH_KEY");
+			hp.enterTextIntoSearchBox(searchInput);
+			//clicking outside the text box at a random point to check if text still stays in search box
+			logger.info("\tLL-TC-01: Checking if input stays in Search Box");
+			hp.clickSearchButton();
 			
-			test.log(Status.INFO, "Checking if Filter section is visible or not");
 			Assert.assertTrue(rp.isFilterSectionAccessible());
+			
 			screenshotPath = su.takeScreenshot("LL_TC01_pass");
 			test.log(Status.PASS,"Successfully Passed");
 			logger.info("\tLL-TC-01: Successfully Passed");
