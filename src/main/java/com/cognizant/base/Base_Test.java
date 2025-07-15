@@ -45,6 +45,7 @@ public class Base_Test {
 		driver.get(url);
 		driver.manage().window().maximize();
 		//Adding a general common implicit wait to the driver
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//Creating the required class objects to use in the test cases
 		hp = new HomePage(driver);

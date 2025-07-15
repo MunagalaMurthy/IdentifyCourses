@@ -319,17 +319,21 @@ public class ForEnterprisePage extends Base_Page{
 								     String phoneNumber, 
 								     String orgType,
 								     String institutionType,
-								     String company,
-								     String companySize,
 								     String jobRole,
 								     String department,
+								     String company,
+								     String companySize,
 								     String businessNeeds,
 								     String country,
 								     String state) {
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
-		mu.sendValues(companyElem, company);
-		SelectUtils.selectFromVisibleText(companySizeElem, companySize);
+		try {
+			mu.sendValues(companyElem, company);
+			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
+		}catch(Exception e) {
+			System.out.println("No company name required");
+		}
 		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		SelectUtils.selectFromVisibleText(departmentElem, department);
 		mu.sendValues(needDiscribeElem, businessNeeds);

@@ -44,7 +44,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	
 	@Test(groups="sanity")
 	public void tc02tofillCollegeSupportForm() {
-		String title = fep.fillFormForCollege(testData.get(2).get(0), testData.get(2).get(1), testData.get(2).get(2), testData.get(2).get(3), testData.get(2).get(4), testData.get(2).get(15),testData.get(2).get(13),testData.get(2).get(14),testData.get(2).get(8),testData.get(2).get(9),testData.get(2).get(10));
+		String title = fep.fillFormForCollege(testData.get(2).get(0), testData.get(2).get(1), testData.get(2).get(2), testData.get(2).get(3), testData.get(2).get(4), testData.get(2).get(15),testData.get(2).get(13),testData.get(2).get(14),testData.get(2).get(6),testData.get(2).get(7),testData.get(2).get(8),testData.get(2).get(9),testData.get(2).get(10));
 		Assert.assertTrue(title.contains("Thank"));
 	}
 	
