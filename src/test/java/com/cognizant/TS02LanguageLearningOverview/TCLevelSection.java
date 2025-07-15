@@ -2,7 +2,6 @@ package com.cognizant.TS02LanguageLearningOverview;
 
 import java.io.IOException;
 
-import org.openqa.selenium.devtools.v135.page.model.Screenshot;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -11,7 +10,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.cognizant.base.Base_Test;
-import com.cognizant.utilities.ScreenshotUtils;
 
 public class TCLevelSection extends Base_Test {
 
@@ -78,7 +76,6 @@ public class TCLevelSection extends Base_Test {
 			Assert.assertEquals(rp.getNumberOfLevels(), 4);
 			screenshotPath = su.takeScreenshot("LL_TC08_pass");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC08_pass.png");
 			logger.info("\tLL-TC-08: Successfully Passed");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -110,7 +107,6 @@ public class TCLevelSection extends Base_Test {
 			}
 			logger.info("\tLL-TC-07: Successfully Passed");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC07_pass.png");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC07_fail.png").build());
@@ -138,7 +134,6 @@ public class TCLevelSection extends Base_Test {
 			screenshotPath = su.takeScreenshot("LL_TC11_pass");
 			logger.info("\tLL-TC-11: Successfully Passed");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC11_pass.png");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC11_fail.png").build());
@@ -155,7 +150,7 @@ public class TCLevelSection extends Base_Test {
 	@Test(groups="smoke")
 	public void tc09ToVerifyBeginnerOptionIsAvailable() throws IOException {
 		logger.info("LL-TC-09: To verify that \"Beginner\" option is available in levels section");
-		ExtentTest test = extent.createTest("LL-TC-07: To verify that the count of courses is visible for each level in the list");
+		ExtentTest test = extent.createTest("LL-TC-09: To verify that \"Beginner\" option is available in levels section");
 		try {
 			logger.info("\tLL-TC-09: Started");
 			logger.info("\tLL-TC-09:Checking Whether the Beginner level is present in list or not");
@@ -169,11 +164,9 @@ public class TCLevelSection extends Base_Test {
 			}
 			logger.info("\tLL-TC-09: Successfully Passed");
 			test.log(Status.PASS,"Successfully Passed");
-			test.addScreenCaptureFromPath("LL_TC09_pass.png");
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.fail("Details: ",MediaEntityBuilder.createScreenCaptureFromPath("LL_TC09_fail.png").build());
-			screenshotPath = su.takeScreenshot("LL_TC09_fail");
 		}catch(Exception e) {
 			logger.error(e.getMessage());
 			screenshotPath = su.takeScreenshot("LL_TC09_fail");

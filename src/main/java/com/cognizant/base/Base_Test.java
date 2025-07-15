@@ -44,7 +44,7 @@ public class Base_Test {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
 		logger=LogManager.getLogger(this.getClass());
-		htmlReporter = new ExtentHtmlReporter("extent.html");
+		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/reports/extentReport.html");
         // create ExtentReports and attach reporter(s)
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
