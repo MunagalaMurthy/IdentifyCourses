@@ -4,11 +4,8 @@
   <test thread-count="5" name="Test">
     <classes>
       <class name="com.cognizant.base.Base_Test"/>
-<<<<<<< HEAD
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"></class>
-=======
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TC01"/>	
->>>>>>> a79132c134392e788e8f0ff6cc555acc33208259
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
