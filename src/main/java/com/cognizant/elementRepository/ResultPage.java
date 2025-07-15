@@ -181,8 +181,8 @@ public class ResultPage extends Base_Page{
 		ExcelUtils excel = new ExcelUtils(System.getProperty("user.dir")+"/src/main/resources/Checkwords.xlsx");
 		int count = excel.getRowCount("Sheet1");
 		//Creating an array to store the checking key words
-		String[] checkWords = new String[count];
-		for(int i=1;i<=count;i++)
+		String[] checkWords = new String[count-1];
+		for(int i=1;i<count;i++)
 			checkWords[i-1] = excel.getCellData("Sheet1", i, 0);
 		//Checking whether the course titles contain atleast one of the key words from the array
 		int trueCount = 0;
@@ -206,10 +206,11 @@ public class ResultPage extends Base_Page{
 		else
 			return false;
 	}
+	/*
 	//Method for checking the englishFilterClickable
 	public boolean englishFilterDisplayStatus() {
 		return englishFilterCheckBox.isDisplayed();
-	}
+	}*/
 
 	//Method for checking whether the given filter is displayed or not
 	public boolean filterDisplayStatus(String filterName) {
@@ -268,6 +269,7 @@ public class ResultPage extends Base_Page{
 			break;
 		}
 	}
+	
 	//Method for applying English filter
 	public void applyEnglishFilter() {
 		englishFilterCheckBox.click();
@@ -278,6 +280,7 @@ public class ResultPage extends Base_Page{
 		beginnerFilterCheckBox.click();
 	}
 
+	/*
 	//Method to check if the selected filter is applied properly
 	public boolean checkAppliedFilter(String filterName) {
 		boolean check = false;
@@ -289,7 +292,6 @@ public class ResultPage extends Base_Page{
 		return check;
 	}
 
-	/*
 
 
 	//Method for checking beginnerFilterStatus
