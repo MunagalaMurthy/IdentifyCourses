@@ -4,6 +4,7 @@ package com.cognizant.elementRepository;
 
 import java.time.Duration;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -71,12 +72,15 @@ public class ForEnterprisePage extends Base_Page{
 	}
 
 	public void mandatoryInfo(String firstName,String lastName,String email,String phoneNumber,String orgType) {
-		action.mouseHoverToElement(forEnterpriseElem);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);", forEnterpriseElem);
 		forEnterpriseElem.click();
 		action.mouseHoverToElement(firstNameElem);
 		mu.sendValues(firstNameElem, firstName);
 		mu.sendValues(lastNameElem, lastName);
+		emailElem.clear();
 		mu.sendValues(emailElem, email);
+		phoneNumberElem.clear();
 		mu.sendValues(phoneNumberElem, phoneNumber);
 		SelectUtils.selectFromVisibleText(orgTypeElem, orgType);
 	}
@@ -104,7 +108,6 @@ public class ForEnterprisePage extends Base_Page{
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
-			System.out.println("No company name required");
 		}
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(noOfLearnersElem, noOfLearners);
@@ -158,7 +161,6 @@ public class ForEnterprisePage extends Base_Page{
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
-			System.out.println("No company name required");
 		}
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
@@ -347,11 +349,40 @@ public class ForEnterprisePage extends Base_Page{
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
-			System.out.println("No company name required");
 		}
 		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
 		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		SelectUtils.selectFromVisibleText(departmentElem, department);
+		mu.sendValues(needDiscribeElem, businessNeeds);
+		SelectUtils.selectFromVisibleText(countryElem, country);
+		SelectUtils.selectFromVisibleText(stateElem, state);
+		submitBtn.click();
+		String error = errorChecker();
+		if(error != null) return error;
+		wait.until(ExpectedConditions.titleContains("Thank"));
+		return driver.getTitle();
+	}
+	
+	public String fillFormForCollege(String firstName,
+			String lastName,
+			String email,
+			String phoneNumber, 
+			String orgType,
+			String institutionType,
+			String jobRole,
+			String company,
+			String companySize,
+			String businessNeeds,
+			String country,
+			String state) {
+		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
+		try {
+			mu.sendValues(companyElem, company);
+			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
+		}catch(Exception e) {
+		}
+		SelectUtils.selectFromVisibleText(institutionElem,institutionType);
+		SelectUtils.selectFromVisibleText(jobRoleElem, jobRole);
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
 		SelectUtils.selectFromVisibleText(stateElem, state);
@@ -403,7 +434,6 @@ public class ForEnterprisePage extends Base_Page{
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
-			System.out.println("No company name required");
 		}
 		mu.sendValues(needDiscribeElem, businessNeeds);
 		SelectUtils.selectFromVisibleText(countryElem, country);
