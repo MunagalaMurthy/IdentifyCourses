@@ -1,51 +1,313 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Available languages and count of courses:]]>
+    </line>
+    <line>
+      <![CDATA[English(6,278)
+]]>
+    </line>
+    <line>
+      <![CDATA[Spanish(2,969)
+]]>
+    </line>
+    <line>
+      <![CDATA[Arabic(2,478)
+]]>
+    </line>
+    <line>
+      <![CDATA[French(2,460)
+]]>
+    </line>
+    <line>
+      <![CDATA[Portuguese (Brazil)(2,429)
+]]>
+    </line>
+    <line>
+      <![CDATA[Japanese(2,329)
+]]>
+    </line>
+    <line>
+      <![CDATA[Chinese (China)(2,323)
+]]>
+    </line>
+    <line>
+      <![CDATA[German(2,320)
+]]>
+    </line>
+    <line>
+      <![CDATA[Indonesian(2,295)
+]]>
+    </line>
+    <line>
+      <![CDATA[Korean(2,236)
+]]>
+    </line>
+    <line>
+      <![CDATA[Russian(2,231)
+]]>
+    </line>
+    <line>
+      <![CDATA[Hindi(2,204)
+]]>
+    </line>
+    <line>
+      <![CDATA[Turkish(2,164)
+]]>
+    </line>
+    <line>
+      <![CDATA[Ukrainian(2,162)
+]]>
+    </line>
+    <line>
+      <![CDATA[Italian(2,151)
+]]>
+    </line>
+    <line>
+      <![CDATA[Thai(2,137)
+]]>
+    </line>
+    <line>
+      <![CDATA[Polish(2,130)
+]]>
+    </line>
+    <line>
+      <![CDATA[Dutch(2,127)
+]]>
+    </line>
+    <line>
+      <![CDATA[Greek(2,125)
+]]>
+    </line>
+    <line>
+      <![CDATA[Swedish(2,124)
+]]>
+    </line>
+    <line>
+      <![CDATA[Kazakh(1,971)
+]]>
+    </line>
+    <line>
+      <![CDATA[Hungarian(1,349)
+]]>
+    </line>
+    <line>
+      <![CDATA[Uzbek(510)
+]]>
+    </line>
+    <line>
+      <![CDATA[Vietnamese(479)
+]]>
+    </line>
+    <line>
+      <![CDATA[Azerbaijani(458)
+]]>
+    </line>
+    <line>
+      <![CDATA[Pushto(252)
+]]>
+    </line>
+    <line>
+      <![CDATA[Chinese (Traditional)(41)
+]]>
+    </line>
+    <line>
+      <![CDATA[Hebrew(4)
+]]>
+    </line>
+    <line>
+      <![CDATA[Catalan(1)
+]]>
+    </line>
+    <line>
+      <![CDATA[Croatian(1)
+]]>
+    </line>
+    <line>
+      <![CDATA[Portuguese(1)
+]]>
+    </line>
+    <line>
+      <![CDATA[Portuguese (Portugal)(1)
+]]>
+    </line>
   </reporter-output>
-  <suite started-at="2025-07-14T11:42:10 IST" name="Default suite" finished-at="2025-07-14T11:42:14 IST" duration-ms="3768">
+  <suite started-at="2025-07-16T08:29:03 IST" name="Default suite" finished-at="2025-07-16T08:29:20 IST" duration-ms="16095">
     <groups>
       <group name="smoke">
-        <method signature="TCLanguageSection.tc03ToVerifyVisibilityOfShowMoreLink()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc03ToVerifyVisibilityOfShowMoreLink" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
-        <method signature="TCLanguageSection.tc04ToVerifyEnglishOptionIsAvailable()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc04ToVerifyEnglishOptionIsAvailable" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
-        <method signature="TCLanguageSection.tc11ToVerifyEnglishLanguageCheckboxChecked()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc11ToVerifyEnglishLanguageCheckboxChecked" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc03ToVerifyVisibilityOfShowMoreLink()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc03ToVerifyVisibilityOfShowMoreLink" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc04ToVerifyEnglishOptionIsAvailable()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc04ToVerifyEnglishOptionIsAvailable" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc10ToVerifyEnglishLanguageCheckboxChecked()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc10ToVerifyEnglishLanguageCheckboxChecked" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
       </group> <!-- smoke -->
       <group name="sanity">
-        <method signature="TCLanguageSection.tc02ToVerifyLanguageSectionAccessible()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc02ToVerifyLanguageSectionAccessible" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
-        <method signature="TCLanguageSection.tc05ToVeriftCountOfCoursesVisibleForEachLanguage()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc05ToVeriftCountOfCoursesVisibleForEachLanguage" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
-        <method signature="TCLanguageSection.tc08ToVerifyCountOfLanguages()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" name="tc08ToVerifyCountOfLanguages" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc02ToVerifyLanguageSectionAccessible()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc02ToVerifyLanguageSectionAccessible" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc05ToVerifyCountOfCoursesVisibleForEachLanguage()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc05ToVerifyCountOfCoursesVisibleForEachLanguage" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
+        <method signature="TCLanguageSection.tc08ToVerifyCountOfLanguages()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" name="tc08ToVerifyCountOfLanguages" class="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2025-07-14T11:42:10 IST" name="Default test" finished-at="2025-07-14T11:42:14 IST" duration-ms="3768">
+    <test started-at="2025-07-16T08:29:03 IST" name="Default test" finished-at="2025-07-16T08:29:20 IST" duration-ms="16095">
       <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:03 IST" name="setup" finished-at="2025-07-14T11:42:10 IST" duration-ms="7047" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:03 IST" name="setup" finished-at="2025-07-16T08:29:11 IST" duration-ms="7226" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="tc02ToVerifyLanguageSectionAccessible()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:10 IST" name="tc02ToVerifyLanguageSectionAccessible" finished-at="2025-07-14T11:42:12 IST" duration-ms="1407" status="PASS">
+        <test-method signature="tc02ToVerifyLanguageSectionAccessible()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:11 IST" name="tc02ToVerifyLanguageSectionAccessible" finished-at="2025-07-16T08:29:11 IST" duration-ms="610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc02ToVerifyLanguageSectionAccessible -->
-        <test-method signature="tc03ToVerifyVisibilityOfShowMoreLink()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:12 IST" name="tc03ToVerifyVisibilityOfShowMoreLink" finished-at="2025-07-14T11:42:12 IST" duration-ms="30" status="PASS">
+        <test-method signature="tc03ToVerifyVisibilityOfShowMoreLink()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:11 IST" name="tc03ToVerifyVisibilityOfShowMoreLink" finished-at="2025-07-16T08:29:12 IST" duration-ms="244" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc03ToVerifyVisibilityOfShowMoreLink -->
-        <test-method signature="tc04ToVerifyEnglishOptionIsAvailable()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:12 IST" name="tc04ToVerifyEnglishOptionIsAvailable" finished-at="2025-07-14T11:42:12 IST" duration-ms="107" status="PASS">
+        <test-method signature="tc04ToVerifyEnglishOptionIsAvailable()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:12 IST" name="tc04ToVerifyEnglishOptionIsAvailable" finished-at="2025-07-16T08:29:12 IST" duration-ms="756" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc04ToVerifyEnglishOptionIsAvailable -->
-        <test-method signature="tc05ToVeriftCountOfCoursesVisibleForEachLanguage()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:12 IST" name="tc05ToVeriftCountOfCoursesVisibleForEachLanguage" finished-at="2025-07-14T11:42:12 IST" duration-ms="73" status="PASS">
+        <test-method signature="tc05ToVerifyCountOfCoursesVisibleForEachLanguage()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:12 IST" name="tc05ToVerifyCountOfCoursesVisibleForEachLanguage" finished-at="2025-07-16T08:29:14 IST" duration-ms="1515" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[Available languages and count of courses:]]>
+            </line>
+            <line>
+              <![CDATA[English(6,278)
+]]>
+            </line>
+            <line>
+              <![CDATA[Spanish(2,969)
+]]>
+            </line>
+            <line>
+              <![CDATA[Arabic(2,478)
+]]>
+            </line>
+            <line>
+              <![CDATA[French(2,460)
+]]>
+            </line>
+            <line>
+              <![CDATA[Portuguese (Brazil)(2,429)
+]]>
+            </line>
+            <line>
+              <![CDATA[Japanese(2,329)
+]]>
+            </line>
+            <line>
+              <![CDATA[Chinese (China)(2,323)
+]]>
+            </line>
+            <line>
+              <![CDATA[German(2,320)
+]]>
+            </line>
+            <line>
+              <![CDATA[Indonesian(2,295)
+]]>
+            </line>
+            <line>
+              <![CDATA[Korean(2,236)
+]]>
+            </line>
+            <line>
+              <![CDATA[Russian(2,231)
+]]>
+            </line>
+            <line>
+              <![CDATA[Hindi(2,204)
+]]>
+            </line>
+            <line>
+              <![CDATA[Turkish(2,164)
+]]>
+            </line>
+            <line>
+              <![CDATA[Ukrainian(2,162)
+]]>
+            </line>
+            <line>
+              <![CDATA[Italian(2,151)
+]]>
+            </line>
+            <line>
+              <![CDATA[Thai(2,137)
+]]>
+            </line>
+            <line>
+              <![CDATA[Polish(2,130)
+]]>
+            </line>
+            <line>
+              <![CDATA[Dutch(2,127)
+]]>
+            </line>
+            <line>
+              <![CDATA[Greek(2,125)
+]]>
+            </line>
+            <line>
+              <![CDATA[Swedish(2,124)
+]]>
+            </line>
+            <line>
+              <![CDATA[Kazakh(1,971)
+]]>
+            </line>
+            <line>
+              <![CDATA[Hungarian(1,349)
+]]>
+            </line>
+            <line>
+              <![CDATA[Uzbek(510)
+]]>
+            </line>
+            <line>
+              <![CDATA[Vietnamese(479)
+]]>
+            </line>
+            <line>
+              <![CDATA[Azerbaijani(458)
+]]>
+            </line>
+            <line>
+              <![CDATA[Pushto(252)
+]]>
+            </line>
+            <line>
+              <![CDATA[Chinese (Traditional)(41)
+]]>
+            </line>
+            <line>
+              <![CDATA[Hebrew(4)
+]]>
+            </line>
+            <line>
+              <![CDATA[Catalan(1)
+]]>
+            </line>
+            <line>
+              <![CDATA[Croatian(1)
+]]>
+            </line>
+            <line>
+              <![CDATA[Portuguese(1)
+]]>
+            </line>
+            <line>
+              <![CDATA[Portuguese (Portugal)(1)
+]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- tc05ToVeriftCountOfCoursesVisibleForEachLanguage -->
-        <test-method signature="tc08ToVerifyCountOfLanguages()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:12 IST" name="tc08ToVerifyCountOfLanguages" finished-at="2025-07-14T11:42:12 IST" duration-ms="200" status="PASS">
+        </test-method> <!-- tc05ToVerifyCountOfCoursesVisibleForEachLanguage -->
+        <test-method signature="tc08ToVerifyCountOfLanguages()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:14 IST" name="tc08ToVerifyCountOfLanguages" finished-at="2025-07-16T08:29:14 IST" duration-ms="252" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tc08ToVerifyCountOfLanguages -->
-        <test-method signature="tc11ToVerifyEnglishLanguageCheckboxChecked()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:12 IST" name="tc11ToVerifyEnglishLanguageCheckboxChecked" finished-at="2025-07-14T11:42:14 IST" duration-ms="1851" status="PASS">
+        <test-method signature="tc10ToVerifyEnglishLanguageCheckboxChecked()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:14 IST" name="tc10ToVerifyEnglishLanguageCheckboxChecked" finished-at="2025-07-16T08:29:16 IST" duration-ms="2333" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tc11ToVerifyEnglishLanguageCheckboxChecked -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@1fa121e2]" started-at="2025-07-14T11:42:14 IST" name="tearDown" finished-at="2025-07-14T11:42:17 IST" duration-ms="2595" status="PASS">
+        </test-method> <!-- tc10ToVerifyEnglishLanguageCheckboxChecked -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.cognizant.TS02LanguageLearningOverview.TCLanguageSection@4116aac9]" started-at="2025-07-16T08:29:16 IST" name="tearDown" finished-at="2025-07-16T08:29:20 IST" duration-ms="3102" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

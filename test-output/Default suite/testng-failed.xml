@@ -6,11 +6,8 @@
       <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection">
         <methods>
           <include name="tc04ToVerifyEnglishOptionIsAvailable"/>
-          <include name="tc05ToVeriftCountOfCoursesVisibleForEachLanguage"/>
-          <include name="tc08ToVerifyCountOfLanguages"/>
           <include name="setup"/>
-          <include name="tc02ToVerifyLanguageSectionAccessible"/>
-          <include name="tc03ToVerifyVisibilityOfShowMoreLink"/>
+          <include name="tearDown"/>
         </methods>
       </class> <!-- com.cognizant.TS02LanguageLearningOverview.TCLanguageSection -->
     </classes>

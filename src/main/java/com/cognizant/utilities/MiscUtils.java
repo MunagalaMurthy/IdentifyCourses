@@ -24,24 +24,29 @@ public class MiscUtils {
 		element.click();
 	}
 	
-	private int getNumberLength(String str) {
-		int cnt=0;
-		String num = str.substring( str.indexOf("(")+1, str.indexOf(")"));
-		for(int i=0;i<num.length();i++) {
-			if(num.charAt(i)>='0' && num.charAt(i)<='9') {
-				cnt++;
-			}
+	private boolean getNumberLength(String str) {
+		
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)>='0' && str.charAt(i)<='9') {			
+				
+				return true;
+			}			
+			
 		}
-		return cnt;
+		return false;
 		
 	}
 	
 	public boolean isCountAvailable(List<WebElement> ls) {
 		int cnt=0;
+		
 		for(WebElement element: ls) {
-			if(getNumberLength(element.getText())>0) cnt++;
+			if(getNumberLength(element.getText())) cnt++;
 		}
+		System.out.println("siz"+ls.size());
+		System.out.println("count"+cnt);
 		if(cnt == ls.size()) return true;
+		
 		return false;
 	}
 	
