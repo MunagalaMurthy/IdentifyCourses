@@ -12,7 +12,7 @@ import com.cognizant.base.Base_Test;
 public class ScreenshotUtils{
 	// Assuming you have a WebDriver instance accessible
     // You might pass it as a parameter or get it from a common base class
-    private WebDriver driver; // Initialize this appropriately, e.g., in a BaseTest class
+    private static WebDriver driver; // Initialize this appropriately, e.g., in a BaseTest class
 
     public ScreenshotUtils(WebDriver driver) {
         this.driver = driver;
