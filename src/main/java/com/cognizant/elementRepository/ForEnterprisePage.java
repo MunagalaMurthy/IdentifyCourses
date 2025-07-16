@@ -346,6 +346,7 @@ public class ForEnterprisePage extends Base_Page{
 			String state) {
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		try {
+			companyElem.clear();
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
