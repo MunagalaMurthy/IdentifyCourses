@@ -4,7 +4,6 @@
   <artifactId>com.cognizant.coursera</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>com.cognizant.coursera</name>
-  
 	<dependencies>
 	  	<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
 		<dependency>
@@ -69,7 +68,5 @@
 		    <artifactId>extentreports</artifactId>
 		    <version>3.1.5</version>
 		</dependency>
-		
-		
 	</dependencies>  
 </project>

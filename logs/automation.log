@@ -1,0 +1,91 @@
+2025-07-16 08:17:49 INFO  TCLanguageSection:27 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 08:17:49 INFO  TCLanguageSection:35 - 	LL-TC-02: Started
+2025-07-16 08:17:49 INFO  TCLanguageSection:36 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 08:17:49 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 08:17:49 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 08:17:49 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 08:17:49 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 08:17:49 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 08:17:49 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 08:17:49 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 08:17:49 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 08:17:50 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 08:17:50 INFO  TCLanguageSection:203 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 08:17:50 INFO  TCLanguageSection:209 - 	LL-TC-05: Started
+2025-07-16 08:17:50 INFO  TCLanguageSection:210 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 08:17:52 INFO  TCLanguageSection:230 - 	LL-TC-05: Successfully Passed
+2025-07-16 08:17:52 INFO  TCLanguageSection:261 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 08:17:52 INFO  TCLanguageSection:267 - 	LL-TC-08: Started
+2025-07-16 08:17:52 INFO  TCLanguageSection:268 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 08:17:52 INFO  TCLanguageSection:281 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 08:17:52 INFO  TCLanguageSection:282 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 08:18:02 ERROR TCLanguageSection:295 - 	LL-TC-08: Exception occurred - no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Show less Language options']"}
+  (Session info: chrome=137.0.7151.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e60ef1b116fd133a15d982d007bfcd9f, findElement {value=//button[@aria-label='Show less Language options'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\2406712\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65147}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65147/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e60ef1b116fd133a15d982d007bfcd9f
+2025-07-16 08:18:02 INFO  TCLanguageSection:313 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 08:18:02 INFO  TCLanguageSection:319 - 	LL-TC-10: Started
+2025-07-16 08:18:02 INFO  TCLanguageSection:320 - 	LL-TC-10: Applying English language filter
+2025-07-16 08:18:04 INFO  TCLanguageSection:333 - 	LL-TC-10: Successfully Passed
+2025-07-16 08:24:52 INFO  TCLanguageSection:27 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 08:24:52 INFO  TCLanguageSection:35 - 	LL-TC-02: Started
+2025-07-16 08:24:52 INFO  TCLanguageSection:36 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 08:24:53 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 08:24:53 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 08:24:53 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 08:24:53 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 08:24:53 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 08:24:53 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 08:24:53 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 08:24:53 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 08:24:54 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 08:24:54 INFO  TCLanguageSection:203 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 08:24:54 INFO  TCLanguageSection:209 - 	LL-TC-05: Started
+2025-07-16 08:24:54 INFO  TCLanguageSection:210 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 08:24:56 INFO  TCLanguageSection:230 - 	LL-TC-05: Successfully Passed
+2025-07-16 08:24:56 INFO  TCLanguageSection:261 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 08:24:56 INFO  TCLanguageSection:267 - 	LL-TC-08: Started
+2025-07-16 08:24:56 INFO  TCLanguageSection:268 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 08:25:06 ERROR TCLanguageSection:295 - 	LL-TC-08: Exception occurred - no such element: Unable to locate element: {"method":"xpath","selector":"//button[@data-testid="expand-filter-items-button" and @aria-label="Show more Language options"]"}
+  (Session info: chrome=137.0.7151.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [1ef27c6c003a06a014850ec74af15d99, findElement {value=//button[@data-testid="expand-filter-items-button" and @aria-label="Show more Language options"], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 137.0.7151.69, chrome: {chromedriverVersion: 137.0.7151.119 (e0ac9d12dff..., userDataDir: C:\Users\2406712\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49795}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49795/devtoo..., se:cdpVersion: 137.0.7151.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 1ef27c6c003a06a014850ec74af15d99
+2025-07-16 08:25:06 INFO  TCLanguageSection:313 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 08:25:06 INFO  TCLanguageSection:319 - 	LL-TC-10: Started
+2025-07-16 08:25:06 INFO  TCLanguageSection:320 - 	LL-TC-10: Applying English language filter
+2025-07-16 08:25:07 INFO  TCLanguageSection:333 - 	LL-TC-10: Successfully Passed
+2025-07-16 08:29:11 INFO  TCLanguageSection:27 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 08:29:11 INFO  TCLanguageSection:35 - 	LL-TC-02: Started
+2025-07-16 08:29:11 INFO  TCLanguageSection:36 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 08:29:11 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 08:29:11 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 08:29:11 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 08:29:11 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 08:29:12 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 08:29:12 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 08:29:12 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 08:29:12 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 08:29:12 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 08:29:12 INFO  TCLanguageSection:203 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 08:29:12 INFO  TCLanguageSection:209 - 	LL-TC-05: Started
+2025-07-16 08:29:12 INFO  TCLanguageSection:210 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 08:29:14 INFO  TCLanguageSection:230 - 	LL-TC-05: Successfully Passed
+2025-07-16 08:29:14 INFO  TCLanguageSection:261 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 08:29:14 INFO  TCLanguageSection:267 - 	LL-TC-08: Started
+2025-07-16 08:29:14 INFO  TCLanguageSection:268 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 08:29:14 INFO  TCLanguageSection:281 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 08:29:14 INFO  TCLanguageSection:282 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 08:29:14 INFO  TCLanguageSection:313 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 08:29:14 INFO  TCLanguageSection:319 - 	LL-TC-10: Started
+2025-07-16 08:29:14 INFO  TCLanguageSection:320 - 	LL-TC-10: Applying English language filter
+2025-07-16 08:29:16 INFO  TCLanguageSection:333 - 	LL-TC-10: Successfully Passed

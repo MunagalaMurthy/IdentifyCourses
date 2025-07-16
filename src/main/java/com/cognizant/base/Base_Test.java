@@ -57,9 +57,9 @@ public class Base_Test {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/reports/extentReport.html");
-        // create ExtentReports and attach reporter(s)
-        extent = new ExtentReports();
-        extent.attachReporter(htmlReporter);
+    // create ExtentReports and attach reporter(s)
+    extent = new ExtentReports();
+    extent.attachReporter(htmlReporter);
 		//Creating the required class objects to use in the test cases
 		hp = new HomePage(driver);
 		rp = new ResultPage(driver);

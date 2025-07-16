@@ -10,17 +10,25 @@ public class MiscUtils {
 	public int getElementsCount(List<WebElement> elements_list) {
 		return elements_list.size();
 	}
+	public boolean isItDisplayed(WebElement item) {
+		return item.isDisplayed();
+	}
 	
-	private int getNumberLength(String str) {
-		int cnt=0;
-		String num = str.substring( str.indexOf("(")+1, str.indexOf(")"));
-		for(int i=0;i<num.length();i++) {
-			if(num.charAt(i)>='0' && num.charAt(i)<='9') {
-				cnt++;
-			}
-		}
-		return cnt;
+	public boolean isItSelected(WebElement element) {
+		return element.isSelected();
+	}
+	
+	public void ClickOnElement(WebElement element) {
+		element.click();
+	}
+	private boolean getNumberLength(String str) {
 		
+		for(int i=0;i<str.length();i++) {
+			if(str.charAt(i)>='0' && str.charAt(i)<='9') {	
+				return true;
+			}			
+		}
+		return false;
 	}
 	
 	public boolean isCountAvailable(List<WebElement> ls) {

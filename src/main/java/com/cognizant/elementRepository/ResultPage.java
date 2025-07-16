@@ -27,11 +27,14 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
 	private List<WebElement> levelsList;
 
-	@FindBy(xpath ="//div[contains(@data-testid,\"language\")]")
+	@FindBy(xpath ="//div[contains(@data-testid,"language")]")
 	private List<WebElement> languageList;
 
 	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
+  
+  @FindBy(xpath = "//button[@aria-label='Show less Language options']")
+	private WebElement showLessLink;
 
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
 	private WebElement beginnerTag;
@@ -79,31 +82,6 @@ public class ResultPage extends Base_Page{
 	private WebElement clearAllFiltersButton;
 
 	/*
-	public boolean isFilterSectionAccessible() {
-		return filtersSection.isDisplayed();
-	}
-
-	public boolean isLevelSectionAccessible() {
-		return levelSection.isDisplayed();
-	}
-	public int getNumberOfLevels() {
-		return levels_list.size();
-	}
-
-	public boolean isCountAvailableForLevels() {
-		MiscUtils mu = new MiscUtils();
-		return mu.isCountAvailable(levels_list);
-	}
-
-	public List<String> getListOfLevels() {
-		List<String> levelsList = new ArrayList<>();
-		for(WebElement level: levels_list) {
-			levelsList.add(level.getText());
-		}
-
-		return levelsList;
-	}
-
 	//Locator to find the clear all filters button
 	@FindBy(xpath="//span[normalize-space()='Clear all']")
 	private WebElement clearAllFiltersButton; 
@@ -115,7 +93,71 @@ public class ResultPage extends Base_Page{
 	public ResultPage(WebDriver driver) {
 		super(driver);
 	}
+  
+  public String ShowMoreText() throws InterruptedException {
+		if(isshowmorevisible==false) {
+			mu.ClickOnElement(showLessLink);
+			isshowmorevisible = true;
+		}
+		return showMoreLink.getText();
+	}
+  
+  public void clickShowMoreLink() {
+		System.out.println("bool status" + isshowmorevisible);
+		if (isshowmorevisible) {
+			mu.ClickOnElement(showMoreLink);
+			isshowmorevisible = false;
+		} else {
+			mu.ClickOnElement(showLessLink);
+			isshowmorevisible = true;
+			clickShowMoreLink();
+		}
 
+	}
+
+	public boolean isAccessible(String value) {
+		value = value.toLowerCase();
+		switch (value) {
+		case "filter":
+			return mu.isItDisplayed(filtersSection);
+		case "level":
+			return mu.isItDisplayed(levelSection);
+		case "language":
+			return mu.isItDisplayed(languageSection);
+		case "showmore":
+//
+			System.out.println("inside isAccesible func - showmore");
+			System.out.println("isDisplayed method " + mu.isItDisplayed(showMoreLink));
+			return mu.isItDisplayed(showMoreLink);
+
+		}
+		return false;
+
+	}
+  
+  public int getTotalNumberOfElementsInList(String value) {
+		value = value.toLowerCase();
+		switch (value) {
+		case "level":
+			return mu.getElementsCount(levelsList);
+		case "language":
+			clickShowMoreLink();
+			return mu.getElementsCount(languageList);
+
+		}
+		return 0;
+	}
+  
+  public boolean isCountDisplayed(String value) {
+		value = value.toLowerCase();
+		switch (value) {
+		case "level":
+			return mu.isCountAvailable(levelsList);
+		case "language":
+			return mu.isCountAvailable(languageList);
+		}
+		return false;
+	}
 
 	public boolean isFilterSectionAccessible() {
 		return mu.isSectionDisplayed(filtersSection);
@@ -147,7 +189,7 @@ public class ResultPage extends Base_Page{
 
 	public boolean isCountDisplayed(String value) {
 		value = value.toLowerCase();
-		switch(value) {
+		switch (value) {
 		case "level":
 			return mu.isCountAvailable(levelsList);
 		case "language":
@@ -156,14 +198,24 @@ public class ResultPage extends Base_Page{
 		return false;
 	}
 
+	public List<String> getList(String value) {
+		value = value.toLowerCase();
+		switch (value) {
+		case "level":
+			return mu.getNameList(levelsList);
+		case "language":
+			System.out.println("calling clickable method");
+			clickShowMoreLink();
+			return mu.getNameList(languageList);
+
+		}
+		return null;
+
+	}
+
 	public List<String> getListOfLevels() {
 
 		return mu.getNameList(levelsList);
-	}
-
-	public List<String> getListOfLanguages() {
-
-		return mu.getNameList(languageList);
 	}
 
 
@@ -205,13 +257,7 @@ public class ResultPage extends Base_Page{
 			return true;
 		else
 			return false;
-	}
-	/*
-	//Method for checking the englishFilterClickable
-	public boolean englishFilterDisplayStatus() {
-		return englishFilterCheckBox.isDisplayed();
-	}*/
-
+  }
 	//Method for checking whether the given filter is displayed or not
 	public boolean filterDisplayStatus(String filterName) {
 		boolean returnValue = false;
@@ -231,11 +277,12 @@ public class ResultPage extends Base_Page{
 		return beginnerFilterCheckBox.isSelected();
 	}
 
+
 	//Method for checking englishFilterStatus
 	public boolean englishFilterSelectStatus() {
 		return englishFilterCheckBox.isSelected();
 	}
-
+  
 	//Method for checking whether the given filter is selected or not
 	public boolean filterSelectStatus(String filterName) {
 		boolean returnValue = false;
@@ -275,10 +322,11 @@ public class ResultPage extends Base_Page{
 		englishFilterCheckBox.click();
 	}
 
-	//Method for applying Beginner filter
+
 	public void applyBeginnerFilter() {
 		beginnerFilterCheckBox.click();
 	}
+
 
 	/*
 	//Method to check if the selected filter is applied properly
@@ -401,5 +449,4 @@ public class ResultPage extends Base_Page{
 		}
 
 	}
-
 }
