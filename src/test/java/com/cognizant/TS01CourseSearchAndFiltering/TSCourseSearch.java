@@ -19,7 +19,7 @@ public class TSCourseSearch extends Base_Test{
 int i=4;
 	
 	//Test 1: testing whether search box accepts any text input
-	@Test(priority=0,groups= {"Smoke"})
+	@Test(priority=-4,groups= {"Smoke"})
 	public void testSearchInputAcceptsText() {
 		logger.info("CS-TC-01: To Verify That Search Input Field Accepts Text");
 		try {
@@ -46,7 +46,7 @@ int i=4;
 	}
 	
 	//Test 2: testing whether search button triggers the search on clicking
-	@Test(priority=1,dependsOnMethods={"testSearchInputAcceptsText"},groups= {"Smoke"})
+	@Test(priority=-3,dependsOnMethods={"testSearchInputAcceptsText"},groups= {"Smoke"})
 	public void testSearchButtonTrigger() {
 		logger.info("CS-TC-02: To Verify That Search Button Click Triggers Search");
 		try {
@@ -66,7 +66,7 @@ int i=4;
 	}
 	
 	//Test 3: testing whether search results shown on the results page are valid and related to the search key
-	@Test(priority=2, dependsOnMethods= {"testSearchButtonTrigger"},groups= {"Sanity"})
+	@Test(priority=-2, dependsOnMethods= {"testSearchButtonTrigger"},groups= {"Sanity"})
 	public void testValidSearchResults() throws IOException {
 		logger.info("CS-TC-03: To Verify That Search Results Are Displayed Correctly");
 		try {
@@ -96,7 +96,7 @@ int i=4;
 	}
 	
 	//CS-TC-08: Verifies that 'Beginner' and 'English' filters are unselected by default.
-	@Test(priority = 3,dataProvider="filtersData",dependsOnMethods= {"testSearchButtonTrigger"})
+	@Test(priority = -1,dataProvider="filtersData",dependsOnMethods= {"testSearchButtonTrigger"})
 	public void testDefaultStateOfFilters(String filterName) {
 	    logger.info("CS-TC-08: Starting default filter state verification for "+filterName);
 
@@ -135,7 +135,7 @@ int i=4;
 	}
 	
 	//Test 4: testing whether checkboxes function as required individually
-	@Test(priority=4,dataProvider="filtersData",dependsOnMethods="testValidSearchResults",groups= {"Sanity"})
+	@Test(priority=0,dataProvider="filtersData",dependsOnMethods="testValidSearchResults",groups= {"Sanity"})
 	public void testRespectiveCheckboxes(String filterName) {
 		logger.info("CS-TC-0"+i+": Test "+filterName+" Checkbox is Clickable");
 		try {
@@ -175,7 +175,7 @@ int i=4;
 
 		
 		//CS-TC-09: Verifies that multiple filters (English and Beginner) are applied correctly
-		@Test(priority = 6, dependsOnMethods = {"testValidSearchResults"})
+		@Test(priority = 1, dependsOnMethods = {"testValidSearchResults"})
 		public void testMultipleFiltersApplicable() {
 		    logger.info("CS-TC-09: Verifying multiple filter application");
 
@@ -206,7 +206,7 @@ int i=4;
 		}
 		
 		//CS-TC-10: Verifies that all required fields (e.g., title, rating, duration) are present in each course result after filters are applied.
-		@Test(priority = 7, dependsOnMethods = {"testMultipleFiltersApplicable"})
+		@Test(priority = 2, dependsOnMethods = {"testMultipleFiltersApplicable"})
 		public void testPresenceOfAllRequiredFields() {
 		    logger.info("CS-TC-10: Starting verification of required fields in course results");
 
@@ -232,7 +232,7 @@ int i=4;
 		/**
 		 * Main Test Case: Extracts and prints details of the top 2 filtered courses.
 		 */
-		@Test(priority = 8, dependsOnMethods= {"testPresenceOfAllRequiredFields"})
+		@Test(priority = 3, dependsOnMethods= {"testPresenceOfAllRequiredFields"})
 		public void testCourseDetailsExtraction() {
 		    logger.info("Main Test Case: Extracting top 2 filtered course details");
 
@@ -254,7 +254,7 @@ int i=4;
 		}
 
 		//CS-TC-11: Verifies that all retrieved course ratings are within the valid range (1 to 5).
-		@Test(priority = 9, dependsOnMethods = {"testPresenceOfAllRequiredFields"})
+		@Test(priority = 4, dependsOnMethods = {"testPresenceOfAllRequiredFields"})
 		public void testRangeOfRatingField() {
 		    logger.info("CS-TC-11: Starting rating range validation");
 
@@ -282,21 +282,21 @@ int i=4;
 		}
 		
 		//CS-TC-13: Verifies that the 'Clear Filters' button removes all applied filters.
-		@Test(priority = 10)
+		@Test(priority = 5, dependsOnMethods= {"testMultipleFiltersApplicable"})
 		public void testClearFiltersButtonFunctionality() {
-		    logger.info("CS-TC-13: Starting test for 'Clear Filters' functionality");
+		    logger.info("CS-TC-12: Starting test for 'Clear Filters' functionality");
 
 		    try {
 		    	
 		    	//Clearing Applied Filters
 		        rp.clearAllAppliedFilters();
 		        ArrayList<String> filtersApplied = rp.getAppliedFilters();
-		        logger.info("   CS-TC-13: Filters after clearing: " + filtersApplied);
+		        logger.info("   CS-TC-12: Filters after clearing: " + filtersApplied);
 
 		        //Validation whether filters cleared or not
 		        Assert.assertTrue(filtersApplied.isEmpty(), "Filters not cleared properly");
 
-		        logger.info("CS-TC-13: 'Clear Filters' functionality verified successfully");
+		        logger.info("CS-TC-12: 'Clear Filters' functionality verified successfully");
 
 		    }
 		    catch (AssertionError ae) {
@@ -304,15 +304,15 @@ int i=4;
 				Assert.fail("Assertion Failed");
 			}
 		    catch (Exception e) {
-		        logger.error("CS-TC-13: Exception while testing 'Clear Filters' functionality", e);
+		        logger.error("CS-TC-12: Exception while testing 'Clear Filters' functionality", e);
 		        Assert.fail("Exception occurred during filter clearing: " + e.getMessage());
 		    }
 		}
 		
 		//CS-TC-12: Verifies behavior of the search field when no input is provided. Ensures that the system handles empty search queries gracefully.
-		@Test(priority = 11)
+		@Test(priority = 6)
 		public void testEmptySearchFieldBehaviour() {
-		    logger.info("CS-TC-12: Starting test for empty search field behavior");
+		    logger.info("CS-TC-13: Starting test for empty search field behavior");
 
 		    try {
 		    	//Navigating back to search page
@@ -321,12 +321,12 @@ int i=4;
 
 		        //Get current url for empty search key
 		        String currentUrl = driver.getCurrentUrl();
-		        logger.info("   CS-TC-12: Current URL after empty search: " + currentUrl);
+		        logger.info("   CS-TC-13: Current URL after empty search: " + currentUrl);
 
 		        //Validation
 		        Assert.assertTrue(currentUrl.endsWith("query=&"), "Unexpected behavior for empty search field");
 
-		        logger.info("CS-TC-12: Empty search field handled correctly");
+		        logger.info("CS-TC-13: Empty search field handled correctly");
 
 		    }
 		    catch (AssertionError ae) {
@@ -334,13 +334,13 @@ int i=4;
 				Assert.fail("Assertion Failed");
 			}
 		    catch (Exception e) {
-		        logger.error("CS-TC-12: Exception during empty search field test", e);
+		        logger.error("CS-TC-13: Exception during empty search field test", e);
 		        Assert.fail("Exception occurred: " + e.getMessage());
 		    }
 		}
 
 		//CS-TC-14: Verifies that the search box auto-suggestion selects the correct course. Ensures that selecting a suggestion updates the URL with relevant keywords.
-		@Test(priority = 12)
+		@Test(priority = 7)
 		public void testAutoSuggestionOfSearch() throws InterruptedException {
 		    logger.info("CS-TC-14: Starting test for search box auto-suggestion");
 
@@ -373,4 +373,3 @@ int i=4;
 	
 	
 }
-
