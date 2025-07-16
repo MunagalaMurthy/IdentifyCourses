@@ -34,7 +34,7 @@ public class MiscUtils {
 	public boolean isCountAvailable(List<WebElement> ls) {
 		int cnt=0;
 		for(WebElement element: ls) {
-			if(getNumberLength(element.getText())>0) cnt++;
+			if(getNumberLength(element.getText())) cnt++;
 		}
 		if(cnt == ls.size()) return true;
 		return false;

@@ -27,12 +27,13 @@ public class ResultPage extends Base_Page{
 	@FindBy(xpath="//div[contains(@data-testid,\"productDifficultyLevel\")]")
 	private List<WebElement> levelsList;
 
-	@FindBy(xpath ="//div[contains(@data-testid,"language")]")
+	@FindBy(xpath ="//div[contains(@data-testid,\"language\")]")
 	private List<WebElement> languageList;
 
 	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
-  
+	@FindBy(xpath = "//div[@data-testid='language:English-true']")
+	private WebElement englishFilterChecked;
   @FindBy(xpath = "//button[@aria-label='Show less Language options']")
 	private WebElement showLessLink;
 
@@ -87,7 +88,7 @@ public class ResultPage extends Base_Page{
 	private WebElement clearAllFiltersButton; 
 	 */
 
-
+	boolean isshowmorevisible = false;
 	MiscUtils mu = new MiscUtils();
 
 	public ResultPage(WebDriver driver) {
@@ -125,7 +126,6 @@ public class ResultPage extends Base_Page{
 		case "language":
 			return mu.isItDisplayed(languageSection);
 		case "showmore":
-//
 			System.out.println("inside isAccesible func - showmore");
 			System.out.println("isDisplayed method " + mu.isItDisplayed(showMoreLink));
 			return mu.isItDisplayed(showMoreLink);
@@ -187,17 +187,6 @@ public class ResultPage extends Base_Page{
 		return mu.isSectionDisplayed(beginnerFilterChecked);
 	}
 
-	public boolean isCountDisplayed(String value) {
-		value = value.toLowerCase();
-		switch (value) {
-		case "level":
-			return mu.isCountAvailable(levelsList);
-		case "language":
-			return mu.isCountAvailable(languageList);
-		}
-		return false;
-	}
-
 	public List<String> getList(String value) {
 		value = value.toLowerCase();
 		switch (value) {
@@ -212,6 +201,10 @@ public class ResultPage extends Base_Page{
 		return null;
 
 	}
+	public boolean isEnglishChecked() {
+		return mu.isItDisplayed(englishFilterChecked);
+	}
+ 
 
 	public List<String> getListOfLevels() {
 

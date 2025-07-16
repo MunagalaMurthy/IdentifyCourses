@@ -1,19 +1,15 @@
 package com.cognizant.TS02LanguageLearningOverview;
 
-import org.testng.annotations.Test;
-
 import java.io.IOException;
 
-import org.apache.commons.codec.language.bm.Rule.RPattern;
 import org.testng.Assert;
 import org.testng.Reporter;
-import org.testng.asserts.SoftAssert;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.cognizant.base.Base_Test;
-import com.cognizant.elementRepository.ResultPage;
 
 public class TCLanguageSection extends Base_Test{
 	
@@ -23,6 +19,13 @@ public class TCLanguageSection extends Base_Test{
 	@Test(groups="sanity")
 	public void tc02ToVerifyLanguageSectionAccessible() throws IOException {
 		
+		//Gathering the input term/search key from the properties file
+		logger.info("\tLL-TC-01: Entering Search Key into Search Box");
+		String searchInput = prop.getProperty("SEARCH_KEY");
+		hp.enterTextIntoSearchBox(searchInput);
+		//clicking outside the text box at a random point to check if text still stays in search box
+		logger.info("\tLL-TC-01: Checking if input stays in Search Box");
+		hp.clickSearchButton();
 		// Logging the start of the test case
 		logger.info("LL-TC-02: To verify that Language section is accessible");
 		

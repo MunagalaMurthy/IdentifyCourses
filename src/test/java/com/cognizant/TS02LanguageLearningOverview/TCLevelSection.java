@@ -2,7 +2,6 @@ package com.cognizant.TS02LanguageLearningOverview;
 
 import java.io.IOException;
 
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
