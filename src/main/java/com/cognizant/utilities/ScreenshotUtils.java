@@ -45,7 +45,7 @@ public class ScreenshotUtils {
     public String takeScreenshot(String tname) {
 		String timeStamp=new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-    	String targetFilepath=System.getProperty("user.dir")+"\\screenshots\\"+tname+"_"+".png";
+    	String targetFilepath=System.getProperty("user.dir")+"\\screenshots\\"+tname+"_"+timeStamp+".png";
     	File target = new File(targetFilepath);
 		src.renameTo(target);
 		return targetFilepath;
