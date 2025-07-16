@@ -10,8 +10,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.cognizant.base.Base_Test;
-import com.cognizant.utilities.ExtentReportManager;
+
 public class TCLanguageSection extends Base_Test{
+	
 	
 	// Test Case: LL-TC-02
 	// Description: To verify that the Language section is accessible on the result page.
@@ -20,9 +21,6 @@ public class TCLanguageSection extends Base_Test{
 		
 		//Gathering the input term/search key from the properties file
 		logger.info("\tLL-TC-02: Entering Search Key into Search Box");
-		// Creating a test entry in the Extent Report
-		ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-02: To verify that Language section is accessible");
-		test.assignCategory("TS-LanguageLearning");
 		String searchInput = prop.getProperty("SEARCH_KEY");
 		hp.enterTextIntoSearchBox(searchInput);
 		//clicking outside the text box at a random point to check if text still stays in search box
@@ -30,6 +28,10 @@ public class TCLanguageSection extends Base_Test{
 		hp.clickSearchButton();
 		// Logging the start of the test case
 		logger.info("LL-TC-02: To verify that Language section is accessible");
+		
+		// Creating a test entry in the Extent Report
+		ExtentTest test = extent.createTest("LL-TC-02: To verify that Language section is accessible");
+		
 		try {
 			
 			// Logging the steps being performed
@@ -39,36 +41,37 @@ public class TCLanguageSection extends Base_Test{
 	        
 	        // Assertion to verify if the language section is accessible
 	        Assert.assertTrue(rp.isAccessible("language"));
-
+	        
+	        // Taking screenshot on successful verification
+	        screenshotPath = su.takeScreenshot("LL_TC02_pass");
+	        test.log(Status.PASS, "Successfully Passed");
+	        
 	        // Logging success in Extent Report and console
 	        logger.info("\tLL-TC-02: Successfully Passed");
-	        test.log(Status.PASS,"\tLL-TC-02: Successfully Passed");
 
 		}catch (AssertionError ae) {
 			
 			// Logging assertion failure and capturing screenshot
 	        logger.error("\tLL-TC-02: Assertion failed - " + ae.getMessage());
-	        test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
-        	throw ae;
-//	        screenshotPath = su.takeScreenshot("LL_TC02_fail");
+	        screenshotPath = su.takeScreenshot("LL_TC02_fail");
 	        
 	        // Attaching screenshot to Extent Report with failure status
-	        //test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		}catch (Exception e) {
 			
 			// Logging unexpected exception and capturing screenshot
 			logger.error("\tLL-TC-02: Exception occurred - " + e.getMessage());
-//			screenshotPath = su.takeScreenshot("LL_TC02_fail");
+			screenshotPath = su.takeScreenshot("LL_TC02_fail");
 			
 			// Attaching screenshot to Extent Report with failure status
-			//test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		}
 		finally {
 			
-			String captureScreen = captureScreen("Test LanguageLevels");
-        	test.addScreenCaptureFromPath(captureScreen);
+			// Adding screenshot to the test report regardless of pass/fail
+	        test.addScreenCaptureFromPath(screenshotPath);
 	    }
 	}
 	
@@ -84,7 +87,7 @@ public class TCLanguageSection extends Base_Test{
 	    
 
 		 // Creating a test entry in the Extent Report
-	     ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-03: To verify that 'Show More' link is visible in the Language section");
+	     ExtentTest test = extent.createTest("LL-TC-03: To verify that 'Show More' link is visible in the Language section");
 	     
 	     try {
 	    	 
@@ -97,7 +100,7 @@ public class TCLanguageSection extends Base_Test{
 	         Assert.assertTrue(rp.isAccessible("showmore"));
 
 	         // Taking screenshot on successful verification
-//             screenshotPath = su.takeScreenshot("LL_TC03_pass");
+             screenshotPath = su.takeScreenshot("LL_TC03_pass");
 
              // Logging success in Extent Report and console
              test.log(Status.PASS, "Successfully Passed");
@@ -107,25 +110,25 @@ public class TCLanguageSection extends Base_Test{
 	    	 
 	    	 // Logging assertion failure and capturing screenshot
 	    	 logger.error("\tLL-TC-03: Assertion failed - " + ae.getMessage());
-//	    	 screenshotPath = su.takeScreenshot("LL_TC03_fail");
+	    	 screenshotPath = su.takeScreenshot("LL_TC03_fail");
 	    	 
 	    	 // Attaching screenshot to Extent Report with failure status
-//             test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+             test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
              
 	     } catch (Exception e) {
 	    	 
 	    	 // Logging unexpected exception and capturing screenshot
 	    	 
 	    	 logger.error("\tLL-TC-03: Exception occurred - " + e.getMessage());
-//	         screenshotPath = su.takeScreenshot("LL_TC03_fail");
+	         screenshotPath = su.takeScreenshot("LL_TC03_fail");
 
 	         // Attaching screenshot to Extent Report with failure status
-//	         test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build()); 
+	         test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build()); 
 	         
 	     } finally {
 	    	 
 	    	 // Adding screenshot to the test report regardless of pass/fail
-//	         test.addScreenCaptureFromPath(screenshotPath);
+	         test.addScreenCaptureFromPath(screenshotPath);
 
 		}
 	}
@@ -140,7 +143,7 @@ public class TCLanguageSection extends Base_Test{
 	    logger.info("LL-TC-04: To verify that 'English' option is available in the language list");
 
 	    // Creating a test entry in the Extent Report
-	    ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-04: To verify that 'English' option is available in the language list");
+	    ExtentTest test = extent.createTest("LL-TC-04: To verify that 'English' option is available in the language list");
 
 		try {
 			
@@ -156,8 +159,8 @@ public class TCLanguageSection extends Base_Test{
 					test.log(Status.PASS, "'English' option is available");
 					
 					// Capture screenshot on success
-//	                screenshotPath = su.takeScreenshot("LL_TC04_pass");
-//	                test.addScreenCaptureFromPath(screenshotPath);
+	                screenshotPath = su.takeScreenshot("LL_TC04_pass");
+	                test.addScreenCaptureFromPath(screenshotPath);
 	                
 					// English found
 					Assert.assertTrue(true);  
@@ -169,23 +172,26 @@ public class TCLanguageSection extends Base_Test{
 			
 	        // Log assertion failure and capture screenshot
 	        logger.error("\tLL-TC-04: Assertion failed - " + ae.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC04_fail");
-//	        test.fail("\tLL-TC-04: 'English' option not found in the list", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC04_fail");
+	        test.fail("\tLL-TC-04: 'English' option not found in the list", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 	    } catch (Exception e) {
 	    	
 			// Log any unexpected exception and capture screenshot
 	    	logger.error("\tLL-TC-04: Exception occurred - " + e.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC04_fail");
-//	        test.fail("\tLL-TC-04: 'English' option not found in the list", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC04_fail");
+	        test.fail("\tLL-TC-04: 'English' option not found in the list", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 	        
 		} finally {
-//	        // Attach screenshot to the report regardless of outcome
-//      if (screenshotPath != null) {
-//	            test.addScreenCaptureFromPath(screenshotPath);
-//	        }
+	        // Attach screenshot to the report regardless of outcome
+	        if (screenshotPath != null) {
+	            test.addScreenCaptureFromPath(screenshotPath);
+	        }
 	    }
-	// English not found
+
+		
+
+		// English not found
 		Assert.assertFalse(true);
 	}
 	
@@ -200,7 +206,7 @@ public class TCLanguageSection extends Base_Test{
 	    logger.info("LL-TC-05: To verify that the count of courses is visible for each language in the list");
 
 	    // Creating a test entry in the Extent Report
-	    ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-05: To verify that the count of courses is visible for each language in the list");
+	    ExtentTest test = extent.createTest("LL-TC-05: To verify that the count of courses is visible for each language in the list");
 		
 		try {
 			logger.info("\tLL-TC-05: Started");
@@ -211,7 +217,7 @@ public class TCLanguageSection extends Base_Test{
 			Assert.assertTrue(rp.isCountDisplayed("language"));
 			
 			// Capture screenshot on success
-//	        screenshotPath = su.takeScreenshot("LL_TC05_pass");
+	        screenshotPath = su.takeScreenshot("LL_TC05_pass");
 
 	        // Logging and reporting each language and its course count
 	        Reporter.log("Available languages and count of courses:");
@@ -230,19 +236,19 @@ public class TCLanguageSection extends Base_Test{
 		} catch (AssertionError ae) {
 			// Log assertion failure and capture screenshot
 	        logger.error("\tLL-TC-05: Assertion failed - " + ae.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC05_fail");
-//	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC05_fail");
+	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		} catch (Exception e) {
 			// Log unexpected exception and capture screenshot
 	        logger.error("\tLL-TC-05: Exception occurred - " + e.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC05_fail");
-//	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC05_fail");
+	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		} finally {
 
 			// Attach screenshot to the report
-//			test.addScreenCaptureFromPath(screenshotPath);
+			test.addScreenCaptureFromPath(screenshotPath);
 
 		}
 	}
@@ -258,7 +264,7 @@ public class TCLanguageSection extends Base_Test{
 	    logger.info("LL-TC-08: To verify that the count of languages is same as the total languages displayed");
 
 	    // Creating a test entry in the Extent Report
-	    ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-08: To verify that the count of languages is same as the total languages displayed");
+	    ExtentTest test = extent.createTest("LL-TC-08: To verify that the count of languages is same as the total languages displayed");
 	    
 	    try {
 	    	logger.info("\tLL-TC-08: Started");
@@ -284,18 +290,18 @@ public class TCLanguageSection extends Base_Test{
 	    } catch (AssertionError ae) {
 	    	// Log assertion failure and capture screenshot
 	        logger.error("\tLL-TC-08: Assertion failed - " + ae.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC08_fail");
-//	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC08_fail");
+	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 	    } catch (Exception e) {
 	    	// Log unexpected exception and capture screenshot
 	        logger.error("\tLL-TC-08: Exception occurred - " + e.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC08_fail");
-//	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC08_fail");
+	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 	    }finally {
 	    	//Attach screenshot to the report
-//	    	test.addScreenCaptureFromPath(screenshotPath);
+	    	test.addScreenCaptureFromPath(screenshotPath);
 
 		}
 	}
@@ -310,7 +316,7 @@ public class TCLanguageSection extends Base_Test{
 	    logger.info("LL-TC-10: To verify that English language checkbox is checked after applying the filter");
 
 	    // Creating a test entry in the Extent Report
-	    ExtentTest test = ExtentReportManager.extent.createTest("LL-TC-10: To verify that English language checkbox is checked after applying the filter");
+	    ExtentTest test = extent.createTest("LL-TC-10: To verify that English language checkbox is checked after applying the filter");
 
 		try {
 			logger.info("\tLL-TC-10: Started");
@@ -325,28 +331,28 @@ public class TCLanguageSection extends Base_Test{
 			
 
 			// Capture screenshot on success
-//	        screenshotPath = su.takeScreenshot("LL_TC10_pass");
+	        screenshotPath = su.takeScreenshot("LL_TC10_pass");
 	        test.log(Status.PASS, "Successfully Passed");
 	        logger.info("\tLL-TC-10: Successfully Passed");
 			
 		} catch (AssertionError ae) {
 			// Log assertion failure and capture screenshot
 	        logger.error("\tLL-TC-10: Assertion failed - " + ae.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC10_fail");
-//	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC10_fail");
+	        test.fail("Assertion Failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 			 
 		} catch (Exception e) {
 
 			// Log unexpected exception and capture screenshot
 	        logger.error("\tLL-TC-10: Exception occurred - " + e.getMessage());
-//	        screenshotPath = su.takeScreenshot("LL_TC10_fail");
-//	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+	        screenshotPath = su.takeScreenshot("LL_TC10_fail");
+	        test.fail("Exception Occurred", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		} finally {
 			
 			//Attach screenshot to the report
-//			test.addScreenCaptureFromPath(screenshotPath);
+			test.addScreenCaptureFromPath(screenshotPath);
 		}
 	}
 

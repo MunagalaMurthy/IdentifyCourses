@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-	<listeners>
-	  <listener class-name="com.cognizant.utilities.ExtentReportManager" />
-	</listeners>
+<suite name="Suite" parallel="tests">
   <test thread-count="4" name="Test1">
   <parameter name="browser" value="Chrome"/>
     <classes>
@@ -17,10 +14,9 @@
   <parameter name="browser" value="Edge"/>
     <classes>
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
-      <!--<class name="com.cognizant.TS02LanguageLearningOverview.TCLevelSection"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TCLevelSection"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
-      <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>-->
-      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
