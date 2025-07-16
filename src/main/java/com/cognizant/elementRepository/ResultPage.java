@@ -81,6 +81,7 @@ public class ResultPage extends Base_Page{
 	//Locator for Clear All
 	@FindBy(xpath="//span[normalize-space()='Clear all']")
 	private WebElement clearAllFiltersButton;
+	
 
 	/*
 	//Locator to find the clear all filters button

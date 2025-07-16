@@ -10,9 +10,10 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.cognizant.base.Base_Test;
+import com.cognizant.elementRepository.ResultPage;
 
 public class TCLevelSection extends Base_Test {
-
+	ResultPage rp;
 	@Test(groups="sanity")
 	public void tc01ToVerifyFilterSectionAccessible() throws IOException {
 		logger.info("LL-TC-01: To verify that \"Filter by\" section is  accessible");
@@ -27,9 +28,9 @@ public class TCLevelSection extends Base_Test {
 			//clicking outside the text box at a random point to check if text still stays in search box
 			logger.info("\tLL-TC-01: Checking if input stays in Search Box");
 			hp.clickSearchButton();
-			
+			rp= new ResultPage(driver);
 			Assert.assertTrue(rp.isFilterSectionAccessible());
-			
+
 			screenshotPath = su.takeScreenshot("LL_TC01_pass");
 			test.log(Status.PASS,"Successfully Passed");
 			logger.info("\tLL-TC-01: Successfully Passed");
@@ -44,9 +45,9 @@ public class TCLevelSection extends Base_Test {
 		finally {
 			test.addScreenCaptureFromPath(screenshotPath);
 		}
-		
+
 	}
-	
+
 	@Test(groups="sanity")
 	public void tc06ToVerifyLevelSectionAccessible() throws IOException {
 		logger.info("LL-TC-06: To verify that course level section is accessible");
@@ -70,7 +71,7 @@ public class TCLevelSection extends Base_Test {
 		finally {
 			test.addScreenCaptureFromPath(screenshotPath);
 		}
-		
+
 	}
 	@Test(groups="sanity")
 	public void tc08ToVerifyCountOfLevels() throws IOException {
@@ -95,7 +96,7 @@ public class TCLevelSection extends Base_Test {
 		finally {
 			test.addScreenCaptureFromPath(screenshotPath);
 		}
-		
+
 	}
 	@Test(groups="sanity")
 	public void tc07ToVerifyCountOfCoursesVisibleForEachLevels() throws IOException {
@@ -153,7 +154,7 @@ public class TCLevelSection extends Base_Test {
 			test.addScreenCaptureFromPath(screenshotPath);
 		}
 	}
-	
+
 	@Test(groups="smoke")
 	public void tc09ToVerifyBeginnerOptionIsAvailable() throws IOException {
 		logger.info("LL-TC-09: To verify that \"Beginner\" option is available in levels section");
