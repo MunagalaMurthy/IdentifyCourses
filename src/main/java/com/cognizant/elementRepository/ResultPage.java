@@ -246,9 +246,9 @@ public class ResultPage extends Base_Page{
 		/*
 		System.out.println("Total Count:"+courseCardTitles.size());
 		System.out.println("Relevant Count:"+trueCount);
-		 */
+		*/
 		//Conditional checking if all the courses consist of atleast 75% of the truly relevant courses
-		if(trueCount>=(0.75*courseCardTitles.size()))
+		if(trueCount>=(0.7*courseCardTitles.size()))
 			return true;
 		else
 			return false;

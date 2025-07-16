@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -36,17 +37,18 @@ public class Base_Test {
 	protected ScreenshotUtils su;
 	
 	@BeforeClass
-	public void setup() throws Exception {
+	@Parameters({"browser"})
+	public void setup(String browser) throws Exception {
 		//Loading the config.properties file into the project to use for inputs
 		logger = LogManager.getLogger(this.getClass());
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);
 		//Cross-Browser compatibility: checking for browser from the properties file
-		if(prop.getProperty("BROWSER").equalsIgnoreCase("Chrome")) {
+		if(browser.equalsIgnoreCase("Chrome")) {
 			driver = new ChromeDriver();
 		}
-		else if(prop.getProperty("BROWSER").equalsIgnoreCase("Edge")) {
+		else if(browser.equalsIgnoreCase("Edge")) {
 			driver = new EdgeDriver();
 		}
 		//Navigating to the required URL (from the properties file)
@@ -57,9 +59,9 @@ public class Base_Test {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir")+"/reports/extentReport.html");
-    // create ExtentReports and attach reporter(s)
-    extent = new ExtentReports();
-    extent.attachReporter(htmlReporter);
+	    // create ExtentReports and attach reporter(s)
+	    extent = new ExtentReports();
+	    extent.attachReporter(htmlReporter);
 		//Creating the required class objects to use in the test cases
 		hp = new HomePage(driver);
 		rp = new ResultPage(driver);
@@ -76,5 +78,4 @@ public class Base_Test {
             extent.flush(); // Flushes the report for the current <test> tag
         }
     }
-		
 }

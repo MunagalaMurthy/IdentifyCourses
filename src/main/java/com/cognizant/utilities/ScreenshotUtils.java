@@ -6,9 +6,10 @@ import java.util.Date;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.io.FileHandler;
 
-public class ScreenshotUtils {
+import com.cognizant.base.Base_Test;
+
+public class ScreenshotUtils{
 	// Assuming you have a WebDriver instance accessible
     // You might pass it as a parameter or get it from a common base class
     private static WebDriver driver; // Initialize this appropriately, e.g., in a BaseTest class
@@ -45,10 +46,9 @@ public class ScreenshotUtils {
     public String takeScreenshot(String tname) {
 		String timeStamp=new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-    	String targetFilepath=System.getProperty("user.dir")+"\\screenshots\\"+tname+"_"+timeStamp+".png";
+    	String targetFilepath=System.getProperty("user.dir")+"\\screenshots\\"+tname+"_"+ timeStamp + ".png";
     	File target = new File(targetFilepath);
 		src.renameTo(target);
 		return targetFilepath;
 	}
-	
 }
