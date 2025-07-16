@@ -237,3 +237,80 @@ Session ID: 329e77157cbc8dcc569511dfc2052196
 2025-07-16 10:14:21 INFO  TCLanguageSection:322 - 	LL-TC-10: Started
 2025-07-16 10:14:21 INFO  TCLanguageSection:323 - 	LL-TC-10: Applying English language filter
 2025-07-16 10:14:25 INFO  TCLanguageSection:336 - 	LL-TC-10: Successfully Passed
+2025-07-16 10:35:13 INFO  TCLanguageSection:23 - 	LL-TC-01: Entering Search Key into Search Box
+2025-07-16 10:35:13 INFO  TCLanguageSection:27 - 	LL-TC-01: Checking if input stays in Search Box
+2025-07-16 10:35:17 INFO  TCLanguageSection:30 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 10:35:17 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 10:35:17 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 10:35:20 INFO  TCLanguageSection:50 - 	LL-TC-02: Successfully Passed
+2025-07-16 10:35:20 INFO  TCLanguageSection:86 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 10:35:20 INFO  TCLanguageSection:95 - 	LL-TC-03: Started
+2025-07-16 10:35:20 INFO  TCLanguageSection:96 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 10:35:21 INFO  TCLanguageSection:107 - 	LL-TC-03: Successfully Passed
+2025-07-16 10:35:21 INFO  TCLanguageSection:143 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 10:35:21 INFO  TCLanguageSection:150 - 	LL-TC-04: Started
+2025-07-16 10:35:21 INFO  TCLanguageSection:151 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 10:35:31 ERROR TCLanguageSection:181 - 	LL-TC-04: Exception occurred - no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Show less Language options']"}
+  (Session info: MicrosoftEdge=138.0.3351.83)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [05ce60bbe5e64da0dcca7709a8e31a8c, findElement {using=xpath, value=//button[@aria-label='Show less Language options']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53383}, msedge: {msedgedriverVersion: 138.0.3351.83 (16e2a7bef320..., userDataDir: C:\Users\2406730\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53383/devtoo..., se:cdpVersion: 138.0.3351.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05ce60bbe5e64da0dcca7709a8e31a8c
+2025-07-16 10:35:32 INFO  TCLanguageSection:206 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 10:35:32 INFO  TCLanguageSection:212 - 	LL-TC-05: Started
+2025-07-16 10:35:32 INFO  TCLanguageSection:213 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 10:35:42 ERROR TCLanguageSection:244 - 	LL-TC-05: Exception occurred - no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Show less Language options']"}
+  (Session info: MicrosoftEdge=138.0.3351.83)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [05ce60bbe5e64da0dcca7709a8e31a8c, findElement {using=xpath, value=//button[@aria-label='Show less Language options']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53383}, msedge: {msedgedriverVersion: 138.0.3351.83 (16e2a7bef320..., userDataDir: C:\Users\2406730\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53383/devtoo..., se:cdpVersion: 138.0.3351.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05ce60bbe5e64da0dcca7709a8e31a8c
+2025-07-16 10:35:43 INFO  TCLanguageSection:264 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 10:35:43 INFO  TCLanguageSection:270 - 	LL-TC-08: Started
+2025-07-16 10:35:43 INFO  TCLanguageSection:271 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 10:35:53 ERROR TCLanguageSection:298 - 	LL-TC-08: Exception occurred - no such element: Unable to locate element: {"method":"xpath","selector":"//button[@aria-label='Show less Language options']"}
+  (Session info: MicrosoftEdge=138.0.3351.83)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.33.0', revision: '2c6aaad03a'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Command: [05ce60bbe5e64da0dcca7709a8e31a8c, findElement {using=xpath, value=//button[@aria-label='Show less Language options']}]
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 138.0.3351.83, fedcm:accounts: true, ms:edgeOptions: {debuggerAddress: localhost:53383}, msedge: {msedgedriverVersion: 138.0.3351.83 (16e2a7bef320..., userDataDir: C:\Users\2406730\AppData\Lo...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53383/devtoo..., se:cdpVersion: 138.0.3351.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 05ce60bbe5e64da0dcca7709a8e31a8c
+2025-07-16 10:35:53 INFO  TCLanguageSection:316 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 10:35:53 INFO  TCLanguageSection:322 - 	LL-TC-10: Started
+2025-07-16 10:35:53 INFO  TCLanguageSection:323 - 	LL-TC-10: Applying English language filter
+2025-07-16 10:35:55 INFO  TCLanguageSection:336 - 	LL-TC-10: Successfully Passed
+2025-07-16 11:08:44 INFO  TCLanguageSection:23 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 11:08:44 INFO  TCLanguageSection:27 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 11:08:48 INFO  TCLanguageSection:30 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 11:08:48 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 11:08:48 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 11:08:51 INFO  TCLanguageSection:50 - 	LL-TC-02: Successfully Passed
+2025-07-16 11:08:51 INFO  TCLanguageSection:86 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 11:08:51 INFO  TCLanguageSection:95 - 	LL-TC-03: Started
+2025-07-16 11:08:51 INFO  TCLanguageSection:96 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 11:08:51 INFO  TCLanguageSection:107 - 	LL-TC-03: Successfully Passed
+2025-07-16 11:08:51 INFO  TCLanguageSection:143 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 11:08:51 INFO  TCLanguageSection:150 - 	LL-TC-04: Started
+2025-07-16 11:08:51 INFO  TCLanguageSection:151 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 11:08:53 INFO  TCLanguageSection:158 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 11:08:53 INFO  TCLanguageSection:206 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 11:08:53 INFO  TCLanguageSection:212 - 	LL-TC-05: Started
+2025-07-16 11:08:53 INFO  TCLanguageSection:213 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 11:08:57 INFO  TCLanguageSection:233 - 	LL-TC-05: Successfully Passed
+2025-07-16 11:08:57 INFO  TCLanguageSection:264 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 11:08:57 INFO  TCLanguageSection:270 - 	LL-TC-08: Started
+2025-07-16 11:08:57 INFO  TCLanguageSection:271 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 11:08:57 INFO  TCLanguageSection:284 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 11:08:57 INFO  TCLanguageSection:285 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 11:08:57 INFO  TCLanguageSection:316 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 11:08:57 INFO  TCLanguageSection:322 - 	LL-TC-10: Started
+2025-07-16 11:08:57 INFO  TCLanguageSection:323 - 	LL-TC-10: Applying English language filter
+2025-07-16 11:08:59 INFO  TCLanguageSection:336 - 	LL-TC-10: Successfully Passed

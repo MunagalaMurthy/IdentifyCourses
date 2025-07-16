@@ -88,29 +88,31 @@ public class ResultPage extends Base_Page{
 	private WebElement clearAllFiltersButton; 
 	 */
 
-	boolean isshowmorevisible = false;
+	
 	MiscUtils mu = new MiscUtils();
-
+	
+	boolean isShowMoreVisible = true;
+	
 	public ResultPage(WebDriver driver) {
 		super(driver);
 	}
   
   public String ShowMoreText() throws InterruptedException {
-		if(isshowmorevisible==false) {
+		if(isShowMoreVisible==false) {
 			mu.ClickOnElement(showLessLink);
-			isshowmorevisible = true;
+			isShowMoreVisible = true;
 		}
 		return showMoreLink.getText();
 	}
   
   public void clickShowMoreLink() {
-		System.out.println("bool status" + isshowmorevisible);
-		if (isshowmorevisible) {
+		
+		if (isShowMoreVisible) {
 			mu.ClickOnElement(showMoreLink);
-			isshowmorevisible = false;
+			isShowMoreVisible = false;
 		} else {
 			mu.ClickOnElement(showLessLink);
-			isshowmorevisible = true;
+			isShowMoreVisible = true;
 			clickShowMoreLink();
 		}
 
