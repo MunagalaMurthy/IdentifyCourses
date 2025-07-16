@@ -75,8 +75,10 @@ public class ForEnterprisePage extends Base_Page{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", forEnterpriseElem);
 		forEnterpriseElem.click();
+		firstNameElem.clear();
 		action.mouseHoverToElement(firstNameElem);
 		mu.sendValues(firstNameElem, firstName);
+		lastNameElem.clear();
 		mu.sendValues(lastNameElem, lastName);
 		emailElem.clear();
 		mu.sendValues(emailElem, email);
@@ -105,6 +107,7 @@ public class ForEnterprisePage extends Base_Page{
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		try {
+			companyElem.clear();
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
@@ -158,6 +161,7 @@ public class ForEnterprisePage extends Base_Page{
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		try {
+			companyElem.clear();
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
@@ -363,7 +367,7 @@ public class ForEnterprisePage extends Base_Page{
 		wait.until(ExpectedConditions.titleContains("Thank"));
 		return driver.getTitle();
 	}
-	
+
 	public String fillFormForCollege(String firstName,
 			String lastName,
 			String email,
@@ -378,6 +382,7 @@ public class ForEnterprisePage extends Base_Page{
 			String state) {
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		try {
+			companyElem.clear();
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
@@ -432,6 +437,7 @@ public class ForEnterprisePage extends Base_Page{
 		mandatoryInfo(firstName, lastName, email, phoneNumber, orgType);
 		mu.sendValues(titleElem, jobTitle);
 		try {
+			companyElem.clear();
 			mu.sendValues(companyElem, company);
 			SelectUtils.selectFromVisibleText(companySizeElem, companySize);
 		}catch(Exception e) {
