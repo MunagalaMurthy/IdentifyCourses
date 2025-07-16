@@ -1,533 +1,869 @@
 
+
 <!DOCTYPE html>
 <html>
-
-
 <head>
-	<meta charset='utf-8' /> 
-	<meta name='description' content='' />
-	<meta name='robots' content='noodp, noydir' />
-	<meta name='viewport' content='width=device-width, initial-scale=1' />
-	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
-	
-	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
-	
-	<title>ExtentReports</title>
-
-	<style type='text/css'>
-	</style>
-</head>
-
-	<body class='extent standard default hide-overflow '>
-		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
-			<span><i class='material-icons'>desktop_windows</i></span>
-		</div>
-
-<nav>
-	<div class="nav-wrapper">
-		<a href="#!" class="brand-logo blue darken-3">Extent</a>
-
-		<!-- slideout menu -->
-		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
-			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
-						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
-		</ul>
-
-		<!-- report name -->
-		<span class='report-name'>ExtentReports</span>
-		
-		<!-- report headline -->
-		<span class='report-headline'></span>
-
-		<!-- nav-right -->
-		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
-			<li>
-                <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 16, 2025 11:16:10 AM</span>
-				</a>
-			</li>
-			<li>
-                <a href='#!'>
-                    <span class='label blue darken-3'>3.1.5</span>
-				</a>
-			</li>
-		</ul>
-	</div>
-</nav>
-
-		<!-- container -->
-		<div class='container'>
-
-<div id='test-view' class='view'>
-				
-	<section id='controls'>
-		<div class='controls grey lighten-4'>
-			<!-- test toggle -->
-			<div class='chip transparent'>
-				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
-					<i class='material-icons'>warning</i> Status
-				</a>
-				<ul id='tests-toggle' class='dropdown-content'>
-										<li class='divider'></li>
-					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
-				</ul>
-			</div>
-			<!-- test toggle -->
-
-			<!-- category toggle -->
-			<!-- category toggle -->
-
-			<!-- clear filters -->
-			<div class='chip transparent hide'>
-				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
-					<i class='material-icons'>close</i> Clear
-				</a>
-			</div>
-			<!-- clear filters -->
-
-			<!-- enable dashboard -->
-			<div id='toggle-test-view-charts' class='chip transparent'>
-				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
-					<i class='material-icons'>track_changes</i> Dashboard
-				</a>
-			</div>
-			<!-- enable dashboard -->
-
-			<!-- search -->
-			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
-				<a href="#" class='search-div'>
-					<i class='material-icons'>search</i> Search
-				</a>
-
-				<div class='input-field left hide'>
-					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
-				</div>
-				
-			</div>
-			<!-- search -->
-		</div>
-	</section>
-
-
-<div id='test-view-charts' class='subview-full'>
-	<div id='charts-row' class='row nm-v nm-h'>
-		<div class='col s12 m6 l6 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Tests</div>
-				<div class='chart-box'>
-					<canvas id='parent-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>15</span> test(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
-				</div>
-			</div>
-		</div>
-		
-		
-	</div>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title></title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@ce8b10435bcbae260c334c0d0c6b61d2c19b6168/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
 </div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary"></span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Jul 16, 2025 03:22:32 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">TS-LL</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author=""
+          tag="TS-LL"
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-02: To verify that Language section is accessible</p>
+            <p class="text-sm">
+              <span>3:22:42 pm</span> / <span>00:00:01:504</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-02: To verify that Language section is accessible</h5>
+<span class='badge badge-success'>07.16.2025 3:22:42 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:44 pm</span>
+<span class='badge badge-default'>00:00:01:504</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">TS-LL</span></div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
 
-	<div class='subview-left left'>
-		
-		<div class='view-summary'>
-			<h5>Tests</h5>
-			<ul id='test-collection' class='test-collection'>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-01: To Verify that college details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:16:19 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:16:19 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:16:19 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-01_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-01_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-01_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-02: To Verify the company details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:17:11 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:17:11 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:17:11 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-02_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-02_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-02_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-03: To Verify the government details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:17:55 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:17:55 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:17:55 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-03_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-03_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-03_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-04: To Verify the non-profit organization details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:18:40 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:18:40 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:18:40 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-04_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-04_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-04_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-05: To Verify that business details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:19:24 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:19:24 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:19:24 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-05_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-05_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-05_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-06: To Verify that business details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:20:06 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:20:06 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:20:06 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-06_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-06_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-06_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-07: To Verify that college details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:20:49 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:20:49 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:20:49 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-07_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-07_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-07_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-08: To Verify that college details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:21:34 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:21:34 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:21:34 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-08_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-08_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-08_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-09: To Verify that government details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:22:18 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:22:18 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:22:18 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-09_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-09_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-09_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-10: To Verify that government details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:23:00 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:23:00 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:23:00 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-10_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-10_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-10_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-11: To Verify the non-profit organization details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:23:43 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:23:43 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:23:43 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-11_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-11_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-11_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-12: To Verify the non-profit organization details is successfully submitted.</span>
-						<span class='test-time'>Jul 16, 2025 11:24:25 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:24:25 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:24:25 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-12_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-12_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-12_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-13: To Verify the company details is declined.</span>
-						<span class='test-time'>Jul 16, 2025 11:25:08 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:25:08 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:25:08 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-13_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-13_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-13_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-14: To Verify the non-profit organization details is declined.</span>
-						<span class='test-time'>Jul 16, 2025 11:25:24 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:25:24 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:25:24 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-14_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-14_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-14_.png'></li>
-							</ul>
-					</div>
-				</li>
-				
-				
-				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
-					<div class='test-heading'>
-						<span class='test-name'>EF-TC-15: To Verify that non-profit organization details is declined.</span>
-						<span class='test-time'>Jul 16, 2025 11:25:39 AM</span>
-						<span class='test-status right pass'>pass</span>
-					</div>
-					<div class='test-content hide'>
-<div class='test-time-info'>
-	<span class='label start-time'>Jul 16, 2025 11:25:39 AM</span>
-	<span class='label end-time'>Jul 16, 2025 11:25:39 AM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+0ms</span>
-</div>
-							<ul class='screenshots'>
-								<li><img data-featherlight='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-15_.png' width='10%' src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-15_.png' data-src='C:\Users\2406730\OneDrive - Cognizant\Hackathon Project\IdentifyCourses\screenshots\EF-TC-15_.png'></li>
-							</ul>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<!-- subview left -->
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\Test LanguageLevels_20250716032242.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\Test LanguageLevels_20250716032242.png">
+  
+    
 
-	<div class='subview-right left'>
-		<div class='view-summary'>
-			<h5 class='test-name'></h5>
-
-			<div id='step-filters' class="right">
-				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
-				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
-				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
-				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
-				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
-				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
-				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
-				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
-			</div>
-		</div>
-	</div>
-	<!-- subview right -->
-
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:42 pm</td>
+        <td>
+          Checking if Language section is accessible
+        </td>
+      </tr>
+  </tbody>
+</table>
 </div>
-<!-- test view -->
-<!-- category view -->
-<!-- exception view -->
-<div id='dashboard-view' class='view hide'>
-	<div class='card-panel transparent np-v'>
-		<h5>Dashboard</h5>
-
-		<div class='row'>
-			<div class='col s2'>
-				<div class='card-panel r'>
-					Tests
-					<div class='panel-lead'>15</div>
-				</div>
-			</div>
-			<div class='col s2'>
-				<div class='card-panel r'>
-					Steps
-					<div class='panel-lead'>0</div>
-				</div>
-			</div>
-			<div class='col s2'>
-				<div class='card-panel r'>
-					Start
-					<div class='panel-lead'>Jul 16, 2025 11:16:10 AM</div>
-				</div>
-			</div>
-			<div class='col s2'>
-				<div class='card-panel r'>
-			 		End
-			 		<div class='panel-lead'>Jul 16, 2025 11:26:30 AM</div>
-				</div>
-			</div>
-			<div class='col s2'>
-				<div class='card-panel r'>
-					Time Taken
-					<div class='panel-lead'>0h 10m 19s+560ms</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-03: To verify that 'Show More' link is visible in the Language section</p>
+            <p class="text-sm">
+              <span>3:22:44 pm</span> / <span>00:00:00:232</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-03: To verify that 'Show More' link is visible in the Language section</h5>
+<span class='badge badge-success'>07.16.2025 3:22:44 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:44 pm</span>
+<span class='badge badge-default'>00:00:00:232</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
 </div>
-<!-- dashboard view -->
-<!-- testrunner-logs view -->
-		</div>
-		<!-- container -->
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
 
-		<script>
-			var statusGroup = {
-				passParent: 15,
-				failParent: 0,
-				fatalParent: 0,
-				errorParent: 0,
-				warningParent: 0,
-				skipParent: 0,
-				exceptionsParent: 0,
-				
-				passChild: 0,
-				failChild: 0,
-				fatalChild: 0,
-				errorChild: 0,
-				warningChild: 0,
-				skipChild: 0,
-				infoChild: 0,
-				exceptionsChild: 0,
-				
-				passGrandChild: 0,
-				failGrandChild: 0,
-				fatalGrandChild: 0,
-				errorGrandChild: 0,
-				warningGrandChild: 0,
-				skipGrandChild: 0,
-				infoGrandChild: 0,
-				exceptionsGrandChild: 0,
-			};
-		</script>
-		
-			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
-		
-		
- 		<script type='text/javascript'>
- 		</script>
-	</body>
-	
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC03_pass_20250716032244.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC03_pass_20250716032244.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:44 pm</td>
+        <td>
+          Checking if 'Show More' link is accessible
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:44 pm</td>
+        <td>
+          Successfully Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-04: To verify that 'English' option is available in the language list</p>
+            <p class="text-sm">
+              <span>3:22:44 pm</span> / <span>00:00:00:716</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-04: To verify that 'English' option is available in the language list</h5>
+<span class='badge badge-success'>07.16.2025 3:22:44 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:45 pm</span>
+<span class='badge badge-default'>00:00:00:716</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC04_pass_20250716032245.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC04_pass_20250716032245.png">
+  
+    
+
+    </div></div>
+    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC04_pass_20250716032245.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC04_pass_20250716032245.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:44 pm</td>
+        <td>
+          Fetching list of available languages
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:45 pm</td>
+        <td>
+          'English' option is available
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-05: To verify that the count of courses is visible for each language in the list</p>
+            <p class="text-sm">
+              <span>3:22:45 pm</span> / <span>00:00:01:063</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-05: To verify that the count of courses is visible for each language in the list</h5>
+<span class='badge badge-success'>07.16.2025 3:22:45 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:46 pm</span>
+<span class='badge badge-default'>00:00:01:063</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC05_pass_20250716032245.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC05_pass_20250716032245.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:45 pm</td>
+        <td>
+          Checking if course count is displayed for each language
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          English(6,278)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Spanish(2,969)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Arabic(2,478)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          French(2,460)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Portuguese (Brazil)(2,429)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Japanese(2,329)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Chinese (China)(2,323)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          German(2,320)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Indonesian(2,295)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Korean(2,236)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Russian(2,231)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Hindi(2,204)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Turkish(2,164)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Ukrainian(2,162)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Italian(2,151)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Thai(2,137)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Polish(2,130)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Dutch(2,127)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Greek(2,125)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Swedish(2,124)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Kazakh(1,971)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Hungarian(1,349)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Uzbek(510)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Vietnamese(479)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Azerbaijani(458)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Pushto(252)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Chinese (Traditional)(41)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Hebrew(4)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Catalan(1)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Croatian(1)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Portuguese(1)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Portuguese (Portugal)(1)
+
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Successfully Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-08: To verify that the count of languages is same as the total languages displayed</p>
+            <p class="text-sm">
+              <span>3:22:46 pm</span> / <span>00:00:00:173</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-08: To verify that the count of languages is same as the total languages displayed</h5>
+<span class='badge badge-success'>07.16.2025 3:22:46 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:46 pm</span>
+<span class='badge badge-default'>00:00:00:173</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC05_pass_20250716032245.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC05_pass_20250716032245.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Fetching 'Show More' text to calculate expected language count
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">LL-TC-10: To verify that English language checkbox is checked after applying the filter</p>
+            <p class="text-sm">
+              <span>3:22:46 pm</span> / <span>00:00:01:128</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">LL-TC-10: To verify that English language checkbox is checked after applying the filter</h5>
+<span class='badge badge-success'>07.16.2025 3:22:46 pm</span>
+<span class='badge badge-danger'>07.16.2025 3:22:47 pm</span>
+<span class='badge badge-default'>00:00:01:128</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span title='Skip to the next failed step' class='badge badge-danger pointer float-right ne ml-1'><i class="fa fa-fast-forward"></i></span>
+<span title='Collapse all nodes' class='badge badge-default pointer float-right ct ml-1'><i class="fa fa-compress"></i></span>
+<span title='Expand all nodes' class='badge badge-default pointer float-right et'><i class="fa fa-expand"></i></span>
+</div>
+</div>
+</div>    <div class="row mb-3"><div class="col-md-3">
+    
+
+<img data-featherlight='C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC10_pass_20250716032247.png' src="C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses\screenshots\LL_TC10_pass_20250716032247.png">
+  
+    
+
+    </div></div>
+<div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>3:22:46 pm</td>
+        <td>
+          Applying English language filter
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>3:22:47 pm</td>
+        <td>
+          Successfully Passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">TS-LL</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>TS-LL</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>15:22:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>LL-TC-02: To verify that Language section is accessible</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Jul 16, 2025 03:22:32 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Jul 16, 2025 03:22:51 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>6</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>6</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='9%'><b>4</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>38</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"LL-TC-02: To verify that Language section is accessible":1.504,"LL-TC-03: To verify that 'Show More' link is visible in the Language section":0.232,"LL-TC-04: To verify that 'English' option is available in the language list":0.716,"LL-TC-05: To verify that the count of courses is visible for each language in the list":1.063,"LL-TC-08: To verify that the count of languages is same as the total languages displayed":0.173,"LL-TC-10: To verify that English language checkbox is checked after applying the filter":1.128
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>TS-LL</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 6,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 4,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 38
+};
+</script>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c05cd28cde1617b9d0c05a831daff6cb97fd9fd5/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
 </html>

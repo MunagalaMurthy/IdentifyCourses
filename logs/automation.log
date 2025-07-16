@@ -475,3 +475,322 @@ Session ID: 05ce60bbe5e64da0dcca7709a8e31a8c
 2025-07-16 11:25:39 INFO  TSForEnterpriseForm:311 - EF-TC-15: Started
 2025-07-16 11:25:39 INFO  TSForEnterpriseForm:312 - EF-TC-15: To Verify that non-profit organization details is declined.
 2025-07-16 11:26:19 INFO  TSForEnterpriseForm:318 - EF-TC-15: Successfully Passed
+2025-07-16 13:18:31 INFO  TCLanguageSection:23 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 13:18:31 INFO  TCLanguageSection:27 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 13:18:33 INFO  TCLanguageSection:30 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 13:18:33 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 13:18:33 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 13:18:35 INFO  TCLanguageSection:50 - 	LL-TC-02: Successfully Passed
+2025-07-16 13:18:35 INFO  TCLanguageSection:86 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 13:18:35 INFO  TCLanguageSection:95 - 	LL-TC-03: Started
+2025-07-16 13:18:35 INFO  TCLanguageSection:96 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 13:18:35 INFO  TCLanguageSection:107 - 	LL-TC-03: Successfully Passed
+2025-07-16 13:18:35 INFO  TCLanguageSection:143 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 13:18:35 INFO  TCLanguageSection:150 - 	LL-TC-04: Started
+2025-07-16 13:18:35 INFO  TCLanguageSection:151 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 13:18:36 INFO  TCLanguageSection:158 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 13:18:36 INFO  TCLanguageSection:206 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 13:18:36 INFO  TCLanguageSection:212 - 	LL-TC-05: Started
+2025-07-16 13:18:36 INFO  TCLanguageSection:213 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 13:18:37 INFO  TCLanguageSection:233 - 	LL-TC-05: Successfully Passed
+2025-07-16 13:18:37 INFO  TCLanguageSection:264 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 13:18:37 INFO  TCLanguageSection:270 - 	LL-TC-08: Started
+2025-07-16 13:18:37 INFO  TCLanguageSection:271 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 13:18:37 INFO  TCLanguageSection:284 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 13:18:37 INFO  TCLanguageSection:285 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 13:18:37 INFO  TCLanguageSection:316 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 13:18:37 INFO  TCLanguageSection:322 - 	LL-TC-10: Started
+2025-07-16 13:18:37 INFO  TCLanguageSection:323 - 	LL-TC-10: Applying English language filter
+2025-07-16 13:18:38 INFO  TCLanguageSection:336 - 	LL-TC-10: Successfully Passed
+2025-07-16 14:34:36 INFO  TCLanguageSection:22 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 14:34:36 INFO  TCLanguageSection:26 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 14:34:49 INFO  TCLanguageSection:29 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 14:34:49 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 14:34:49 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 14:34:49 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 14:34:51 INFO  TCLanguageSection:87 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 14:34:51 INFO  TCLanguageSection:96 - 	LL-TC-03: Started
+2025-07-16 14:34:51 INFO  TCLanguageSection:97 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 14:34:51 INFO  TCLanguageSection:108 - 	LL-TC-03: Successfully Passed
+2025-07-16 14:34:51 INFO  TCLanguageSection:144 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 14:34:51 INFO  TCLanguageSection:151 - 	LL-TC-04: Started
+2025-07-16 14:34:51 INFO  TCLanguageSection:152 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 14:34:51 INFO  TCLanguageSection:159 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 14:34:51 INFO  TCLanguageSection:207 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 14:34:51 INFO  TCLanguageSection:213 - 	LL-TC-05: Started
+2025-07-16 14:34:51 INFO  TCLanguageSection:214 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 14:34:52 INFO  TCLanguageSection:234 - 	LL-TC-05: Successfully Passed
+2025-07-16 14:34:52 INFO  TCLanguageSection:265 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 14:34:52 INFO  TCLanguageSection:271 - 	LL-TC-08: Started
+2025-07-16 14:34:52 INFO  TCLanguageSection:272 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 14:34:53 INFO  TCLanguageSection:285 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 14:34:53 INFO  TCLanguageSection:286 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 14:34:53 INFO  TCLanguageSection:317 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 14:34:53 INFO  TCLanguageSection:323 - 	LL-TC-10: Started
+2025-07-16 14:34:53 INFO  TCLanguageSection:324 - 	LL-TC-10: Applying English language filter
+2025-07-16 14:34:54 INFO  TCLanguageSection:337 - 	LL-TC-10: Successfully Passed
+2025-07-16 15:19:40 INFO  TCLanguageSection:22 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 15:19:40 INFO  TCLanguageSection:26 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 15:19:50 INFO  TCLanguageSection:29 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 15:19:50 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 15:19:50 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 15:19:50 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 15:19:50 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 15:19:50 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 15:19:50 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 15:19:52 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 15:19:52 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 15:19:52 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 15:19:52 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 15:19:52 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 15:19:52 INFO  TCLanguageSection:203 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 15:19:52 INFO  TCLanguageSection:209 - 	LL-TC-05: Started
+2025-07-16 15:19:52 INFO  TCLanguageSection:210 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 15:19:54 INFO  TCLanguageSection:230 - 	LL-TC-05: Successfully Passed
+2025-07-16 15:19:54 INFO  TCLanguageSection:261 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 15:19:54 INFO  TCLanguageSection:267 - 	LL-TC-08: Started
+2025-07-16 15:19:54 INFO  TCLanguageSection:268 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 15:19:54 INFO  TCLanguageSection:281 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 15:19:54 INFO  TCLanguageSection:282 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 15:19:54 INFO  TCLanguageSection:313 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 15:19:54 INFO  TCLanguageSection:319 - 	LL-TC-10: Started
+2025-07-16 15:19:54 INFO  TCLanguageSection:320 - 	LL-TC-10: Applying English language filter
+2025-07-16 15:19:55 INFO  TCLanguageSection:333 - 	LL-TC-10: Successfully Passed
+2025-07-16 15:22:32 INFO  TCLanguageSection:22 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 15:22:32 INFO  TCLanguageSection:26 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 15:22:42 INFO  TCLanguageSection:29 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 15:22:42 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 15:22:42 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 15:22:42 INFO  TCLanguageSection:47 - 	LL-TC-02: Successfully Passed
+2025-07-16 15:22:44 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 15:22:44 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 15:22:44 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 15:22:44 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 15:22:44 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 15:22:44 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 15:22:44 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 15:22:45 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 15:22:45 INFO  TCLanguageSection:203 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 15:22:45 INFO  TCLanguageSection:209 - 	LL-TC-05: Started
+2025-07-16 15:22:45 INFO  TCLanguageSection:210 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 15:22:46 INFO  TCLanguageSection:230 - 	LL-TC-05: Successfully Passed
+2025-07-16 15:22:46 INFO  TCLanguageSection:261 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 15:22:46 INFO  TCLanguageSection:267 - 	LL-TC-08: Started
+2025-07-16 15:22:46 INFO  TCLanguageSection:268 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 15:22:46 INFO  TCLanguageSection:281 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 15:22:46 INFO  TCLanguageSection:282 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 15:22:46 INFO  TCLanguageSection:313 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 15:22:46 INFO  TCLanguageSection:319 - 	LL-TC-10: Started
+2025-07-16 15:22:46 INFO  TCLanguageSection:320 - 	LL-TC-10: Applying English language filter
+2025-07-16 15:22:47 INFO  TCLanguageSection:333 - 	LL-TC-10: Successfully Passed
+2025-07-16 15:42:33 INFO  TCLanguageSection:22 - 	LL-TC-02: Entering Search Key into Search Box
+2025-07-16 15:42:33 INFO  TCLanguageSection:26 - 	LL-TC-02: Checking if input stays in Search Box
+2025-07-16 15:42:44 INFO  TCLanguageSection:29 - LL-TC-02: To verify that Language section is accessible
+2025-07-16 15:42:44 INFO  TCLanguageSection:38 - 	LL-TC-02: Started
+2025-07-16 15:42:44 INFO  TCLanguageSection:39 - 	LL-TC-02: Checking if Language section is visible in Filter By section or not
+2025-07-16 15:42:44 INFO  TCLanguageSection:46 - 	LL-TC-02: Successfully Passed
+2025-07-16 15:42:45 INFO  TCLanguageSection:83 - LL-TC-03: To verify that 'Show More' link is visible in the Language section
+2025-07-16 15:42:45 INFO  TCLanguageSection:92 - 	LL-TC-03: Started
+2025-07-16 15:42:45 INFO  TCLanguageSection:93 - 	LL-TC-03: Checking if 'Show More' link is accessible
+2025-07-16 15:42:45 INFO  TCLanguageSection:104 - 	LL-TC-03: Successfully Passed
+2025-07-16 15:42:45 INFO  TCLanguageSection:140 - LL-TC-04: To verify that 'English' option is available in the language list
+2025-07-16 15:42:45 INFO  TCLanguageSection:147 - 	LL-TC-04: Started
+2025-07-16 15:42:45 INFO  TCLanguageSection:148 - 	LL-TC-04: Fetching list of available languages
+2025-07-16 15:42:46 INFO  TCLanguageSection:155 - 	LL-TC-04: 'English' option found in the list
+2025-07-16 15:42:46 INFO  TCLanguageSection:200 - LL-TC-05: To verify that the count of courses is visible for each language in the list
+2025-07-16 15:42:46 INFO  TCLanguageSection:206 - 	LL-TC-05: Started
+2025-07-16 15:42:46 INFO  TCLanguageSection:207 - 	LL-TC-05: Checking if course count is displayed for each language
+2025-07-16 15:42:47 INFO  TCLanguageSection:227 - 	LL-TC-05: Successfully Passed
+2025-07-16 15:42:47 INFO  TCLanguageSection:258 - LL-TC-08: To verify that the count of languages is same as the total languages displayed
+2025-07-16 15:42:47 INFO  TCLanguageSection:264 - 	LL-TC-08: Started
+2025-07-16 15:42:47 INFO  TCLanguageSection:265 - 	LL-TC-08: Fetching 'Show More' text to calculate expected language count
+2025-07-16 15:42:47 INFO  TCLanguageSection:278 - 	LL-TC-08: Calculated expected language count: 32
+2025-07-16 15:42:47 INFO  TCLanguageSection:279 - 	LL-TC-08: Fetching actual language count from UI
+2025-07-16 15:42:47 INFO  TCLanguageSection:310 - LL-TC-10: To verify that English language checkbox is checked after applying the filter
+2025-07-16 15:42:47 INFO  TCLanguageSection:316 - 	LL-TC-10: Started
+2025-07-16 15:42:47 INFO  TCLanguageSection:317 - 	LL-TC-10: Applying English language filter
+2025-07-16 15:42:49 INFO  TCLanguageSection:330 - 	LL-TC-10: Successfully Passed
+2025-07-16 16:47:25 INFO  TSCourseSearch:27 - CS-TC-01: To Verify That Search Input Field Accepts Text
+2025-07-16 16:47:25 INFO  TSCourseSearch:33 - 	CS-TC-01: Started
+2025-07-16 16:47:25 INFO  TSCourseSearch:36 - 	CS-TC-01: Entering Search Key into Search Box
+2025-07-16 16:47:26 INFO  TSCourseSearch:43 - 	CS-TC-01: Checking if input stays in Search Box
+2025-07-16 16:47:26 INFO  TSCourseSearch:51 - 	CS-TC-01: Successfully Passed
+2025-07-16 16:47:26 INFO  TSCourseSearch:73 - CS-TC-02: To Verify That Search Button Click Triggers Search
+2025-07-16 16:47:26 INFO  TSCourseSearch:77 - 	CS-TC-02: Started
+2025-07-16 16:47:26 INFO  TSCourseSearch:79 - 	CS-TC-02: Triggering Search
+2025-07-16 16:47:37 INFO  TSCourseSearch:84 - 	CS-TC-02: Successfully Passed
+2025-07-16 16:47:38 INFO  TSCourseSearch:105 - CS-TC-03: To Verify That Search Results Are Displayed Correctly
+2025-07-16 16:47:38 INFO  TSCourseSearch:109 - 	CS-TC-03: Started
+2025-07-16 16:47:38 INFO  TSCourseSearch:111 - 	CS-TC-03: Checking the result page
+2025-07-16 16:47:39 INFO  TSCourseSearch:115 - 	CS-TC-03: Results Displayed
+2025-07-16 16:47:39 INFO  TSCourseSearch:117 - 	CS-TC-03: Checking Relevancy of Results
+2025-07-16 16:47:42 INFO  TSCourseSearch:121 - 	CS-TC-03: Successfully Passed
+2025-07-16 16:47:42 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for English
+2025-07-16 16:47:42 INFO  TSCourseSearch:158 - 	CS-TC-08: English filter selected: false
+2025-07-16 16:47:42 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 16:47:42 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for Beginner
+2025-07-16 16:47:42 INFO  TSCourseSearch:158 - 	CS-TC-08: Beginner filter selected: false
+2025-07-16 16:47:42 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 16:47:42 INFO  TSCourseSearch:187 - CS-TC-04: Test English Checkbox is Clickable
+2025-07-16 16:47:42 INFO  TSCourseSearch:191 - 	CS-TC-04: Started
+2025-07-16 16:47:42 INFO  TSCourseSearch:193 - 	CS-TC-04: Checking presence and state of checkbox
+2025-07-16 16:47:42 INFO  TSCourseSearch:198 - 	CS-TC-04: Successfully Passed
+2025-07-16 16:47:42 INFO  TSCourseSearch:201 - CS-TC-05: To Verify That English Filter Gets Applied
+2025-07-16 16:47:42 INFO  TSCourseSearch:203 - 	CS-TC-05: Started
+2025-07-16 16:47:42 INFO  TSCourseSearch:205 - 	CS-TC-05: Applying the English filter
+2025-07-16 16:47:43 INFO  TSCourseSearch:209 - 	CS-TC-05: English filter applied successfully
+2025-07-16 16:47:43 INFO  TSCourseSearch:212 - 	CS-TC-05: Loading filtered results
+2025-07-16 16:47:46 INFO  TSCourseSearch:216 - 	CS-TC-05: Checking status of filter after applying
+2025-07-16 16:47:46 INFO  TSCourseSearch:221 - 	CS-TC-05: Successfully Passed
+2025-07-16 16:47:46 INFO  TSCourseSearch:187 - CS-TC-06: Test Beginner Checkbox is Clickable
+2025-07-16 16:47:46 INFO  TSCourseSearch:191 - 	CS-TC-06: Started
+2025-07-16 16:47:46 INFO  TSCourseSearch:193 - 	CS-TC-06: Checking presence and state of checkbox
+2025-07-16 16:47:46 INFO  TSCourseSearch:198 - 	CS-TC-06: Successfully Passed
+2025-07-16 16:47:46 INFO  TSCourseSearch:201 - CS-TC-07: To Verify That Beginner Filter Gets Applied
+2025-07-16 16:47:46 INFO  TSCourseSearch:203 - 	CS-TC-07: Started
+2025-07-16 16:47:46 INFO  TSCourseSearch:205 - 	CS-TC-07: Applying the Beginner filter
+2025-07-16 16:47:47 INFO  TSCourseSearch:209 - 	CS-TC-07: Beginner filter applied successfully
+2025-07-16 16:47:47 INFO  TSCourseSearch:212 - 	CS-TC-07: Loading filtered results
+2025-07-16 16:47:48 INFO  TSCourseSearch:216 - 	CS-TC-07: Checking status of filter after applying
+2025-07-16 16:47:48 INFO  TSCourseSearch:221 - 	CS-TC-07: Successfully Passed
+2025-07-16 16:47:49 INFO  TSCourseSearch:245 - CS-TC-09: Verifying multiple filter application
+2025-07-16 16:47:51 INFO  TSCourseSearch:256 - 	CS-TC-09: Applied filters: [Language: English, Beginner]
+2025-07-16 16:47:51 INFO  TSCourseSearch:263 - 	CS-TC-09: Applying multiple filters verified successfully
+2025-07-16 16:47:51 INFO  TSCourseSearch:285 - CS-TC-10: Starting verification of required fields in course results
+2025-07-16 16:47:52 INFO  TSCourseSearch:386 - CS-TC-12: Starting test for 'Clear Filters' functionality
+2025-07-16 16:48:02 INFO  TSCourseSearch:393 - 	CS-TC-12: Filters after clearing: []
+2025-07-16 16:48:02 INFO  TSCourseSearch:399 - 	CS-TC-12: 'Clear Filters' functionality verified successfully
+2025-07-16 16:48:02 INFO  TSCourseSearch:421 - CS-TC-13: Starting test for empty search field behavior
+2025-07-16 16:48:22 INFO  TSCourseSearch:431 - 	CS-TC-13: Current URL after empty search: https://www.coursera.org/search?query=&
+2025-07-16 16:48:22 INFO  TSCourseSearch:437 - CS-TC-13: Empty search field handled correctly
+2025-07-16 16:48:22 INFO  TSCourseSearch:459 - CS-TC-14: Starting test for search box auto-suggestion
+2025-07-16 16:48:46 INFO  TSCourseSearch:471 - 	CS-TC-14: URL after selecting suggestion: https://www.coursera.org/search?query=web%20development
+2025-07-16 16:48:46 INFO  TSCourseSearch:477 - CS-TC-14: Auto-suggestion functionality verified successfully
+2025-07-16 16:54:41 INFO  TSCourseSearch:27 - CS-TC-01: To Verify That Search Input Field Accepts Text
+2025-07-16 16:54:41 INFO  TSCourseSearch:33 - 	CS-TC-01: Started
+2025-07-16 16:54:41 INFO  TSCourseSearch:36 - 	CS-TC-01: Entering Search Key into Search Box
+2025-07-16 16:54:41 INFO  TSCourseSearch:43 - 	CS-TC-01: Checking if input stays in Search Box
+2025-07-16 16:54:41 INFO  TSCourseSearch:51 - 	CS-TC-01: Successfully Passed
+2025-07-16 16:54:42 INFO  TSCourseSearch:73 - CS-TC-02: To Verify That Search Button Click Triggers Search
+2025-07-16 16:54:42 INFO  TSCourseSearch:77 - 	CS-TC-02: Started
+2025-07-16 16:54:42 INFO  TSCourseSearch:79 - 	CS-TC-02: Triggering Search
+2025-07-16 16:54:52 INFO  TSCourseSearch:84 - 	CS-TC-02: Successfully Passed
+2025-07-16 16:54:52 INFO  TSCourseSearch:105 - CS-TC-03: To Verify That Search Results Are Displayed Correctly
+2025-07-16 16:54:52 INFO  TSCourseSearch:109 - 	CS-TC-03: Started
+2025-07-16 16:54:52 INFO  TSCourseSearch:111 - 	CS-TC-03: Checking the result page
+2025-07-16 16:54:52 INFO  TSCourseSearch:115 - 	CS-TC-03: Results Displayed
+2025-07-16 16:54:52 INFO  TSCourseSearch:117 - 	CS-TC-03: Checking Relevancy of Results
+2025-07-16 16:54:55 INFO  TSCourseSearch:121 - 	CS-TC-03: Successfully Passed
+2025-07-16 16:54:55 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for English
+2025-07-16 16:54:55 INFO  TSCourseSearch:158 - 	CS-TC-08: English filter selected: false
+2025-07-16 16:54:55 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 16:54:55 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for Beginner
+2025-07-16 16:54:55 INFO  TSCourseSearch:158 - 	CS-TC-08: Beginner filter selected: false
+2025-07-16 16:54:55 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 16:54:56 INFO  TSCourseSearch:187 - CS-TC-04: Test English Checkbox is Clickable
+2025-07-16 16:54:56 INFO  TSCourseSearch:191 - 	CS-TC-04: Started
+2025-07-16 16:54:56 INFO  TSCourseSearch:193 - 	CS-TC-04: Checking presence and state of checkbox
+2025-07-16 16:54:56 INFO  TSCourseSearch:198 - 	CS-TC-04: Successfully Passed
+2025-07-16 16:54:56 INFO  TSCourseSearch:201 - CS-TC-05: To Verify That English Filter Gets Applied
+2025-07-16 16:54:56 INFO  TSCourseSearch:203 - 	CS-TC-05: Started
+2025-07-16 16:54:56 INFO  TSCourseSearch:205 - 	CS-TC-05: Applying the English filter
+2025-07-16 16:54:56 INFO  TSCourseSearch:209 - 	CS-TC-05: English filter applied successfully
+2025-07-16 16:54:56 INFO  TSCourseSearch:212 - 	CS-TC-05: Loading filtered results
+2025-07-16 16:54:57 INFO  TSCourseSearch:216 - 	CS-TC-05: Checking status of filter after applying
+2025-07-16 16:54:57 INFO  TSCourseSearch:221 - 	CS-TC-05: Successfully Passed
+2025-07-16 16:54:58 INFO  TSCourseSearch:187 - CS-TC-06: Test Beginner Checkbox is Clickable
+2025-07-16 16:54:58 INFO  TSCourseSearch:191 - 	CS-TC-06: Started
+2025-07-16 16:54:58 INFO  TSCourseSearch:193 - 	CS-TC-06: Checking presence and state of checkbox
+2025-07-16 16:54:58 INFO  TSCourseSearch:198 - 	CS-TC-06: Successfully Passed
+2025-07-16 16:54:58 INFO  TSCourseSearch:201 - CS-TC-07: To Verify That Beginner Filter Gets Applied
+2025-07-16 16:54:58 INFO  TSCourseSearch:203 - 	CS-TC-07: Started
+2025-07-16 16:54:58 INFO  TSCourseSearch:205 - 	CS-TC-07: Applying the Beginner filter
+2025-07-16 16:54:59 INFO  TSCourseSearch:209 - 	CS-TC-07: Beginner filter applied successfully
+2025-07-16 16:54:59 INFO  TSCourseSearch:212 - 	CS-TC-07: Loading filtered results
+2025-07-16 16:55:02 INFO  TSCourseSearch:216 - 	CS-TC-07: Checking status of filter after applying
+2025-07-16 16:55:02 INFO  TSCourseSearch:221 - 	CS-TC-07: Successfully Passed
+2025-07-16 16:55:02 INFO  TSCourseSearch:245 - CS-TC-09: Verifying multiple filter application
+2025-07-16 16:55:04 INFO  TSCourseSearch:256 - 	CS-TC-09: Applied filters: [Language: English, Beginner]
+2025-07-16 16:55:04 INFO  TSCourseSearch:263 - 	CS-TC-09: Applying multiple filters verified successfully
+2025-07-16 16:55:04 INFO  TSCourseSearch:285 - CS-TC-10: Starting verification of required fields in course results
+2025-07-16 16:55:04 INFO  TSCourseSearch:292 - 	CS-TC-10: Required fields present: true
+2025-07-16 16:55:04 INFO  TSCourseSearch:296 - 	CS-TC-10: Required fields verified successfully
+2025-07-16 16:55:04 INFO  TSCourseSearch:320 - Main Test Case: Extracting top 2 filtered course details
+2025-07-16 16:55:04 INFO  TSCourseSearch:326 - 	Main Test Case: Top 2 Courses Fetched are:
+2025-07-16 16:55:05 INFO  TSCourseSearch:329 - Main Test Case: Top course details printed successfully
+2025-07-16 16:55:05 INFO  TSCourseSearch:351 - CS-TC-11: Starting rating range validation
+2025-07-16 16:55:05 INFO  TSCourseSearch:357 - 	CS-TC-11: Retrieved ratings: [4.7, 4.5]
+2025-07-16 16:55:05 INFO  TSCourseSearch:365 - CS-TC-11: All ratings are within the valid range
+2025-07-16 16:55:05 INFO  TSCourseSearch:387 - CS-TC-12: Starting test for 'Clear Filters' functionality
+2025-07-16 16:55:16 INFO  TSCourseSearch:394 - 	CS-TC-12: Filters after clearing: []
+2025-07-16 16:55:16 INFO  TSCourseSearch:400 - 	CS-TC-12: 'Clear Filters' functionality verified successfully
+2025-07-16 16:55:16 INFO  TSCourseSearch:422 - CS-TC-13: Starting test for empty search field behavior
+2025-07-16 16:55:36 INFO  TSCourseSearch:432 - 	CS-TC-13: Current URL after empty search: https://www.coursera.org/search?query=&
+2025-07-16 16:55:36 INFO  TSCourseSearch:438 - CS-TC-13: Empty search field handled correctly
+2025-07-16 16:55:37 INFO  TSCourseSearch:460 - CS-TC-14: Starting test for search box auto-suggestion
+2025-07-16 16:55:59 INFO  TSCourseSearch:472 - 	CS-TC-14: URL after selecting suggestion: https://www.coursera.org/search?query=web%20development
+2025-07-16 16:55:59 INFO  TSCourseSearch:478 - CS-TC-14: Auto-suggestion functionality verified successfully
+2025-07-16 17:01:11 INFO  TSCourseSearch:27 - CS-TC-01: To Verify That Search Input Field Accepts Text
+2025-07-16 17:01:11 INFO  TSCourseSearch:33 - 	CS-TC-01: Started
+2025-07-16 17:01:11 INFO  TSCourseSearch:36 - 	CS-TC-01: Entering Search Key into Search Box
+2025-07-16 17:01:11 INFO  TSCourseSearch:43 - 	CS-TC-01: Checking if input stays in Search Box
+2025-07-16 17:01:12 INFO  TSCourseSearch:51 - 	CS-TC-01: Successfully Passed
+2025-07-16 17:01:12 INFO  TSCourseSearch:73 - CS-TC-02: To Verify That Search Button Click Triggers Search
+2025-07-16 17:01:12 INFO  TSCourseSearch:77 - 	CS-TC-02: Started
+2025-07-16 17:01:12 INFO  TSCourseSearch:79 - 	CS-TC-02: Triggering Search
+2025-07-16 17:01:24 INFO  TSCourseSearch:84 - 	CS-TC-02: Successfully Passed
+2025-07-16 17:01:24 INFO  TSCourseSearch:105 - CS-TC-03: To Verify That Search Results Are Displayed Correctly
+2025-07-16 17:01:24 INFO  TSCourseSearch:109 - 	CS-TC-03: Started
+2025-07-16 17:01:24 INFO  TSCourseSearch:111 - 	CS-TC-03: Checking the result page
+2025-07-16 17:01:26 INFO  TSCourseSearch:115 - 	CS-TC-03: Results Displayed
+2025-07-16 17:01:26 INFO  TSCourseSearch:117 - 	CS-TC-03: Checking Relevancy of Results
+2025-07-16 17:01:27 INFO  TSCourseSearch:121 - 	CS-TC-03: Successfully Passed
+2025-07-16 17:01:28 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for English
+2025-07-16 17:01:28 INFO  TSCourseSearch:158 - 	CS-TC-08: English filter selected: false
+2025-07-16 17:01:28 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 17:01:28 INFO  TSCourseSearch:149 - CS-TC-08: Starting default filter state verification for Beginner
+2025-07-16 17:01:28 INFO  TSCourseSearch:158 - 	CS-TC-08: Beginner filter selected: false
+2025-07-16 17:01:28 INFO  TSCourseSearch:164 - 	CS-TC-08: Default filter state verified successfully
+2025-07-16 17:01:28 INFO  TSCourseSearch:187 - CS-TC-04: Test English Checkbox is Clickable
+2025-07-16 17:01:28 INFO  TSCourseSearch:191 - 	CS-TC-04: Started
+2025-07-16 17:01:28 INFO  TSCourseSearch:193 - 	CS-TC-04: Checking presence and state of checkbox
+2025-07-16 17:01:28 INFO  TSCourseSearch:198 - 	CS-TC-04: Successfully Passed
+2025-07-16 17:01:28 INFO  TSCourseSearch:201 - CS-TC-05: To Verify That English Filter Gets Applied
+2025-07-16 17:01:28 INFO  TSCourseSearch:203 - 	CS-TC-05: Started
+2025-07-16 17:01:28 INFO  TSCourseSearch:205 - 	CS-TC-05: Applying the English filter
+2025-07-16 17:01:28 INFO  TSCourseSearch:209 - 	CS-TC-05: English filter applied successfully
+2025-07-16 17:01:28 INFO  TSCourseSearch:212 - 	CS-TC-05: Loading filtered results
+2025-07-16 17:01:31 INFO  TSCourseSearch:216 - 	CS-TC-05: Checking status of filter after applying
+2025-07-16 17:01:31 INFO  TSCourseSearch:221 - 	CS-TC-05: Successfully Passed
+2025-07-16 17:01:32 INFO  TSCourseSearch:187 - CS-TC-06: Test Beginner Checkbox is Clickable
+2025-07-16 17:01:32 INFO  TSCourseSearch:191 - 	CS-TC-06: Started
+2025-07-16 17:01:32 INFO  TSCourseSearch:193 - 	CS-TC-06: Checking presence and state of checkbox
+2025-07-16 17:01:32 INFO  TSCourseSearch:198 - 	CS-TC-06: Successfully Passed
+2025-07-16 17:01:32 INFO  TSCourseSearch:201 - CS-TC-07: To Verify That Beginner Filter Gets Applied
+2025-07-16 17:01:32 INFO  TSCourseSearch:203 - 	CS-TC-07: Started
+2025-07-16 17:01:32 INFO  TSCourseSearch:205 - 	CS-TC-07: Applying the Beginner filter
+2025-07-16 17:01:32 INFO  TSCourseSearch:209 - 	CS-TC-07: Beginner filter applied successfully
+2025-07-16 17:01:32 INFO  TSCourseSearch:212 - 	CS-TC-07: Loading filtered results
+2025-07-16 17:01:34 INFO  TSCourseSearch:216 - 	CS-TC-07: Checking status of filter after applying
+2025-07-16 17:01:34 INFO  TSCourseSearch:221 - 	CS-TC-07: Successfully Passed
+2025-07-16 17:01:34 INFO  TSCourseSearch:246 - CS-TC-09: Verifying multiple filter application
+2025-07-16 17:01:37 INFO  TSCourseSearch:257 - 	CS-TC-09: Applied filters: [Language: English, Beginner]
+2025-07-16 17:01:37 INFO  TSCourseSearch:264 - 	CS-TC-09: Applying multiple filters verified successfully
+2025-07-16 17:01:37 INFO  TSCourseSearch:286 - CS-TC-10: Starting verification of required fields in course results
+2025-07-16 17:01:37 INFO  TSCourseSearch:293 - 	CS-TC-10: Required fields present: true
+2025-07-16 17:01:37 INFO  TSCourseSearch:297 - 	CS-TC-10: Required fields verified successfully
+2025-07-16 17:01:37 INFO  TSCourseSearch:321 - Main Test Case: Extracting top 2 filtered course details
+2025-07-16 17:01:37 INFO  TSCourseSearch:327 - 	Main Test Case: Top 2 Courses Fetched are:
+2025-07-16 17:01:38 INFO  TSCourseSearch:330 - Main Test Case: Top course details printed successfully
+2025-07-16 17:01:38 INFO  TSCourseSearch:352 - CS-TC-11: Starting rating range validation
+2025-07-16 17:01:38 INFO  TSCourseSearch:358 - 	CS-TC-11: Retrieved ratings: [4.7, 3.6]
+2025-07-16 17:01:38 INFO  TSCourseSearch:366 - CS-TC-11: All ratings are within the valid range
+2025-07-16 17:01:38 INFO  TSCourseSearch:388 - CS-TC-12: Starting test for 'Clear Filters' functionality
+2025-07-16 17:01:48 INFO  TSCourseSearch:395 - 	CS-TC-12: Filters after clearing: []
+2025-07-16 17:01:48 INFO  TSCourseSearch:401 - 	CS-TC-12: 'Clear Filters' functionality verified successfully
+2025-07-16 17:01:49 INFO  TSCourseSearch:423 - CS-TC-13: Starting test for empty search field behavior
+2025-07-16 17:02:08 INFO  TSCourseSearch:433 - 	CS-TC-13: Current URL after empty search: https://www.coursera.org/search?query=&
+2025-07-16 17:02:08 INFO  TSCourseSearch:439 - CS-TC-13: Empty search field handled correctly
+2025-07-16 17:02:09 INFO  TSCourseSearch:461 - CS-TC-14: Starting test for search box auto-suggestion
+2025-07-16 17:02:32 INFO  TSCourseSearch:473 - 	CS-TC-14: URL after selecting suggestion: https://www.coursera.org/search?query=web%20development
+2025-07-16 17:02:32 INFO  TSCourseSearch:479 - CS-TC-14: Auto-suggestion functionality verified successfully
