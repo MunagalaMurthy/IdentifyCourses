@@ -5,6 +5,7 @@
     <classes>
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
       <class name="com.cognizant.TS02LanguageLearningOverview.TCLevelSection"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
     </classes>
   </test> <!-- Test -->

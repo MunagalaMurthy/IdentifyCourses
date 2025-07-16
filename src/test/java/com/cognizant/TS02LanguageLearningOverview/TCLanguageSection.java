@@ -20,11 +20,11 @@ public class TCLanguageSection extends Base_Test{
 	public void tc02ToVerifyLanguageSectionAccessible() throws IOException {
 		
 		//Gathering the input term/search key from the properties file
-		logger.info("\tLL-TC-01: Entering Search Key into Search Box");
+		logger.info("\tLL-TC-02: Entering Search Key into Search Box");
 		String searchInput = prop.getProperty("SEARCH_KEY");
 		hp.enterTextIntoSearchBox(searchInput);
 		//clicking outside the text box at a random point to check if text still stays in search box
-		logger.info("\tLL-TC-01: Checking if input stays in Search Box");
+		logger.info("\tLL-TC-02: Checking if input stays in Search Box");
 		hp.clickSearchButton();
 		// Logging the start of the test case
 		logger.info("LL-TC-02: To verify that Language section is accessible");
