@@ -5,4 +5,4 @@ desktop.ini
 /reports/*
 /target/*
 /target/
-/run/
+run.bat
