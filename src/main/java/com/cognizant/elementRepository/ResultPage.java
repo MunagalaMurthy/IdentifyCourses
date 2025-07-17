@@ -32,70 +32,52 @@ public class ResultPage extends Base_Page{
 
 	@FindBy(xpath="//button[@data-testid=\"expand-filter-items-button\" and @aria-label=\"Show more Language options\"]")
 	private WebElement showMoreLink;
+	@FindBy(xpath = "//button[@aria-label='Show less Language options']")
+	private WebElement showLessLink;
 	@FindBy(xpath = "//div[@data-testid='language:English-true']")
 	private WebElement englishFilterChecked;
-  @FindBy(xpath = "//button[@aria-label='Show less Language options']")
-	private WebElement showLessLink;
-
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
 	private WebElement beginnerTag;
-
 	@FindBy(xpath="//button[contains(normalize-space(),\"English\")]")
 	private WebElement englishTag;
-
 	//Locator For The English Filter Selector
 	@FindBy(xpath = "//div[contains(@data-testid,'English') and contains(@data-testid,'language')]")
 	private WebElement englishFilterCheckBox;
-
 	//Locator For The Checked Begineer Filter
 	@FindBy(xpath="//div[@data-testid=\"productDifficultyLevel:Beginner-true\"]")
 	private WebElement beginnerFilterChecked;
 	//Locator for The English filter selector
 	@FindBy(xpath="//div[contains(@data-testid,'Beginner') and contains(@data-testid,'Level')]")
 	private WebElement beginnerFilterCheckBox;
-
 	//Locator for applied filters list
 	@FindBy(xpath="//span[@class='cds-Chip-label']")
 	public List<WebElement> appliedFilters;
 	//Locator for Filters Chips
 	@FindBy(className="cds-Chip-label")
 	private List<WebElement> filtersApplied;
-
 	//Locator for Course Cards
 	@FindBy(className = "css-1whl2ol")
 	private List<WebElement> courseCards;
-
 	//Locator For Course Names
 	@FindBy(className = "cds-CommonCard-title")
 	private List<WebElement> courseCardTitles;
-
-
 	//Locator For Course Ratings
 	@FindBy(xpath = "//div[contains(@class,'RatingStat')]//descendant::span[1]")
 	private List<WebElement> courseCardRatings;
-
 	//Locator For Course Durations
 	@FindBy(xpath = "//div[contains(@class,'metadata')]//descendant::p")
 	private List<WebElement> courseCardDurations;
-
 	//Locator for Clear All
 	@FindBy(xpath="//span[normalize-space()='Clear all']")
 	private WebElement clearAllFiltersButton;
-
-	/*
-	//Locator to find the clear all filters button
-	@FindBy(xpath="//span[normalize-space()='Clear all']")
-	private WebElement clearAllFiltersButton; 
-	 */
-
+	
 	
 	MiscUtils mu = new MiscUtils();
-	
 	boolean isShowMoreVisible = true;
-	
 	public ResultPage(WebDriver driver) {
 		super(driver);
 	}
+	
   
   public String ShowMoreText() throws InterruptedException {
 		if(isShowMoreVisible==false) {
@@ -128,8 +110,6 @@ public class ResultPage extends Base_Page{
 		case "language":
 			return mu.isItDisplayed(languageSection);
 		case "showmore":
-			System.out.println("inside isAccesible func - showmore");
-			System.out.println("isDisplayed method " + mu.isItDisplayed(showMoreLink));
 			return mu.isItDisplayed(showMoreLink);
 
 		}
@@ -137,7 +117,7 @@ public class ResultPage extends Base_Page{
 
 	}
   
-  public int getTotalNumberOfElementsInList(String value) {
+  public String getTotalNumberOfElementsInList(String value) {
 		value = value.toLowerCase();
 		switch (value) {
 		case "level":
@@ -147,7 +127,7 @@ public class ResultPage extends Base_Page{
 			return mu.getElementsCount(languageList);
 
 		}
-		return 0;
+		return "0";
 	}
   
   public boolean isCountDisplayed(String value) {
@@ -160,35 +140,17 @@ public class ResultPage extends Base_Page{
 		}
 		return false;
 	}
-
-	public boolean isFilterSectionAccessible() {
-		return mu.isSectionDisplayed(filtersSection);
+	
+	public boolean isChecked(String value) {
+		value = value.toLowerCase();
+		switch(value) {
+		case "beginner":
+			return mu.isSectionDisplayed(beginnerFilterChecked);
+		case "english":
+			return mu.isItDisplayed(englishFilterChecked);
+		}
+		return false;
 	}
-
-	public boolean isLevelSectionAccessible() {
-		return mu.isSectionDisplayed(levelSection);
-	}
-
-	public boolean isLanguageSectionAccessible() {
-		return mu.isSectionDisplayed(languageSection);
-	}
-
-	public int getNumberOfLevels() {
-		return levelsList.size();
-	}
-
-	public boolean isBeginnerLevelFilterDisplayed() {
-		return beginnerTag.isDisplayed();
-	}
-
-	public int getNumberOfLanguages() {
-		return languageList.size();
-	}
-
-	public boolean isBeginnerChkd() {
-		return mu.isSectionDisplayed(beginnerFilterChecked);
-	}
-
 	public List<String> getList(String value) {
 		value = value.toLowerCase();
 		switch (value) {
@@ -202,15 +164,6 @@ public class ResultPage extends Base_Page{
 		}
 		return null;
 
-	}
-	public boolean isEnglishChecked() {
-		return mu.isItDisplayed(englishFilterChecked);
-	}
- 
-
-	public List<String> getListOfLevels() {
-
-		return mu.getNameList(levelsList);
 	}
 
 
@@ -241,14 +194,8 @@ public class ResultPage extends Base_Page{
 				}
 			}
 		}
-
-		//Debug print statements to check how many course are relevant out of all
-		/*
-		System.out.println("Total Count:"+courseCardTitles.size());
-		System.out.println("Relevant Count:"+trueCount);
-		 */
 		//Conditional checking if all the courses consist of atleast 75% of the truly relevant courses
-		if(trueCount>=(0.75*courseCardTitles.size()))
+		if(trueCount>=(0.7*courseCardTitles.size()))
 			return true;
 		else
 			return false;
@@ -266,16 +213,6 @@ public class ResultPage extends Base_Page{
 			break;
 		}
 		return returnValue;
-	}
-	//Method for checking beginnerFilterStatus
-	public boolean beginnerFilterSelectStatus() {
-		return beginnerFilterCheckBox.isSelected();
-	}
-
-
-	//Method for checking englishFilterStatus
-	public boolean englishFilterSelectStatus() {
-		return englishFilterCheckBox.isSelected();
 	}
   
 	//Method for checking whether the given filter is selected or not
@@ -311,51 +248,6 @@ public class ResultPage extends Base_Page{
 			break;
 		}
 	}
-	
-	//Method for applying English filter
-	public void applyEnglishFilter() {
-		englishFilterCheckBox.click();
-	}
-
-
-	public void applyBeginnerFilter() {
-		beginnerFilterCheckBox.click();
-	}
-
-
-	/*
-	//Method to check if the selected filter is applied properly
-	public boolean checkAppliedFilter(String filterName) {
-		boolean check = false;
-		//Using the name of the filter provided to check if the selected filter is applied as required
-		for(WebElement filter:appliedFilters) {
-			if(filter.getText().contains(filterName))
-				check = true;
-		}
-		return check;
-	}
-
-
-
-	//Method for checking beginnerFilterStatus
-	public boolean beginnerFilterSelectStatus() {
-		return beginnerFilterCheckBox.isSelected();
-	}
-
-	//Method for applying Beginner filter
-	public void applyBeginnerFilter() {
-		beginnerFilterCheckBox.click();
-	}
-
-	public boolean checkAppliedBeginnerFilter() {
-		boolean check = false;
-		for(WebElement filter:appliedFilters) {
-			if(filter.getText().contains("Beginner"))
-				check = true;
-		}
-		return check;
-	}*/
-
 	//Method for Clearing Filters
 	public void clearAllAppliedFilters() {
 		clearAllFiltersButton.click();
