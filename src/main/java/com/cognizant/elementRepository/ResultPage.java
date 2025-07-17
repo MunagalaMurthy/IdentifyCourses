@@ -194,7 +194,7 @@ public class ResultPage extends Base_Page{
 			}
 		}
 		//Conditional checking if all the courses consist of atleast 75% of the truly relevant courses
-		if(trueCount>=(0.7*courseCardTitles.size()))
+		if(trueCount>=(0.6*courseCardTitles.size()))
 			return true;
 		else
 			return false;
