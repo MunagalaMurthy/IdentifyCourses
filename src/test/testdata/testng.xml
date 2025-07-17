@@ -4,23 +4,22 @@
 	<listeners>
 	  <listener class-name="com.cognizant.utilities.ExtentReportManager" />
 	</listeners>
-  <test thread-count="4" name="Test1">
+  <test thread-count="3" name="Test1" parallel="false">
   <parameter name="browser" value="Edge"/>
     <classes>
-      <!--<class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/> 
+      <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/> 
       <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
-      <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>-->
+      <!-- <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/> -->
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
     </classes>
   </test> <!-- Test -->
-  <test thread-count="4" name="Test2">
+  <test thread-count="3" name="Test2" parallel="false">
   <parameter name="browser" value="Chrome"/>
     <classes>
-      <!-- <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
-      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>-->
+      <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
-      <!--<class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>-->
-
+      <!-- <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/> -->
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
