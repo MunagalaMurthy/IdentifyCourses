@@ -157,7 +157,6 @@ public class ResultPage extends Base_Page{
 		case "level":
 			return mu.getNameList(levelsList);
 		case "language":
-			System.out.println("calling clickable method");
 			clickShowMoreLink();
 			return mu.getNameList(languageList);
 
