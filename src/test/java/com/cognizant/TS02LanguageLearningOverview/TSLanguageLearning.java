@@ -36,11 +36,11 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.INFO, "LL-TC-01: Triggering Search");
 			hp.clickSearchButton();
 			rp= new ResultPage(driver);
-			Assert.assertTrue(rp.isFilterSectionAccessible());
+			Assert.assertTrue(rp.isAccessible("filter"));
 			test.log(Status.PASS,"Successfully Passed");
 			logger.info("\tLL-TC-01: Successfully Passed");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyFilterSectionAccessible");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -77,7 +77,7 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.PASS, "Successfully Passed");
 			// Logging success in Extent Report and console
 			logger.info("\tLL-TC-02: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyLanguageSectionAccessible");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}catch (AssertionError ae) {
@@ -121,7 +121,7 @@ public class TSLanguageLearning extends Base_Test {
 			// Logging success in Extent Report and console
 			test.log(Status.PASS, "Successfully Passed");
 			logger.info("\tLL-TC-03: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyVisibilityOfShowMoreLink");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch(AssertionError ae) {
@@ -171,7 +171,7 @@ public class TSLanguageLearning extends Base_Test {
 					return;
 				}
 			}
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyEnglishOptionIsAvailable");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -225,7 +225,7 @@ public class TSLanguageLearning extends Base_Test {
 
 			logger.info("\tLL-TC-05: Successfully Passed");
 			test.log(Status.PASS, "Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyCountOfCoursesVisibleForEachLanguage");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -251,10 +251,10 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.INFO, "LL-TC-06: Started");
 			logger.info("\tLL-TC-06: Checking if Course level section is visible in Filter By section or not");
 			test.log(Status.INFO, "LL-TC-06: Checking if Filter section is visible or not");
-			Assert.assertTrue(rp.isLevelSectionAccessible());
+			Assert.assertTrue(rp.isAccessible("level"));
 			test.log(Status.PASS,"Successfully Passed");
 			logger.info("\tLL-TC-06: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyLevelSectionAccessible");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -280,13 +280,13 @@ public class TSLanguageLearning extends Base_Test {
 			Assert.assertTrue(rp.isCountDisplayed("level"));
 			Reporter.log("Available levels and Count of courses:");
 			test.log(Status.INFO, "List of Levels:");
-			for(String lvl: rp.getListOfLevels()) {
+			for(String lvl: rp.getList("level")) {
 				Reporter.log(lvl+"\n");
 				test.log(Status.INFO,"\t"+lvl);
 			}
 			logger.info("\tLL-TC-07: Successfully Passed");
 			test.log(Status.PASS,"LL-TC-07: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyCountOfCoursesVisibleForEachLevels");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -307,10 +307,10 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.INFO, "LL-TC-08: Started");
 			logger.info("\tLL-TC-08: Checking Whether the count of languages is same as the total language displayed");
 			test.log(Status.INFO, "LL-TC-08: Checking Whether the count of languages is same as the total language displayed");
-			Assert.assertEquals(rp.getNumberOfLevels(), 4);
+			Assert.assertEquals(rp.getTotalNumberOfElementsInList("level"), prop.getProperty("TOTAL_LEVELS"));
 			test.log(Status.PASS,"Successfully Passed");
 			logger.info("\tLL-TC-08: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyCountOfLevels");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -356,8 +356,8 @@ public class TSLanguageLearning extends Base_Test {
 			test.info("\tLL-TC-09: Fetching actual language count from UI");
 
 			// Assertion to verify if expected and actual counts match
-			Assert.assertEquals(totalLangCount,rp.getTotalNumberOfElementsInList("language"));
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			Assert.assertEquals(totalLangCount+"",rp.getTotalNumberOfElementsInList("language"));
+			String captureScreen = captureScreen("ToVerifyCountOfLanguages");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -384,7 +384,7 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.INFO, "LL-TC-10: Started");
 			logger.info("\tLL-TC-10:Checking Whether the Beginner level is present in list or not");
 			test.log(Status.INFO, "Checking Whether the Beginner level is present in list or not");
-			for(String lvl: rp.getListOfLevels()) {
+			for(String lvl: rp.getList("level")) {
 				if(lvl.contains("Beginner")) {
 					Assert.assertTrue(true);
 					return;
@@ -392,7 +392,7 @@ public class TSLanguageLearning extends Base_Test {
 			}
 			logger.info("\tLL-TC-10: Successfully Passed");
 			test.log(Status.PASS,"LL-TC-10: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyBeginnerOptionIsAvailable");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -420,19 +420,19 @@ public class TSLanguageLearning extends Base_Test {
 		test.assignCategory("TS-LanguageLearning");
 		try {
 			logger.info("\tLL-TC-11: Started");
-			test.log(Status.INFO, "LL-TC-06: Started");
+			test.log(Status.INFO, "LL-TC-11: Started");
 			logger.info("\tLL-TC-11: Applying English language filter");
 			test.log(Status.INFO, "Applying English language filter");
 
 			// Apply the English filter
-			rp.applyEnglishFilter();
+			rp.applyFilter("English");
 
 			// Verify if the English checkbox is checked
-			Assert.assertTrue(rp.isEnglishChecked());
+			Assert.assertTrue(rp.isChecked("English"));
 
 			test.log(Status.PASS, "Successfully Passed");
 			logger.info("\tLL-TC-11: Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyEnglishLanguageCheckboxChecked");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -462,11 +462,11 @@ public class TSLanguageLearning extends Base_Test {
 			test.log(Status.INFO, "LL-TC-12: Started");
 			logger.info("\tLL-TC-12: Checking Whether the Beginner level checkbox is checked or not");
 			test.log(Status.INFO, "LL-TC-12: Checking Whether the Beginner level checkbox is checked or not");
-			rp.applyBeginnerFilter();
-			Assert.assertTrue(rp.isBeginnerChkd());
+			rp.applyFilter("Beginner");
+			Assert.assertTrue(rp.isChecked("Beginner"));
 			logger.info("\tLL-TC-12: Successfully Passed");
 			test.log(Status.PASS,"Successfully Passed");
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("ToVerifyBeginnerLevelCheckboxChecked");
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch (AssertionError ae) {
 			logger.error(ae.getMessage());
@@ -477,9 +477,5 @@ public class TSLanguageLearning extends Base_Test {
 			Assert.fail("Exception Occured");
 		}
 	}
-
-
-
-	//=============================================================================================================
-
+	
 }

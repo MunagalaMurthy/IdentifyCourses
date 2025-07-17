@@ -8,7 +8,7 @@
   <parameter name="browser" value="Chrome"/>
     <classes>
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/> 
-      <class name="com.cognizant.TS02LanguageLearningOverview.TCLevelSection"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
       <!--<class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>-->
     </classes>
@@ -17,7 +17,7 @@
   <parameter name="browser" value="Edge"/>
     <classes>
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
-      <class name="com.cognizant.TS02LanguageLearningOverview.TCLevelSection"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
       <!--<class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
       <class name="com.cognizant.TS02LanguageLearningOverview.TCLanguageSection"/>-->
 

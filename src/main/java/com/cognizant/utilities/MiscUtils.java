@@ -7,8 +7,8 @@ import org.openqa.selenium.WebElement;
 
 public class MiscUtils {
 	
-	public int getElementsCount(List<WebElement> elements_list) {
-		return elements_list.size();
+	public String getElementsCount(List<WebElement> elements_list) {
+		return elements_list.size()+"";
 	}
 	public boolean isItDisplayed(WebElement item) {
 		return item.isDisplayed();

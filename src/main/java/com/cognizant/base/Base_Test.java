@@ -70,10 +70,9 @@ public class Base_Test {
 		driver.manage().window().maximize();
 		//Adding a general common implicit wait to the driver
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		//Creating the required class objects to use in the test cases
 		hp = new HomePage(driver);
-//		su = new ScreenshotUtils(driver);
 		readTestData();
 	}
 	
@@ -114,8 +113,5 @@ public class Base_Test {
         if (driver != null) {
             driver.quit(); // Quits the browser opened for the current <test> tag
         }
-//        if (extent != null) {
-//            extent.flush(); // Flushes the report for the current <test> tag
-//        }
     }
 }
