@@ -25,7 +25,7 @@ public class TSCourseSearch extends Base_Test{
 
 	//Test 1: testing whether search box accepts any text input
 	@Test(priority=-4,groups= {"Smoke"})
-	public void testSearchInputAcceptsText() {
+	public void tc01testSearchInputAcceptsText() {
 		logger.info("CS-TC-01: To Verify That Search Input Field Accepts Text");
 
 		// Creating a test entry in the Extent Report
@@ -53,7 +53,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-01: Successfully Passed");
 			test.log(Status.PASS, "CS-TC-01: Successfully Passed");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -70,7 +70,7 @@ public class TSCourseSearch extends Base_Test{
 	}
 
 	//Test 2: testing whether search button triggers the search on clicking
-	@Test(priority=-3,dependsOnMethods={"testSearchInputAcceptsText"},groups= {"Smoke"})
+	@Test(priority=-3,dependsOnMethods={"tc01testSearchInputAcceptsText"},groups= {"Smoke"})
 	public void testSearchButtonTrigger() {
 		logger.info("CS-TC-02: To Verify That Search Button Click Triggers Search");
 		ExtentTest test = ExtentReportManager.extent.createTest("CS-TC-02: To Verify That Search Button Click Triggers Search");
@@ -87,7 +87,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-02: Successfully Passed");
 			test.log(Status.PASS, "CS-TC-02: Successfully Passed");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -124,7 +124,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-03: Successfully Passed");
 			test.log(Status.PASS, "CS-TC-03: Successfully Passed");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} catch (AssertionError ae) {
@@ -167,7 +167,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-08: Default filter state verified successfully");
 			test.log(Status.PASS, "CS-TC-08: Default filter state verified successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} 
@@ -225,7 +225,7 @@ public class TSCourseSearch extends Base_Test{
 			test.log(Status.PASS, "CS-TC-0"+i+": Successfully Passed");
 			i++;
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 			//Clearing the current applied filter
@@ -267,7 +267,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-09: Applying multiple filters verified successfully");
 			test.log(Status.PASS, "CS-TC-09: Applying multiple filters verified successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		} 
@@ -300,7 +300,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-10: Required fields verified successfully");
 			test.log(Status.PASS, "CS-TC-10: Required fields verified successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}
@@ -333,7 +333,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("Main Test Case: Top course details printed successfully");
 			test.log(Status.PASS, "Main Test Case: Top course details printed successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}
@@ -369,7 +369,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("CS-TC-11: All ratings are within the valid range");
 			test.log(Status.PASS, "CS-TC-11: All ratings are within the valid range");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}
@@ -404,7 +404,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-12: 'Clear Filters' functionality verified successfully");
 			test.log(Status.PASS, "CS-TC-12: 'Clear Filters' functionality verified successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}
@@ -442,7 +442,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("CS-TC-13: Empty search field handled correctly");
 			test.log(Status.PASS, "CS-TC-13: Empty search field handled correctly");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}
@@ -482,7 +482,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("CS-TC-14: Auto-suggestion functionality verified successfully");
 			test.log(Status.PASS, "CS-TC-14: Auto-suggestion functionality verified successfully");
 
-			String captureScreen = captureScreen("TestSearchInputAcceptsText");
+			String captureScreen = captureScreen("tc01testSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
 
 		}

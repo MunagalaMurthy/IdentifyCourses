@@ -45,26 +45,38 @@ public class HomePage extends Base_Page{
 		searchButton.click();
 	}
 	
+
+	//Method For Searching A Course Using Search Box click on search Button
 	public void searchForCourse(String courseName) {
+		//Enter Course Name In Search Box
         searchBox.sendKeys(courseName);
+      //Click On Search Button To Initiate Search
         searchButton.click();
     }
 	
+
+	//Method For Selecting A Specific Suggestion From Auto-Suggest Dropdown
 	public void selectSuggestionFromSearch(String inputText, String targetSuggestion) throws InterruptedException {
+		
+
+		//Create Actions Instance For Simulating User Input
         Actions actions = new Actions(driver);
 
+        //Focus And Click On Search Box
         actions.moveToElement(searchBox).click().perform();
 
+      //Simulate Typing Each Character With Delay
         for (char ch : inputText.toCharArray()) {
             actions.sendKeys(String.valueOf(ch)).perform();
             Thread.sleep(300); // Simulate typing delay
         }
 
+      //Wait Until Suggestions Are Visible
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         List<WebElement> suggestions = wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(
             By.xpath("//span[contains(@class, 'item-name') and contains(@class, 'body-1-text') and contains(translate(text(), 'WEB', 'web'), 'web')]")
         ));
-
+      //Iterate Through Suggestions And Click On Matching Suggestion
         for (WebElement elem : suggestions) {
             String suggestion = elem.getText();
             System.out.println("Suggestion: " + suggestion);
