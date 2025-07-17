@@ -84,8 +84,7 @@ public class Base_Test {
 				capabilities.setBrowserName("MicrosoftEdge");
 			}
 			
-			String seleniumHubUrlString = "http://10.230.28.66:4444/wd/hub";
-			URI uri = new URI(seleniumHubUrlString);
+			URI uri = new URI(prop.getProperty("GRID_LINK"));
 			URL seleniumHubUrl = uri.toURL();
 			driver = new RemoteWebDriver(seleniumHubUrl, capabilities);
 			
