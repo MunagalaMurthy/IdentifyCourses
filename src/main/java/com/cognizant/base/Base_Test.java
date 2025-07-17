@@ -3,6 +3,8 @@ package com.cognizant.base;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URI;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.ArrayList;
@@ -15,10 +17,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.ThreadContext;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -57,13 +62,50 @@ public class Base_Test {
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);
+		
+		//For Selenium Grid
+		if(prop.getProperty("EXECUTION_ENV").equalsIgnoreCase("remote")) {
+			DesiredCapabilities capabilities=new DesiredCapabilities();
+			if(prop.getProperty("OS").equalsIgnoreCase("windows")) {
+				capabilities.setPlatform(Platform.WIN11);
+			}
+			else if(prop.getProperty("OS").equalsIgnoreCase("mac")) {
+				capabilities.setPlatform(Platform.MAC);
+			}
+			else {
+				System.out.println("No Matching OS found");
+				return;
+			}
+			
+			if(browser.equalsIgnoreCase("Chrome")) {
+				capabilities.setBrowserName("chrome");
+			}
+			else if(browser.equalsIgnoreCase("Edge")) {
+				capabilities.setBrowserName("MicrosoftEdge");
+			}
+			
+			String seleniumHubUrlString = "http://10.230.28.66:4444/wd/hub";
+			URI uri = new URI(seleniumHubUrlString);
+			URL seleniumHubUrl = uri.toURL();
+			driver = new RemoteWebDriver(seleniumHubUrl, capabilities);
+			
+		}
+		if(prop.getProperty("EXECUTION_ENV").equalsIgnoreCase("local")) {
+			if(browser.equalsIgnoreCase("Chrome")) {
+				driver = new ChromeDriver();
+			}
+			else if(browser.equalsIgnoreCase("Edge")) {
+				driver = new EdgeDriver();
+			}
+		}
+		
 		//Cross-Browser compatibility: checking for browser from the properties file
-		if(browser.equalsIgnoreCase("Chrome")) {
-			driver = new ChromeDriver();
-		}
-		else if(browser.equalsIgnoreCase("Edge")) {
-			driver = new EdgeDriver();
-		}
+//		if(browser.equalsIgnoreCase("Chrome")) {
+//			driver = new ChromeDriver();
+//		}
+//		else if(browser.equalsIgnoreCase("Edge")) {
+//			driver = new EdgeDriver();
+//		}
 		//Navigating to the required URL (from the properties file)
 		url = prop.getProperty("URL");
 		driver.get(url);

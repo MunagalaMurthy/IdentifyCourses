@@ -1,2 +1,2 @@
-cd C://Prep Files/IdentifyCourses/IdentifyCourses
+cd C:\Users\2406714\OneDrive - Cognizant\Desktop\IdentifyCourses\IdentifyCourses
 mvn test
