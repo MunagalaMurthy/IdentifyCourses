@@ -7,20 +7,12 @@ import org.openqa.selenium.WebElement;
 
 public class MiscUtils {
 	
+	//Method For Getting The Count Of Elements In A List As String
 	public String getElementsCount(List<WebElement> elements_list) {
 		return elements_list.size()+"";
 	}
-	public boolean isItDisplayed(WebElement item) {
-		return item.isDisplayed();
-	}
 	
-	public boolean isItSelected(WebElement element) {
-		return element.isSelected();
-	}
-	
-	public void ClickOnElement(WebElement element) {
-		element.click();
-	}
+	//Utility Method For Checking String contains digits
 	private boolean getNumberLength(String str) {
 		
 		for(int i=0;i<str.length();i++) {
@@ -31,6 +23,7 @@ public class MiscUtils {
 		return false;
 	}
 	
+	//Method For Verifying If All Elements In The List Contain Count
 	public boolean isCountAvailable(List<WebElement> ls) {
 		int cnt=0;
 		for(WebElement element: ls) {
@@ -40,10 +33,7 @@ public class MiscUtils {
 		return false;
 	}
 	
-//	public boolean isSectionDisplayed(WebElement Section) {
-//		return Section.isDisplayed();
-//	}
-	
+	//Method For Extracting Text From A List Of WebElements And Returning As A List Of Strings
 	public List<String> getNameList(List<WebElement> elementNames) {
 		List<String> elementNamesList = new ArrayList<>();
 		for(WebElement ele:elementNames ) {
@@ -53,6 +43,8 @@ public class MiscUtils {
 		return elementNamesList;
 	}
 	
+
+	//Method For Sending Input Text To A WebElement
 	public void sendValues(WebElement element, String value) {
 		element.sendKeys(value);
 	}

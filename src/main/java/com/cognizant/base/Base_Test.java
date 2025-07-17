@@ -34,7 +34,6 @@ import com.cognizant.elementRepository.ForEnterprisePage;
 import com.cognizant.elementRepository.HomePage;
 import com.cognizant.elementRepository.ResultPage;
 import com.cognizant.utilities.ExcelUtils;
-import com.cognizant.utilities.ScreenshotUtils;
 
 public class Base_Test {
 	
@@ -48,7 +47,6 @@ public class Base_Test {
 //	protected ExtentReports extent;
     protected ExtentTest test;
 	protected String screenshotPath = null;
-	protected ScreenshotUtils su;
 	protected List<List<String>> testData = new ArrayList<>();
 	ExcelUtils eu = new ExcelUtils(System.getProperty("user.dir") + "\\src\\test\\testdata\\FormTestData.xlsx");
 	
@@ -84,7 +82,7 @@ public class Base_Test {
 				capabilities.setBrowserName("MicrosoftEdge");
 			}
 			
-			String seleniumHubUrlString = "http://10.230.28.66:4444/wd/hub";
+			String seleniumHubUrlString = "http://10.187.128.130:4444/wd/hub";
 			URI uri = new URI(seleniumHubUrlString);
 			URL seleniumHubUrl = uri.toURL();
 			driver = new RemoteWebDriver(seleniumHubUrl, capabilities);
