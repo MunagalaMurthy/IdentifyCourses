@@ -6,18 +6,18 @@
 	</listeners>
   <test thread-count="3" name="Test1" parallel="false">
   <parameter name="browser" value="Edge"/>
-    <classes>
-      <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/> 
-      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
-      <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
-    </classes>
-  </test> <!-- Test -->
-  <test thread-count="3" name="Test2" parallel="false">
-  <parameter name="browser" value="Chrome"/>
+  	
     <classes>
       <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
       <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
       <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
     </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+  </test> <test thread-count="3" name="Test2" parallel="false">
+  <parameter name="browser" value="Chrome"/>
+  	
+    <classes>
+      <class name="com.cognizant.TS01CourseSearchAndFiltering.TSCourseSearch"/>
+      <class name="com.cognizant.TS02LanguageLearningOverview.TSLanguageLearning"/>
+      <class name="com.cognizant.TS03ForEnterprise.TSForEnterpriseForm"/>
+    </classes>
+  </test> </suite> 

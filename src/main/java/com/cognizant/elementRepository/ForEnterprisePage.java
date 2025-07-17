@@ -10,17 +10,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
 import com.cognizant.base.Base_Page;
-<<<<<<< HEAD
 import com.cognizant.utilities.MiscUtils;
 import com.cognizant.utilities.SelectUtils;
 
 // This class represents the "For Enterprise" page and contains methods to interact with its elements.
-public class ForEnterprisePage extends Base_Page {
-=======
-//import com.cognizant.utilities.ActionUtils;
-import com.cognizant.utilities.MiscUtils;
-import com.cognizant.utilities.SelectUtils;
-
 public class ForEnterprisePage extends Base_Page{
 	//Locators & Variables
 //	ActionUtils action = new ActionUtils(driver);
@@ -45,53 +38,8 @@ public class ForEnterprisePage extends Base_Page{
 	@FindBy(id="Employee_Range__c") private WebElement companySizeElem;
 	@FindBy(id="ValidMsgEmail") private WebElement emailErrorElem;
 	@FindBy(id="ValidMsgPhone") private WebElement phoneErrorElem;
->>>>>>> 75b26091b13454dcfcded71f351ad8b18dbef805
 
-	// FluentWait instance for explicit waits with custom polling and ignoring exceptions.
-	// Initialized here, but its 'driver' dependency will be set via the constructor.
-	FluentWait<WebDriver> wait;
-
-	// Locators for various web elements on the "For Enterprise" form.
-	@FindBy(id = "FirstName")
-	private WebElement firstNameElem;
-	@FindBy(id = "LastName")
-	private WebElement lastNameElem;
-	@FindBy(id = "Email")
-	private WebElement emailElem;
-	@FindBy(id = "Phone")
-	private WebElement phoneNumberElem;
-	@FindBy(id = "rentalField9")
-	private WebElement orgTypeElem;
-	@FindBy(id = "Title")
-	private WebElement titleElem;
-	@FindBy(xpath = "//*[@id=\"What_the_lead_asked_for_on_the_website__c\"]")
-	private WebElement needDiscribeElem; // Renamed from needDescribeElem for consistency
-	@FindBy(id = "Self_reported_employees_to_buy_for__c")
-	private WebElement noOfLearnersElem;
-	@FindBy(id = "Country")
-	private WebElement countryElem;
-	@FindBy(id = "State")
-	private WebElement stateElem;
-	@FindBy(xpath = "//*[@id=\"mktoForm_2666\"]/div[54]/span/button")
-	private WebElement submitBtn;
-	@FindBy(id = "rentalField5")
-	private WebElement descriptionElem;
-	@FindBy(linkText = "For Enterprise")
-	private WebElement forEnterpriseElem;
-	@FindBy(id = "Institution_Type__c")
-	private WebElement institutionElem;
-	@FindBy(id = "C4C_Job_Title__c")
-	private WebElement jobRoleElem;
-	@FindBy(id = "Department")
-	private WebElement departmentElem;
-	@FindBy(id = "Company")
-	private WebElement companyElem;
-	@FindBy(id = "Employee_Range__c")
-	private WebElement companySizeElem;
-	@FindBy(id = "ValidMsgEmail")
-	private WebElement emailErrorElem;
-	@FindBy(id = "ValidMsgPhone")
-	private WebElement phoneErrorElem;
+	
 
 	// Instance of MiscUtils for common utility methods.
 	MiscUtils mu = new MiscUtils();
@@ -162,15 +110,11 @@ public class ForEnterprisePage extends Base_Page{
 	 */
 	public void mandatoryInfo(String firstName, String lastName, String email, String phoneNumber, String orgType) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-<<<<<<< HEAD
 		js.executeScript("window.scrollTo(0,9350)"); // Scrolls to a specific pixel height.
 		forEnterpriseElem.click(); // Clicks on the "For Enterprise" link/element.
 		// Clear and send values to mandatory fields.
-=======
 		js.executeScript("window.scrollTo(0,9350)");
 		forEnterpriseElem.click();
-//		action.mouseHoverToElement(firstNameElem);
->>>>>>> 75b26091b13454dcfcded71f351ad8b18dbef805
 		firstNameElem.clear();
 		mu.sendValues(firstNameElem, firstName);
 		lastNameElem.clear();
