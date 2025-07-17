@@ -34,7 +34,7 @@ public class ResultPage extends Base_Page{
 	private WebElement showMoreLink;
 	@FindBy(xpath = "//div[@data-testid='language:English-true']")
 	private WebElement englishFilterChecked;
-  @FindBy(xpath = "//button[@aria-label='Show less Language options']")
+    @FindBy(xpath = "//button[@aria-label='Show less Language options']")
 	private WebElement showLessLink;
 
 	@FindBy(xpath="//button[contains(normalize-space(),\"Beginner\")]")
@@ -242,12 +242,6 @@ public class ResultPage extends Base_Page{
 				}
 			}
 		}
-
-		//Debug print statements to check how many course are relevant out of all
-		/*
-		System.out.println("Total Count:"+courseCardTitles.size());
-		System.out.println("Relevant Count:"+trueCount);
-		*/
 		//Conditional checking if all the courses consist of atleast 75% of the truly relevant courses
 		if(trueCount>=(0.7*courseCardTitles.size()))
 			return true;
@@ -322,40 +316,6 @@ public class ResultPage extends Base_Page{
 	public void applyBeginnerFilter() {
 		beginnerFilterCheckBox.click();
 	}
-
-
-	/*
-	//Method to check if the selected filter is applied properly
-	public boolean checkAppliedFilter(String filterName) {
-		boolean check = false;
-		//Using the name of the filter provided to check if the selected filter is applied as required
-		for(WebElement filter:appliedFilters) {
-			if(filter.getText().contains(filterName))
-				check = true;
-		}
-		return check;
-	}
-
-
-
-	//Method for checking beginnerFilterStatus
-	public boolean beginnerFilterSelectStatus() {
-		return beginnerFilterCheckBox.isSelected();
-	}
-
-	//Method for applying Beginner filter
-	public void applyBeginnerFilter() {
-		beginnerFilterCheckBox.click();
-	}
-
-	public boolean checkAppliedBeginnerFilter() {
-		boolean check = false;
-		for(WebElement filter:appliedFilters) {
-			if(filter.getText().contains("Beginner"))
-				check = true;
-		}
-		return check;
-	}*/
 
 	//Method for Clearing Filters
 	public void clearAllAppliedFilters() {
