@@ -73,7 +73,7 @@ public class ForEnterprisePage extends Base_Page{
 
 	public void mandatoryInfo(String firstName,String lastName,String email,String phoneNumber,String orgType) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollTo(0,8400)");
+		js.executeScript("window.scrollTo(0,9350)");
 		forEnterpriseElem.click();
 		action.mouseHoverToElement(firstNameElem);
 		firstNameElem.clear();
