@@ -216,8 +216,6 @@ public class TSLanguageLearning extends Base_Test {
 			// Logging and reporting each language and its course count
 			Reporter.log("Available languages and count of courses:");
 
-			//
-			System.out.println("calling getList loop");
 			for(String lang:rp.getList("language")) {
 				Reporter.log(lang+"\n");
 				test.info("\t"+lang);

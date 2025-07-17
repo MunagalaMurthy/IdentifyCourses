@@ -40,9 +40,9 @@ public class MiscUtils {
 		return false;
 	}
 	
-	public boolean isSectionDisplayed(WebElement Section) {
-		return Section.isDisplayed();
-	}
+//	public boolean isSectionDisplayed(WebElement Section) {
+//		return Section.isDisplayed();
+//	}
 	
 	public List<String> getNameList(List<WebElement> elementNames) {
 		List<String> elementNamesList = new ArrayList<>();
