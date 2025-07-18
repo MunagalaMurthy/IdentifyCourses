@@ -1,4 +1,4 @@
-package com.cognizant.TS03ForEnterprise;
+package com.cognizant.testscripts;
 
 import java.io.IOException;
 

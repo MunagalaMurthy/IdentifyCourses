@@ -1,4 +1,4 @@
-package com.cognizant.TS02LanguageLearningOverview;
+package com.cognizant.testscripts;
 
 import java.io.IOException;
 

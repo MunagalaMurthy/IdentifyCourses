@@ -138,8 +138,6 @@ public class Base_Test {
 		// Note: fep and rp are initialized only if needed in specific tests,
 		// but hp is universally useful for navigating to the main page.
 		hp = new HomePage(driver);
-		fep = new ForEnterprisePage(driver); // Initialize fep here as it's used in test methods.
-		rp = new ResultPage(driver); // Initialize rp here as it might be used.
 
 		// Read test data from Excel.
 		readTestData();

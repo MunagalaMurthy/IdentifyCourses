@@ -112,8 +112,6 @@ public class ForEnterprisePage extends Base_Page{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,9350)"); // Scrolls to a specific pixel height.
 		forEnterpriseElem.click(); // Clicks on the "For Enterprise" link/element.
-		// Clear and send values to mandatory fields.
-		js.executeScript("window.scrollTo(0,9350)");
 		forEnterpriseElem.click();
 		firstNameElem.clear();
 		mu.sendValues(firstNameElem, firstName);

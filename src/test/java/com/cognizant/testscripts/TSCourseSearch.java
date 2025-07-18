@@ -1,4 +1,4 @@
-package com.cognizant.TS01CourseSearchAndFiltering;
+package com.cognizant.testscripts;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -65,6 +65,7 @@ public class TSCourseSearch extends Base_Test{
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			Assert.fail("Exception Occurred");
+			test.log(Status.FAIL, "Exception occurred: " + e.getMessage());
 		}
 
 	}
@@ -99,6 +100,7 @@ public class TSCourseSearch extends Base_Test{
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			Assert.fail("Exception Occurred");
+			test.log(Status.FAIL, "Exception occurred: " + e.getMessage());
 		}
 	}
 
@@ -136,6 +138,7 @@ public class TSCourseSearch extends Base_Test{
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			Assert.fail("Exception Occurred");
+			test.log(Status.FAIL, "Exception occurred: " + e.getMessage());
 		}
 	}
 
@@ -179,7 +182,7 @@ public class TSCourseSearch extends Base_Test{
 		}
 		catch (Exception e) {
 			logger.error("CS-TC-08: Error during default filter state verification", e);
-			Assert.fail("Exception Occurred");
+			Assert.fail("Exception Occurred: "+e.getMessage());
 
 		}
 	}
@@ -239,6 +242,7 @@ public class TSCourseSearch extends Base_Test{
 		} catch (Exception e) {
 			logger.error(e.getMessage());
 			Assert.fail("Exception Occurred");
+			test.log(Status.FAIL, "Exception occurred: " + e.getMessage());
 		}
 	}
 
