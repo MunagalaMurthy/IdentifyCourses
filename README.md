@@ -54,7 +54,8 @@ The automation solution will demonstrate capabilities in:
     ```
 2.  **Install dependencies:**
     ```bash
-    open project in Eclipse and update the project (Right click on project folder > Maven > Update Project)
+    cd <Project Path>
+    mvn clean test
     ```
 3.  Download the appropriate browser(e.g., Chrome for ChromeDriver, MS Edge for EdgeDriver)
 
