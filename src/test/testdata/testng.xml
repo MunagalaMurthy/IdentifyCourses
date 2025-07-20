@@ -5,7 +5,7 @@
 	  <listener class-name="com.cognizant.utilities.ExtentReportManager" />
 	</listeners>
   <test thread-count="3" name="Test1" parallel="false">
-  <parameter name="browser" value="Edge"/>
+  <parameter name="browser" value="Edge"/>  	
   	
     <classes>
       <class name="com.cognizant.testscripts.TSCourseSearch"/>
@@ -14,7 +14,6 @@
     </classes>
   </test> <test thread-count="3" name="Test2" parallel="false">
   <parameter name="browser" value="Chrome"/>
-  	
     <classes>
       <class name="com.cognizant.testscripts.TSCourseSearch"/>
       <class name="com.cognizant.testscripts.TSLanguageLearning"/>

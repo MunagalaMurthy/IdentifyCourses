@@ -16,6 +16,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	
 	// Page object for interacting with the "For Enterprise" page elements.
 	ForEnterprisePage fep;
+	String message;
 	
 	/**
 	 * Test case to verify successful submission of the Business Sales form.
@@ -34,9 +35,10 @@ public class TSForEnterpriseForm extends Base_Test{
 			// Initialize the ForEnterprisePage object, passing the WebDriver instance.
 			fep = new ForEnterprisePage(driver);
 			// Fill the Business Sales form using test data retrieved from 'testData' list.
-			String message = fep.fillFormForBusinessSales(testData.get(1).get(0), testData.get(1).get(1), testData.get(1).get(2), testData.get(1).get(3), testData.get(1).get(4), testData.get(1).get(5),testData.get(1).get(6),testData.get(1).get(7), testData.get(1).get(8), testData.get(1).get(12), testData.get(1).get(9), testData.get(1).get(10));
+			message = fep.fillFormForBusinessSales(testData.get(1).get(0), testData.get(1).get(1), testData.get(1).get(2), testData.get(1).get(3), testData.get(1).get(4), testData.get(1).get(5),testData.get(1).get(6),testData.get(1).get(7), testData.get(1).get(8), testData.get(1).get(12), testData.get(1).get(9), testData.get(1).get(10));
 			// Assert that the confirmation message contains "Thank", indicating successful submission.
 			Assert.assertTrue(message.contains("Thank"));
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-01: Successfully Passed");
 			logger.info("EF-TC-01: Successfully Passed");
 			// Capture a screenshot and add it to the Extent Report.
@@ -45,6 +47,7 @@ public class TSForEnterpriseForm extends Base_Test{
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage());
 			Assert.fail("Assertion Failed");
+			test.log(Status.PASS, message);
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae; // Re-throw the assertion error to mark the test as failed.
 		}
@@ -65,9 +68,10 @@ public class TSForEnterpriseForm extends Base_Test{
 		try {
 			test.log(Status.INFO, "EF-TC-02: Started");
 			// Fill the College Support form using test data.
-			String message = fep.fillFormForCollege(testData.get(2).get(0), testData.get(2).get(1), testData.get(2).get(2), testData.get(2).get(3), testData.get(2).get(4), testData.get(2).get(15),testData.get(2).get(13),testData.get(2).get(14),testData.get(2).get(6),testData.get(2).get(7),testData.get(2).get(8),testData.get(2).get(9),testData.get(2).get(10));
+			message = fep.fillFormForCollege(testData.get(2).get(0), testData.get(2).get(1), testData.get(2).get(2), testData.get(2).get(3), testData.get(2).get(4), testData.get(2).get(15),testData.get(2).get(13),testData.get(2).get(14),testData.get(2).get(6),testData.get(2).get(7),testData.get(2).get(8),testData.get(2).get(9),testData.get(2).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank"));
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-02: Successfully Passed");
 			logger.info("EF-TC-02: Successfully Passed");
 			// Capture a screenshot and add it to the report.
@@ -76,6 +80,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage());
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;			
@@ -97,9 +102,10 @@ public class TSForEnterpriseForm extends Base_Test{
 		try { 
 			test.log(Status.INFO,"EF-TC-03: Started");
 			// Fill the Government Upskilling form using test data.
-			String message = fep.fillFormForGovernmentUpskilling(testData.get(3).get(0), testData.get(3).get(1), testData.get(3).get(2), testData.get(3).get(3), testData.get(3).get(4), testData.get(3).get(5),testData.get(3).get(6), testData.get(3).get(7),testData.get(3).get(8), testData.get(3).get(12),testData.get(3).get(9),testData.get(3).get(10));
+			message = fep.fillFormForGovernmentUpskilling(testData.get(3).get(0), testData.get(3).get(1), testData.get(3).get(2), testData.get(3).get(3), testData.get(3).get(4), testData.get(3).get(5),testData.get(3).get(6), testData.get(3).get(7),testData.get(3).get(8), testData.get(3).get(12),testData.get(3).get(9),testData.get(3).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-03: Successfully Passed");
 			logger.info("EF-TC-03: Successfully Passed");
 			// Capture a screenshot.
@@ -107,6 +113,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage());
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -132,6 +139,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForNonProfit(testData.get(4).get(0), testData.get(4).get(1), testData.get(4).get(2), testData.get(4).get(3), testData.get(4).get(4), testData.get(4).get(5),testData.get(4).get(6), testData.get(4).get(7),testData.get(4).get(8),testData.get(4).get(9),testData.get(4).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-04: Successfully Passed");
 			logger.info("EF-TC-04: Successfully Passed");
 			// Capture a screenshot.
@@ -139,6 +147,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -162,6 +171,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForBusinessOthers(testData.get(5).get(0), testData.get(5).get(1), testData.get(5).get(2), testData.get(5).get(3), testData.get(5).get(4),testData.get(5).get(5),testData.get(5).get(6),testData.get(5).get(7),testData.get(5).get(8), testData.get(5).get(9), testData.get(5).get(10), testData.get(5).get(11));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-05: Successfully Passed");
 			logger.info("EF-TC-05: Successfully Passed");
 			// Capture a screenshot.
@@ -169,6 +179,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -192,6 +203,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForBusiness(testData.get(6).get(0), testData.get(6).get(1), testData.get(6).get(2), testData.get(6).get(3), testData.get(6).get(4),testData.get(6).get(5),testData.get(6).get(6),testData.get(6).get(7),testData.get(6).get(8), testData.get(6).get(9), testData.get(6).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-06: Successfully Passed");
 			logger.info("EF-TC-06: Successfully Passed");
 			// Capture a screenshot.
@@ -199,6 +211,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -222,6 +235,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForCollege(testData.get(7).get(0), testData.get(7).get(1), testData.get(7).get(2), testData.get(7).get(3), testData.get(7).get(4),testData.get(7).get(15),testData.get(7).get(13),testData.get(7).get(14),testData.get(7).get(6),testData.get(7).get(7), testData.get(7).get(8), testData.get(5).get(9), testData.get(5).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-07: Successfully Passed");
 			logger.info("EF-TC-07: Successfully Passed");
 			// Capture a screenshot.
@@ -229,6 +243,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -252,6 +267,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForCollege(testData.get(8).get(0), testData.get(8).get(1), testData.get(8).get(2), testData.get(8).get(3), testData.get(8).get(4),testData.get(8).get(15),testData.get(8).get(13),testData.get(8).get(6),testData.get(8).get(7), testData.get(8).get(8), testData.get(8).get(9), testData.get(8).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-08: Successfully Passed");
 			logger.info("EF-TC-08: Successfully Passed");
 			// Capture a screenshot.
@@ -259,6 +275,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -282,6 +299,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForGovernmentLearner(testData.get(9).get(0), testData.get(9).get(1), testData.get(9).get(2), testData.get(9).get(3), testData.get(9).get(4),testData.get(9).get(5),testData.get(9).get(6), testData.get(9).get(7), testData.get(9).get(8), testData.get(9).get(9), testData.get(9).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-09: Successfully Passed");     
 			logger.info("EF-TC-09: Successfully Passed");
 			// Capture a screenshot.
@@ -289,6 +307,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -312,6 +331,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForGovernmentOthers(testData.get(10).get(0),testData.get(10).get(1), testData.get(10).get(2), testData.get(10).get(3), testData.get(10).get(4), testData.get(10).get(5), testData.get(10).get(6), testData.get(10).get(7), testData.get(10).get(8), testData.get(10).get(9), testData.get(10).get(10), testData.get(10).get(11));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-10: Successfully Passed");
 			logger.info("EF-TC-10: Successfully Passed");
 			// Capture a screenshot.
@@ -319,6 +339,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -342,6 +363,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForNonProfitOthers(testData.get(11).get(0),testData.get(11).get(1), testData.get(11).get(2), testData.get(11).get(3), testData.get(11).get(4), testData.get(11).get(5), testData.get(11).get(6), testData.get(11).get(7), testData.get(11).get(8), testData.get(11).get(9), testData.get(11).get(10), testData.get(11).get(11));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-11: Successfully Passed");
 			logger.info("EF-TC-11: Successfully Passed");
 			// Capture a screenshot.
@@ -349,6 +371,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage());
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae; 
@@ -372,6 +395,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForNonProfitSales(testData.get(12).get(0),testData.get(12).get(1), testData.get(12).get(2), testData.get(12).get(3), testData.get(12).get(4), testData.get(12).get(5), testData.get(12).get(6), testData.get(12).get(7), testData.get(12).get(8), testData.get(12).get(12), testData.get(12).get(9), testData.get(12).get(10));
 			// Assert that the confirmation message contains "Thank".
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-12: Successfully Passed");
 			logger.info("EF-TC-12: Successfully Passed");
 			// Capture a screenshot.
@@ -379,6 +403,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -403,6 +428,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForBusiness(testData.get(13).get(0),testData.get(13).get(1), testData.get(13).get(2), testData.get(13).get(3), testData.get(13).get(4), testData.get(13).get(5),testData.get(13).get(6),testData.get(13).get(7), testData.get(13).get(8),testData.get(13).get(9),testData.get(13).get(10));
 			// Assert that the error message contains "Must be", indicating a validation failure.
 			Assert.assertTrue(message.contains("Must be")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-13: Successfully Passed"); // This log indicates the test *passed* because it successfully identified the decline.
 			logger.info("EF-TC-13: Successfully Passed");
 			// Capture a screenshot.
@@ -410,6 +436,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -434,6 +461,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			String message = fep.fillFormForCollege(testData.get(14).get(0),testData.get(14).get(1), testData.get(14).get(2), testData.get(14).get(3), testData.get(14).get(4), testData.get(14).get(15), testData.get(14).get(13), testData.get(14).get(14),testData.get(14).get(6),testData.get(14).get(7), testData.get(14).get(8), testData.get(14).get(9),testData.get(14).get(10));
 			// Assert that the error message contains "Must be".
 			Assert.assertTrue(message.contains("Must be")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-14: Successfully Passed"); // This log indicates the test *passed* because it successfully identified the decline.
 			logger.info("EF-TC-14: Successfully Passed");
 			// Capture a screenshot.
@@ -441,6 +469,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
@@ -468,6 +497,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			// IMPORTANT: The current assertion checks for "Thank". If the test is truly meant to verify a "declined" scenario,
 			// this assertion should be changed to check for an error message (e.g., `message.contains("Must be")`).
 			Assert.assertTrue(message.contains("Thank")); 
+			test.log(Status.PASS, message);
 			test.log(Status.PASS, "EF-TC-15: Successfully Passed"); // This log indicates the test *passed* based on the current "Thank" assertion.
 			logger.info("EF-TC-15: Successfully Passed");
 			// Capture a screenshot.
@@ -475,6 +505,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			test.addScreenCaptureFromPath(captureScreen);
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage()); 
+			test.log(Status.FAIL, message);
 			Assert.fail("Assertion Failed");
 			test.log(Status.FAIL, "Error message mismatch: " + ae.getMessage());
 			throw ae;
