@@ -23,7 +23,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations (e.g., reading test data or capturing screenshots).
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc01tofillBusinessSalesForm() throws IOException {		
 		logger.info("EF-TC-01: Started");
 		logger.info("EF-TC-01: To Verify that college details is successfully submitted.");
@@ -58,7 +58,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc02tofillCollegeSupportForm() throws IOException {
 		logger.info("EF-TC-02: Started");
 		logger.info("EF-TC-02: To Verify the company details is successfully submitted.");
@@ -92,7 +92,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc03toFillGovernmentUpskillingForm() throws IOException {
 		logger.info("EF-TC-03: Started");
 		logger.info("EF-TC-03: To Verify the government details is successfully submitted.");
@@ -125,7 +125,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc04toFillNonProfitForm() throws IOException {
 
 		logger.info("EF-TC-04: Started");
@@ -415,7 +415,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc13toFillBusinessForm() throws IOException {
 		logger.info("EF-TC-13: Started");
 		logger.info("EF-TC-13: To Verify the company details is declined.");
@@ -448,7 +448,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * This test is categorized as "high" priority.
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc14toFillCollegeForm() throws IOException {
 		logger.info("EF-TC-14: Started");
 		logger.info("EF-TC-14: To Verify the non-profit organization details is declined.");
@@ -483,7 +483,7 @@ public class TSForEnterpriseForm extends Base_Test{
 	 * If the intent is to verify a decline, the assertion should be updated to check for an error message (e.g., "Must be").
 	 * @throws IOException If there's an issue with I/O operations.
 	 */
-	@Test(groups="high")
+	@Test
 	public void tc15toFillNonProfitForm() throws IOException {
 		logger.info("EF-TC-15: Started");
 		logger.info("EF-TC-15: To Verify that non-profit organization details is declined.");
