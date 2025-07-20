@@ -54,7 +54,8 @@ The automation solution will demonstrate capabilities in:
     ```
 2.  **Install dependencies:**
     ```bash
-    open project in Eclipse and update the project (Right click on project folder > Maven > Update Project)
+    cd <Project Path>
+    mvn clean test
     ```
 3.  Download the appropriate browser(e.g., Chrome for ChromeDriver, MS Edge for EdgeDriver)
 
@@ -65,25 +66,33 @@ The automation solution will demonstrate capabilities in:
 IdentifyCourses/  
 ├─ src/main/java/  
 │  ├─ com.cognizant.base/  
-│  │  ├─ Base_Test.java  
 │  │  ├─ Base_Page.java  
+│  │  ├─ Base_Test.java  
 │  ├─ com.cognizant.element.repository/  
+│  │  ├─ ForEnterprisePage.java  
 │  │  ├─ HomePage.java  
 │  │  ├─ ResultPage.java  
-│  │  ├─ EnterprisePage.java  
 │  ├─ com.cognizant.utilities/  
 │  │  ├─ ExcelUtils.java  
-│  │  ├─ ActionUtils.java  
-│  │  ├─ SelectUtils.java  
+│  │  ├─ ExtentReportManager.java  
+│  │  ├─ MiscUtils.java  
+│  │  ├─ SelectUtils.java    
+├─ src/main/resources/  
+│  ├─ Checkwords.xlsx  
+│  ├─ config.properties  
+│  ├─ log4j2.xml        
 ├─ src/test/java/  
-│  ├─ com.cognizant.TS01_course_search_and_filtering/  
-│  ├─ com.cognizant.TS02_language_learning_overview/  
-│  ├─ com.cognizant.TS03_enterprise_form/  
-├─ src/test/resources/  
-│  ├─ testdata/  
-│  │  ├─ data.xlsx  
+│  ├─ com.cognizant.testscripts/  
+│  │  ├─ TSCourseSearch.java  
+│  │  ├─ TSForEnterpriseForm.java  
+│  │  ├─ TSLanguageLearning.java  
+├─ src/test/testdata/  
+│  ├─ FormTestData.xlsx  
 │  ├─ testNG.xml  
+├─ logs/  
+├─ reports/  
+├─ screenshots/  
 ├─ POM.xml  
-├─ test outputs/  
+├─ test-outputs/  
 ├─ .gitignore  
 ├─ README.md  
