@@ -24,7 +24,7 @@ public class TSCourseSearch extends Base_Test{
 	int i=4;
 
 	//Test 1: testing whether search box accepts any text input
-	@Test(priority=-4,groups= {"Smoke"})
+	@Test(priority=-4)
 	public void tc01testSearchInputAcceptsText() {
 		logger.info("CS-TC-01: To Verify That Search Input Field Accepts Text");
 
@@ -71,7 +71,7 @@ public class TSCourseSearch extends Base_Test{
 	}
 
 	//Test 2: testing whether search button triggers the search on clicking
-	@Test(priority=-3,dependsOnMethods={"tc01testSearchInputAcceptsText"},groups= {"Smoke"})
+	@Test(priority=-3,dependsOnMethods={"tc01testSearchInputAcceptsText"})
 	public void testSearchButtonTrigger() {
 		logger.info("CS-TC-02: To Verify That Search Button Click Triggers Search");
 		ExtentTest test = ExtentReportManager.extent.createTest("CS-TC-02: To Verify That Search Button Click Triggers Search");
@@ -105,7 +105,7 @@ public class TSCourseSearch extends Base_Test{
 	}
 
 	//Test 3: testing whether search results shown on the results page are valid and related to the search key
-	@Test(priority=-2, dependsOnMethods= {"testSearchButtonTrigger"},groups= {"Sanity"})
+	@Test(priority=-2, dependsOnMethods= {"testSearchButtonTrigger"})
 	public void testValidSearchResults() throws IOException {
 		logger.info("CS-TC-03: To Verify That Search Results Are Displayed Correctly");
 		ExtentTest test = ExtentReportManager.extent.createTest("CS-TC-03: To Verify That Search Results Are Displayed Correctly");
@@ -188,7 +188,7 @@ public class TSCourseSearch extends Base_Test{
 	}
 
 	//Test 4: testing whether checkboxes function as required individually
-	@Test(priority=0,dataProvider="filtersData",dependsOnMethods="testValidSearchResults",groups= {"Sanity"})
+	@Test(priority=0,dataProvider="filtersData",dependsOnMethods="testValidSearchResults")
 	public void testRespectiveCheckboxes(String filterName) {
 		logger.info("CS-TC-0"+i+": Test "+filterName+" Checkbox is Clickable");
 		ExtentTest test = ExtentReportManager.extent.createTest("CS-TC-0"+i+": Test "+filterName+" Checkbox is Clickable");
