@@ -184,7 +184,7 @@ public class Base_Test {
 			FileUtils.copyFile(source, new File(destination)); // Copy screenshot to destination.
 		} catch (Exception e) {
 			logger.error("Error capturing screenshot: " + e.getMessage());
-			e.getMessage(); // This line doesn't do much, consider logging or rethrowing.
+			e.getMessage();
 		}
 		return destination; // Return the path of the saved screenshot.
 
