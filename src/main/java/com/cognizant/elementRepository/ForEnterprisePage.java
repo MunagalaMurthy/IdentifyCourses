@@ -17,7 +17,7 @@ import com.cognizant.utilities.SelectUtils;
 public class ForEnterprisePage extends Base_Page{
 	//Locators & Variables
 //	ActionUtils action = new ActionUtils(driver);
-	FluentWait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2)).ignoring(Exception.class);
+	private FluentWait<WebDriver> wait = new FluentWait<>(driver).withTimeout(Duration.ofSeconds(10)).pollingEvery(Duration.ofSeconds(2)).ignoring(Exception.class);
 	@FindBy(id="FirstName") private WebElement firstNameElem;
 	@FindBy(id="LastName") private WebElement lastNameElem;
 	@FindBy(id="Email") private WebElement emailElem;
