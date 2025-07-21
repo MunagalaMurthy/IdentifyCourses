@@ -14,7 +14,7 @@ import com.cognizant.utilities.ExtentReportManager;
 
 public class TSLanguageLearning extends Base_Test {
 	ResultPage rp;
-	
+
 	// Test Case: LL-TC-01
 	// Description: To verify filter section accessible
 	@Test(groups="sanity")
@@ -257,7 +257,7 @@ public class TSLanguageLearning extends Base_Test {
 
 		}
 	}
-	
+
 	// Test Case: LL-TC-06
 	// Description: To verify level section accessible
 	@Test(groups="sanity")
@@ -297,7 +297,7 @@ public class TSLanguageLearning extends Base_Test {
 			Assert.fail("Exception Occured");
 		}
 	}
-	
+
 	// Test Case: LL-TC-07
 	// Description: To verify count of courses visible for each levels
 	@Test(groups="sanity")
@@ -344,7 +344,7 @@ public class TSLanguageLearning extends Base_Test {
 			Assert.fail("Exception Occured");
 		}
 	}
-	
+
 	// Test Case: LL-TC-08
 	// Description: To verify count of levels
 	@Test(groups="sanity")
@@ -437,7 +437,7 @@ public class TSLanguageLearning extends Base_Test {
 
 		}
 	}
-	
+
 	// Test Case: LL-TC-09
 	// Description: To verify beginner option is available
 	@Test(groups="smoke")
@@ -537,7 +537,7 @@ public class TSLanguageLearning extends Base_Test {
 
 		}
 	}
-	
+
 	// Test Case: LL-TC-09
 	// Description: To verify beginner level checkbox checked
 	// Needs to be run only after the level checkbox is checked
@@ -580,5 +580,5 @@ public class TSLanguageLearning extends Base_Test {
 			Assert.fail("Exception Occured");
 		}
 	}
-	
+
 }

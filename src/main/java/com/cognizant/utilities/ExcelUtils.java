@@ -28,7 +28,7 @@ public class ExcelUtils {
 	private XSSFCell cell;
 	// Path to the Excel file.
 	private String path;
-	
+
 	/**
 	 * Constructor for ExcelUtils.
 	 * Initializes the path to the Excel file.
@@ -37,7 +37,7 @@ public class ExcelUtils {
 	public ExcelUtils(String path) {
 		this.path = path;
 	}
-		
+
 	/**
 	 * Retrieves the total number of rows (last row number) in a specified Excel sheet.
 	 * The row count is 0-indexed, meaning if there are 10 rows (0-9), it returns 9.
@@ -55,7 +55,7 @@ public class ExcelUtils {
 		fi.close(); // Close the file input stream.
 		return rowcount;		
 	}
-	
+
 	/**
 	 * Retrieves the total number of cells (columns) in a specified row of an Excel sheet.
 	 * This method returns the count of the last cell number (1-indexed).
@@ -75,7 +75,7 @@ public class ExcelUtils {
 		fi.close(); // Close the file input stream.
 		return cellcount;
 	}
-	
+
 	/**
 	 * Retrieves the data from a specific cell in an Excel sheet.
 	 * This method uses DataFormatter to return the cell content as a String,
@@ -93,7 +93,7 @@ public class ExcelUtils {
 		sheet = workbook.getSheet(sheetName); // Get the specified sheet.
 		row = sheet.getRow(rownum); // Get the specified row.
 		cell = row.getCell(colnum); // Get the specified cell.
-		
+
 		DataFormatter formatter = new DataFormatter(); // Create a DataFormatter to handle various cell types.
 		String data;
 		try {
@@ -103,15 +103,15 @@ public class ExcelUtils {
 			// If there's an exception (e.g., cell is null or empty), return an empty string.
 			data = "";
 		} finally {
-            // Ensure workbook and FileInputStream are closed even if an exception occurs within the try block
-            // This is good practice for resource management
-            if (workbook != null) {
-                workbook.close();
-            }
-            if (fi != null) {
-                fi.close();
-            }
-        }
+			// Ensure workbook and FileInputStream are closed even if an exception occurs within the try block
+			// This is good practice for resource management
+			if (workbook != null) {
+				workbook.close();
+			}
+			if (fi != null) {
+				fi.close();
+			}
+		}
 		return data;
 	}
 }

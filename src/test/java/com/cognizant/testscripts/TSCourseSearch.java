@@ -20,7 +20,7 @@ import com.cognizant.utilities.ExtentReportManager;
 public class TSCourseSearch extends Base_Test{
 
 	ResultPage rp;
-	
+
 	int i=4;
 
 	//Test 1: testing whether search box accepts any text input
@@ -199,7 +199,7 @@ public class TSCourseSearch extends Base_Test{
 			logger.info("\tCS-TC-0"+i+": Checking presence and state of checkbox");
 			test.log(Status.INFO, "CS-TC-0"+i+": Checking presence and state of checkbox");
 			//Assertion checks to check if the checkbox is displayed and not selected at the start
-			Assert.assertTrue(rp.filterDisplayStatus(filterName));
+			Assert.assertTrue(rp.isAccessible(filterName));
 			Assert.assertFalse(rp.filterSelectStatus(filterName));
 			logger.info("\tCS-TC-0"+i+": Successfully Passed");
 			test.log(Status.PASS, "CS-TC-0"+i+": Successfully Passed");

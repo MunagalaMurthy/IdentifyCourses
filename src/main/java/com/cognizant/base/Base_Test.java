@@ -37,7 +37,7 @@ import com.cognizant.utilities.ExcelUtils;
 
 // Base_Test class provides foundational setup and teardown for all test classes.
 public class Base_Test {
-	
+
 	protected WebDriver driver; // WebDriver instance for browser interaction
 	protected Properties prop; // Properties object to load configuration from config.properties
 	protected HomePage hp; // Page object for the Home Page
@@ -45,12 +45,12 @@ public class Base_Test {
 	protected ResultPage rp; // Page object for the Result Page
 	protected Logger logger; // Logger for logging test execution information
 	protected String url; // Stores the base URL from the properties file
-    protected ExtentTest test; // ExtentTest object for reporting test status
+	protected ExtentTest test; // ExtentTest object for reporting test status
 	protected String screenshotPath = null; // Path to store screenshots
 	protected List<List<String>> testData = new ArrayList<>(); // List to store test data from Excel
 	// ExcelUtils instance to read data from the specified Excel file
 	ExcelUtils eu = new ExcelUtils(System.getProperty("user.dir") + "\\src\\test\\testdata\\FormTestData.xlsx");
-	
+
 	/**
 	 * Sets up the WebDriver based on the execution environment (local/remote) and browser.
 	 * Loads configuration from `config.properties` and test data from Excel.
@@ -60,21 +60,21 @@ public class Base_Test {
 	@BeforeClass
 	@Parameters({"browser"})
 	public void setup(@Optional("chrome") String browser) throws Exception {
-		
+
 		// Set browser name in Log4j2 ThreadContext for logging differentiation.
 		ThreadContext.put("browser", browser);
 		// Initialize logger for the current class.
 		logger = LogManager.getLogger(this.getClass());
-		
+
 		// Load configuration properties from config.properties file.
 		FileInputStream file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
 		prop = new Properties();
 		prop.load(file);
-		
+
 		// Determine execution environment: Selenium Grid (remote) or local.
 		if(prop.getProperty("EXECUTION_ENV").equalsIgnoreCase("remote")) {
 			DesiredCapabilities capabilities = new DesiredCapabilities();
-			
+
 			// Set platform capabilities based on OS property.
 			if(prop.getProperty("OS").equalsIgnoreCase("windows")) {
 				capabilities.setPlatform(Platform.WIN11);
@@ -86,7 +86,7 @@ public class Base_Test {
 				System.out.println("No Matching OS found for remote execution. Please check 'OS' property in config.properties.");
 				return; // Exit setup if OS is not supported for remote execution.
 			}
-			
+
 			// Set browser capabilities.
 			if(browser.equalsIgnoreCase("Chrome")) {
 				capabilities.setBrowserName("chrome");
@@ -97,14 +97,14 @@ public class Base_Test {
 				System.out.println("Unsupported browser for remote execution: " + browser);
 				return; // Exit setup if browser is not supported for remote execution.
 			}
-			
+
 			// Construct URL for Selenium Grid Hub.
 			URI uri = new URI(prop.getProperty("GRID_LINK"));
 			URL seleniumHubUrl = uri.toURL();
-			
+
 			// Initialize RemoteWebDriver for remote execution.
 			driver = new RemoteWebDriver(seleniumHubUrl, capabilities);
-			
+
 		} else if(prop.getProperty("EXECUTION_ENV").equalsIgnoreCase("local")) {
 			// Initialize WebDriver for local execution based on browser parameter.
 			if(browser.equalsIgnoreCase("Chrome")) {
@@ -120,20 +120,20 @@ public class Base_Test {
 			System.out.println("Invalid EXECUTION_ENV property. Please use 'local' or 'remote'.");
 			return; // Exit setup if EXECUTION_ENV is invalid.
 		}
-		
+
 		// Navigate to the application URL.
 		url = prop.getProperty("URL");
 		driver.get(url);
-		
+
 		// Maximize browser window.
 		driver.manage().window().maximize();
-		
+
 		// Delete all cookies to ensure a clean session.
 		driver.manage().deleteAllCookies();
-		
+
 		// Set implicit wait for element visibility.
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		
+
 		// Initialize Page Object Model (POM) classes.
 		// Note: fep and rp are initialized only if needed in specific tests,
 		// but hp is universally useful for navigating to the main page.
@@ -142,7 +142,7 @@ public class Base_Test {
 		// Read test data from Excel.
 		readTestData();
 	}
-	
+
 	/**
 	 * Reads test data from the "FormTestData" sheet in the Excel file
 	 * and stores it in the `testData` list.
@@ -164,7 +164,7 @@ public class Base_Test {
 			e.printStackTrace(); // Print stack trace for debugging.
 		}
 	}
-	
+
 	/**
 	 * Captures a screenshot of the current browser window and saves it to a specified path.
 	 * The screenshot file name includes the test name and a timestamp for uniqueness.
@@ -189,14 +189,14 @@ public class Base_Test {
 		return destination; // Return the path of the saved screenshot.
 
 	}
-	
+
 	/**
 	 * Tears down the WebDriver by quitting the browser after all tests in the class have run.
 	 */
 	@AfterClass
-    public void tearDown() {
-        if (driver != null) {
-            driver.quit(); // Quits the browser opened for the current test class.
-        }
-    }
+	public void tearDown() {
+		if (driver != null) {
+			driver.quit(); // Quits the browser opened for the current test class.
+		}
+	}
 }

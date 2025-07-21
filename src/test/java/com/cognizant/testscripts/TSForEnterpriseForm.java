@@ -13,11 +13,11 @@ import com.cognizant.utilities.ExtentReportManager;
 
 // This class contains test cases for various "For Enterprise" forms.
 public class TSForEnterpriseForm extends Base_Test{	
-	
+
 	// Page object for interacting with the "For Enterprise" page elements.
 	ForEnterprisePage fep;
 	String message;
-	
+
 	/**
 	 * Test case to verify successful submission of the Business Sales form.
 	 * This test is categorized as "high" priority.
@@ -77,7 +77,7 @@ public class TSForEnterpriseForm extends Base_Test{
 			// Capture a screenshot and add it to the report.
 			String captureScreen = captureScreen("TestSearchInputAcceptsText");
 			test.addScreenCaptureFromPath(captureScreen);
-			
+
 		}catch(AssertionError ae) {
 			logger.error(ae.getMessage());
 			test.log(Status.FAIL, message);
