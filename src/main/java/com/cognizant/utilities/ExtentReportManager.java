@@ -2,6 +2,8 @@ package com.cognizant.utilities;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 //import java.net.URL;
 import java.net.URL;
@@ -11,7 +13,7 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
+import java.util.Properties;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -29,6 +31,7 @@ public class ExtentReportManager implements ITestListener {
 	public ExtentSparkReporter sparkReporter;
 	public static  ExtentReports extent;
 	public ExtentTest test;
+	public Properties prop;
 
 	String repName;
 
@@ -56,8 +59,16 @@ public class ExtentReportManager implements ITestListener {
 		extent.setSystemInfo("User Name", System.getProperty("user.name"));
 		extent.setSystemInfo("Environemnt", "QA");
 		
-		String os = testContext.getCurrentXmlTest().getParameter("os");
-		extent.setSystemInfo("Operating System", os);
+		// Load configuration properties from config.properties file.
+		FileInputStream file;
+		try {
+			file = new FileInputStream(System.getProperty("user.dir")+"/src/main/resources/config.properties");
+			prop = new Properties();
+			prop.load(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		extent.setSystemInfo("OS", prop.getProperty("OS"));
 		
 		String browser = testContext.getCurrentXmlTest().getParameter("browser");
 		extent.setSystemInfo("Browser", browser);
